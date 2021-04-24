@@ -53,6 +53,7 @@ label{
 }
 
 input[type="email"],
+input[type="text"],
 input[type="password"],
 input[type="password_veri"]{
     width: 100%;

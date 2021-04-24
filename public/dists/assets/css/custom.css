@@ -1,0 +1,107 @@
+.slider{
+    max-width: 1150px;
+    display: flex;
+}
+
+.slider .card{
+
+    flex: 1;
+    margin: 0 10px;
+    background:#fff;
+    border-radius: 15px;
+
+}
+
+.slider .card:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.4);
+}
+
+.slider .card .img {
+    height: 200px;
+    width: 100%;
+
+}
+.slider .card .img img{
+    margin-top: 8px;
+    height: 180%;
+    width: 100%;
+    object-fit:cover;
+}
+
+.slider .card .content{
+    padding: 10px 20px;
+
+}
+.card .content .title{
+    font-size: 25px;
+    font-weight: 600;
+    margin-top: 155px;
+
+}
+.card .content .sub-title{
+    font-size: 20px;
+    font-weight: 600;
+    color: #f05697;
+    line-height: 20px;
+
+}
+
+.card .content p{
+    text-align: justify;
+    margin: 10px 0;
+
+}
+
+.card .content .btn{
+    display: block;
+    text-align: left;
+    margin: 10px 0;
+}
+
+.card .content .btn a{
+    background: rgb(240, 86, 151);
+    padding: 8px 30px;
+    font-size: 0.928rem;
+    letter-spacing: 1px;
+    font-family: Montserrat, sans-serif;
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+    display: inline-block;
+    text-align: center;
+    border: 1px solid rgb(240, 86, 151);
+    cursor: pointer;
+
+
+}
+.card .content .btn a:hover{
+
+    transform: scale(0.9);
+
+}
+
+
+
+.owl-prev {
+    width: 100px;
+    height: 250px;
+    position: absolute;
+    top: 40%;
+    left: -100px;
+    display: block !important;
+    border:0px solid black;
+}
+
+.owl-next {
+    width: 100px;
+    height: 250px;
+    position: absolute;
+    top: 40%;
+    right: -100px;
+    display: block !important;
+    border:0px solid black;
+}
+.owl-prev i, .owl-next i {transform : scale(1,6); color: #ccc;}
+
+
+
+

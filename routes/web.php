@@ -25,7 +25,11 @@ Route::post('/doctors', 'DoctorController@store')->name('doctor.store');
 Route::put('/doctors/{doctor}', 'DoctorController@update')->name('doctor.update');
 Route::delete('/doctors/{doctor}', 'DoctorController@destroy')->name('doctor.destroy');
 //Pacientes
-
+Route::get('/patients/create', 'PatientController@create')->name('patient.create');
+Route::get('/patients/{patient}/edit', 'PatientController@editar')->name('patient.edit');
+Route::post('/patients', 'PatientController@store')->name('patient.store');
+Route::put('/patients/{patient}', 'PatientController@update')->name('patient.update');
+Route::delete('/patients/{patient}', 'PatientController@destroy')->name('patient.destroy');
 
 //Especialidades
 Route::get('/specialties', 'SpecialtyController@index')->name('specialty');

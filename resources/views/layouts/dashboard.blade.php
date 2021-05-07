@@ -16,12 +16,7 @@
     <link href="{{asset('dists/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css')}}" rel="stylesheet">
     <!-- Argon CSS -->
     <link type="text/css" href="{{asset('dists/assets/css/argon.css?v=1.0.0')}}" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <!-- Datatables JS CDN -->
-    <script type="text/javascript" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
-
+    @livewireStyles
 </head>
 
 <body>
@@ -134,6 +129,7 @@
 
     <!-- Argon JS -->
     <script src="{{asset('dists/assets/js/argon.js?v=1.0.0')}}"></script>
+    @livewireScripts
 
 
 

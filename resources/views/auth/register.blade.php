@@ -8,36 +8,24 @@
         <h1 class="title">Registrarme</h1>
         <form method="POST" action="{{route('register')}}">
             @csrf
-            <label for="User">Cédula</label>
-            <input type="text" name="ci" value="{{ old('ci') }}">
-            @error('ci')
-            <span class="invalid-feedback" role="alert">
-                <strong>{{ $message }}</strong>
-            </span>
-            @enderror
+
             <label for="User">Nombre</label>
-            <input type="text" name="name" value="{{ old('name') }}">
+            <input type="text" name="name" value="{{ old('name') }}" autocomplete="off">
             @error('name')
-            <span class="invalid-feedback" role="alert">
+            <span class="invalid-feedback text-danger" role="alert">
                 <strong>{{ $message }}</strong>
             </span>
             @enderror
-            <label for="User">Apellido</label>
-            <input type="text" name="last_name" value="{{ old('last_name') }}">
-            @error('last_name')
-            <span class="invalid-feedback" role="alert">
-                <strong>{{ $message }}</strong>
-            </span>
-            @enderror
+
             <label for="Email">Email</label>
-            <input type="email" name="email" value="{{ old('email') }}">
+            <input type="email" name="email" value="{{ old('email') }}" autocomplete="off">
             @error('email')
             <span class="invalid-feedback" role="alert">
                 <strong>{{ $message }}</strong>
             </span>
             @enderror
             <label for="password">Contraseña</label>
-            <input type="password" name="password" value="{{ old('password') }}">
+            <input type="password" name="password" value="{{ old('password') }}" autocomplete="off">
             @error('password')
             <span class="invalid-feedback" role="alert">
                 <strong>{{ $message }}</strong>

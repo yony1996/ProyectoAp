@@ -6,7 +6,7 @@
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link " href="{{route('pacientes')}}">
+        <a class="nav-link " href="#">
             <i class="fas fa-procedures text-primary"></i>Pacientes
         </a>
     </li>

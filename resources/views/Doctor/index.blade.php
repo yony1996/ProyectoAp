@@ -1,54 +1,20 @@
 @extends('layouts.dashboard')
 
 @section('content')
-    <div class="row">
-        <div class="col-md-12 mt-4">
+<div class="row">
+    <div class="col-md-12 mt-4">
 
-            <div class="card">
-                <div class="card-header">
-                    <a href="{{redirect()->getUrlGenerator()->previous()}}" data-toggle="tooltip" data-placement="top" title="retornar"><i class="ni ni-bold-left"></i>
-
-                    </a> &nbsp
-                    <a>Usuarios Registrados</a>&nbsp
+        <div class="card">
+            <div class="card-header">
+                <h1>soy medico</h1>
 
 
 
-                </div>
-                <!-- /.card-header -->
-                <div class="card-body table-responsive p-0">
-
-
-                        <table class="table table-hover text-nowrap">
-                            <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>nombre</th>
-                                <th>email</th>
-
-
-                            </tr>
-                            </thead>
-                            <tbody>
-
-
-                                <tr>
-                                    <td>id</td>
-                                    <td>name</td>
-                                    <td>email</td>
-
-                                </tr>
-
-
-
-                            </tbody>
-                        </table>
-
-
-
-                </div>
-                <!-- /.card-body -->
             </div>
-            <!-- /.card -->
+            <!-- /.card-header -->
+
         </div>
+        <!-- /.card -->
     </div>
+</div>
 @endsection

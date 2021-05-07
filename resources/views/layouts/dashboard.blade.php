@@ -16,7 +16,7 @@
     <link href="{{asset('dists/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css')}}" rel="stylesheet">
     <!-- Argon CSS -->
     <link type="text/css" href="{{asset('dists/assets/css/argon.css?v=1.0.0')}}" rel="stylesheet">
-    @livewireStyles
+
 </head>
 
 <body>
@@ -38,7 +38,7 @@
                     <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <div class="media align-items-center">
 
-                            <span class="mb-0 text-sm  font-weight-bold">Jessica Jones</span>
+                            <span class="mb-0 text-sm  font-weight-bold">{{Auth::user()->name}}</span>
 
                         </div>
                     </a>
@@ -84,7 +84,7 @@
                             <div class="media align-items-center">
 
                                 <div class="media-body ml-2 d-none d-lg-block">
-                                    <span class="mb-0 text-sm  font-weight-bold">Jessica Jones</span>
+                                    <span class="mb-0 text-sm  font-weight-bold">{{Auth::user()->name}}</span>
                                 </div>
                             </div>
                         </a>
@@ -129,7 +129,7 @@
 
     <!-- Argon JS -->
     <script src="{{asset('dists/assets/js/argon.js?v=1.0.0')}}"></script>
-    @livewireScripts
+
 
 
 

@@ -19,7 +19,7 @@ class AdminController extends Controller
 
         if ($user == 'admin') {
 
-            return view('Admin.index');
+            return view('Admin.index', compact('patients', 'doctors'));
         } elseif ($user == 'medico') {
             return view('Doctor.index');
         } else {

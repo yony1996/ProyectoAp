@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Doctor;
+use App\Specialty;
 use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Validation\Rule;
@@ -13,13 +14,16 @@ class DoctorController extends Controller
 {
     public function create()
     {
+        $specialties = Specialty::all();
 
-        return view('Doctor.create');
+        return view('Doctor.create', compact('specialties'));
     }
     public function editar($id)
     {
         $doctor = Doctor::find($id);
-        return view('Doctor.edit', compact('doctor'));
+        $specialties = Specialty::all();
+        $specialty_ids = $doctor->specialties()->pluck('specialties.id');
+        return view('Doctor.edit', compact('doctor', 'specialties', 'specialty_ids'));
     }
     public function store(Request $request)
     {
@@ -49,6 +53,8 @@ class DoctorController extends Controller
         $doctor->second_last_name = $request->input('second_last_name');
         $doctor->phone = $request->input('phone');
         $doctor->save();
+
+        $doctor->specialties()->attach($request->input('specialties'));
 
         $notification = 'El Medico se ha creado correctamente';
         return redirect()->route('doctor.create')->with(compact('notification'));
@@ -82,6 +88,8 @@ class DoctorController extends Controller
         $doctor->second_last_name = $request->input('second_last_name');
         $doctor->phone = $request->input('phone');
         $doctor->save();
+
+        $doctor->specialties()->sync($request->input('specialties'));
 
         $notification = 'El Medico se ha actualizado correctamente';
         return redirect()->route('dashboard')->with(compact('notification'));

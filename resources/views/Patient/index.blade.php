@@ -8,8 +8,6 @@
             <div class="card-header">
                 <h1>soy paciente</h1>
 
-
-
             </div>
             <!-- /.card-header -->
 

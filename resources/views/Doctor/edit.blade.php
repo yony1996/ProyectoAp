@@ -20,6 +20,14 @@
                                 <input type="text" name="ci" id="ci" value="{{old('ci',$doctor->ci)}}" class="form-control" placeholder="Cedula" required autocomplete="off">
                                 @error('ci') <small class="text-danger">{{$message}}</small>@enderror
                             </div>
+                            <div class="col">
+                                <label for="specialties">Especialidades</label>
+                                <select name="specialties[]" id="specialties" class="form-control selectpicker" data-style="btn-default" multiple title="Seleccione una o varias">
+                                    @foreach ($specialties as $specialty)
+                                    <option value="{{ $specialty->id }}">{{ $specialty->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
 
                         </div>
                         <div class="row">

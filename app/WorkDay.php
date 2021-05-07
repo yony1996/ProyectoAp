@@ -16,6 +16,6 @@ class WorkDay extends Model
         'afternoon_start',
         'afternoon_end',
 
-        'user_id'
+        'doctor_id'
     ];
 }

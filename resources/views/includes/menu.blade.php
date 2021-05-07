@@ -16,12 +16,12 @@
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link " href="./index.html">
+        <a class="nav-link " href="{{route('specialty')}}">
             <i class="fas fa-user-md text-primary"></i> Especialidades
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link " href="./index.html">
+        <a class="nav-link " href="{{route('schedule')}}">
             <i class="fas fa-user-md text-primary"></i> Mi horario
         </a>
     </li>

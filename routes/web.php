@@ -26,7 +26,18 @@ Route::put('/doctors/{doctor}', 'DoctorController@update')->name('doctor.update'
 Route::delete('/doctors/{doctor}', 'DoctorController@destroy')->name('doctor.destroy');
 //Pacientes
 
+
 //Especialidades
+Route::get('/specialties', 'SpecialtyController@index')->name('specialty');
+Route::get('/specialties/create', 'SpecialtyController@create')->name('specialty.create');
+Route::get('/specialties/{specialty}/edit', 'SpecialtyController@edit')->name('specialty.edit');
+Route::post('/specialties', 'SpecialtyController@store')->name('specialty.store');
+Route::put('/specialties/{specialty}', 'SpecialtyController@update')->name('specialty.update');
+Route::delete('/specialties/{specialty}', 'SpecialtyController@destroy')->name('specialty.destroy');
+
+//Schedule
+Route::get('/schedule', 'ScheduleController@edit')->name('schedule');
+Route::post('/schedule', 'ScheduleController@store')->name('schedule.store');
 
 /*
 Route::get('/courses', 'CourseController@index')->name('asignatura');

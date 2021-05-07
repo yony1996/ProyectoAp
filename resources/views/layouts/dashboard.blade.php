@@ -16,6 +16,7 @@
     <link href="{{asset('dists/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css')}}" rel="stylesheet">
     <!-- Argon CSS -->
     <link type="text/css" href="{{asset('dists/assets/css/argon.css?v=1.0.0')}}" rel="stylesheet">
+    @yield('css')
 
 </head>
 
@@ -126,7 +127,7 @@
     <script src="{{asset('dists/assets/vendor/jquery/dist/jquery.min.js')}}"></script>
 
     <script src="{{asset('dists/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js')}}"></script>
-
+    @yield('js')
     <!-- Argon JS -->
     <script src="{{asset('dists/assets/js/argon.js?v=1.0.0')}}"></script>
 

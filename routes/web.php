@@ -23,6 +23,7 @@ Route::get('/doctors/create', 'DoctorController@create')->name('doctor.create');
 Route::get('/doctors/{doctor}/edit', 'DoctorController@editar')->name('doctor.edit');
 Route::post('/doctors', 'DoctorController@store')->name('doctor.store');
 Route::put('/doctors/{doctor}', 'DoctorController@update')->name('doctor.update');
+Route::delete('/doctors/{doctor}', 'DoctorController@destroy')->name('doctor.destroy');
 //Pacientes
 
 //Especialidades

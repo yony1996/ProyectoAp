@@ -44,7 +44,7 @@
                                 <td>{{$patient->user->name}}</td>
                                 <td>{{$patient->user->email}}</td>
                                 <td>
-                                    @if ($patient->status= 1)
+                                    @if ($patient->user->status==1)
                                     <span class="badge badge-pill badge-success">Activo</span>
                                     @else
                                     <span class="badge badge-pill badge-danger">Inactivo</span>
@@ -125,7 +125,7 @@
                                 <td>{{$doctor->user->name}}</td>
                                 <td>{{$doctor->user->email}}</td>
                                 <td>
-                                    @if ($doctor->status=1)
+                                    @if ($doctor->user->status==1)
                                     <span class="badge badge-pill badge-success">Activo</span>
                                     @else
                                     <span class="badge badge-pill badge-danger">Inactivo</span>
@@ -134,7 +134,7 @@
 
                                 <td>
 
-                                    <form action="#" method="POST">
+                                    <form action="{{route('doctor.destroy', $doctor->id)}}" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <a class="btn btn-sm btn-info" href="{{route('doctor.edit',$doctor->id)}}"> <i class="fas fa-pen"></i></a>

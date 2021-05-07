@@ -86,4 +86,15 @@ class DoctorController extends Controller
         $notification = 'El Medico se ha actualizado correctamente';
         return redirect()->route('dashboard')->with(compact('notification'));
     }
+
+    public function destroy($id)
+    {
+
+        $status = 0;
+        $doctor = Doctor::find($id);
+        $doctor->user->status = $status;
+        $doctor->user->save();
+        $notification = 'El Medico se ha eliminado correctamente';
+        return redirect()->route('dashboard')->with(compact('notification'));
+    }
 }

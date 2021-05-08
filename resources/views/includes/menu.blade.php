@@ -26,7 +26,7 @@
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link " href="./index.html">
+        <a class="nav-link " href="{{route('appoiment.create')}}">
             <i class="fas fa-user-md text-primary"></i> Reservar Cita
         </a>
     </li>

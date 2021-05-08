@@ -15,6 +15,25 @@ class CreateAppoimentsTable extends Migration
     {
         Schema::create('appoiments', function (Blueprint $table) {
             $table->id();
+            $table->string('description');
+
+            // fk specialty
+            $table->unsignedInteger('specialty_id');
+            $table->foreign('specialty_id')->references('id')->on('specialties');
+
+            // fk doctor
+            $table->unsignedInteger('doctor_id');
+            $table->foreign('doctor_id')->references('id')->on('doctors');
+
+            // fk patient
+            $table->unsignedInteger('patient_id');
+            $table->foreign('patient_id')->references('id')->on('patients');
+
+            $table->date('scheduled_date');
+            $table->time('scheduled_time');
+
+            $table->string('type');
+
             $table->timestamps();
         });
     }

@@ -1,7 +1,8 @@
 @extends('layouts.dashboard')
 
 @section('css')
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.2/css/bootstrap-select.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.2/dist/css/bootstrap-select.min.css">
+
 @endsection
 
 @section('content')
@@ -27,15 +28,16 @@
                 <div class="card-body">
                     <form action="{{route('doctor.store')}}" method="POST">
                         @csrf
-                        <div class="row">
+                        <div class="form-row">
                             <div class="col">
                                 <label for="ci">Cedula</label>
                                 <input type="text" name="ci" id="ci" class="form-control" placeholder="Cedula" required autocomplete="off">
                                 @error('ci') <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>@enderror
                             </div>
+
                             <div class="col">
                                 <label for="specialties">Especialidades</label>
-                                <select name="specialties[]" id="specialties" class="form-control selectpicker" data-style="btn-primary" multiple title="Seleccione una o varias">
+                                <select name="specialties[]" id="specialties" class="form-control selectpicker" data-style="btn-info" multiple title="Seleccione una o varias">
                                     @foreach ($specialties as $specialty)
                                     <option value="{{ $specialty->id }}">{{ $specialty->name }}</option>
                                     @endforeach
@@ -103,5 +105,5 @@
 @endsection
 
 @section('js')
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.2/js/bootstrap-select.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.2/dist/js/bootstrap-select.min.js"></script>
 @endsection

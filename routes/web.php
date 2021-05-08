@@ -43,6 +43,10 @@ Route::delete('/specialties/{specialty}', 'SpecialtyController@destroy')->name('
 Route::get('/schedule', 'ScheduleController@edit')->name('schedule');
 Route::post('/schedule', 'ScheduleController@store')->name('schedule.store');
 
+//Appoiments
+Route::get('/appoiments/create', 'AppoimentController@create')->name('appoiment.create');
+Route::post('/appoiments', 'AppoimentController@store')->name('appoiment.store');
+
 /*
 Route::get('/courses', 'CourseController@index')->name('asignatura');
 Route::get('/courses/create', 'CourseController@create')->name('asignatura.create');

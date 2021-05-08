@@ -125,7 +125,6 @@
 
     <!-- Core -->
     <script src="{{asset('dists/assets/vendor/jquery/dist/jquery.min.js')}}"></script>
-
     <script src="{{asset('dists/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js')}}"></script>
     @yield('js')
     <!-- Argon JS -->

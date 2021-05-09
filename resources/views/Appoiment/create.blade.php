@@ -42,15 +42,15 @@
                 <div class="form-group col-md-6">
                     <label for="email">Médico</label>
                     <select name="doctor_id" id="doctor" class="form-control" required>
-                        @foreach ($doctors as $doctor)
+                        {{--@foreach ($doctors as $doctor)
                         <option value="{{ $doctor->id }}" @if(old('doctor_id')==$doctor->id) selected @endif>{{ $doctor->name }}</option>
-                        @endforeach
+                        @endforeach--}}
                     </select>
                 </div>
             </div>
 
             <div class="form-group">
-                <label for="dni">Fecha</label>
+                <label for="date">Fecha</label>
                 <div class="input-group input-group-alternative">
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
@@ -61,24 +61,7 @@
             <div class="form-group">
                 <label for="address">Hora de atención</label>
                 <div id="hours">
-                    @if ($intervals)
-                    @foreach ($intervals['morning'] as $key => $interval)
-                    <div class="custom-control custom-radio mb-3">
-                        <input name="scheduled_time" value="{{ $interval['start'] }}" class="custom-control-input" id="intervalMorning{{ $key }}" type="radio" required>
-                        <label class="custom-control-label" for="intervalMorning{{ $key }}">{{ $interval['start'] }} - {{ $interval['end'] }}</label>
-                    </div>
-                    @endforeach
-                    @foreach ($intervals['afternoon'] as $key => $interval)
-                    <div class="custom-control custom-radio mb-3">
-                        <input name="scheduled_time" value="{{ $interval['start'] }}" class="custom-control-input" id="intervalAfternoon{{ $key }}" type="radio" required>
-                        <label class="custom-control-label" for="intervalAfternoon{{ $key }}">{{ $interval['start'] }} - {{ $interval['end'] }}</label>
-                    </div>
-                    @endforeach
-                    @else
-                    <div class="alert alert-info" role="alert">
-                        Seleccione un médico y una fecha, para ver sus horas disponibles.
-                    </div>
-                    @endif
+
                 </div>
             </div>
             <div class="form-group">
@@ -105,5 +88,5 @@
 @endsection
 @section('js')
 <script src="{{ asset('dists/assets/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js') }}"></script>
-<script src="{{ asset('/js/appointments/create.js') }}"></script>
+<script src="{{asset('js/appoiments/create.js')}}"></script>
 @endsection

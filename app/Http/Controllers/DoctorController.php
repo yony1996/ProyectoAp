@@ -27,6 +27,7 @@ class DoctorController extends Controller
     }
     public function store(Request $request)
     {
+        //dd($request->all());
         $rules = [
             'name' => 'required|regex:/^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+$/u',
             'middle_name' => 'required|regex:/^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+$/u',

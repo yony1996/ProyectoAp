@@ -16,6 +16,8 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
+
+
 Route::get('/dashboard', 'AdminController@index')->name('dashboard');
 
 //Doctores
@@ -47,11 +49,6 @@ Route::post('/schedule', 'ScheduleController@store')->name('schedule.store');
 Route::get('/appoiments/create', 'AppoimentController@create')->name('appoiment.create');
 Route::post('/appoiments', 'AppoimentController@store')->name('appoiment.store');
 
-/*
-Route::get('/courses', 'CourseController@index')->name('asignatura');
-Route::get('/courses/create', 'CourseController@create')->name('asignatura.create');
-Route::get('/courses/{course}/edit', 'CourseController@edit')->name('asignatura.edit');
-Route::post('/courses', 'CourseController@store')->name('asignatura.store');
-Route::put('/courses/{course}', 'CourseController@update')->name('asignatura.update');
-Route::delete('/courses/{course}', 'CourseController@destroy')->name('asignatura.destroy');
-*/
+//JSON
+Route::get('/specialties/{specialty}/doctors', 'Api\SpecialtyController@doctors');
+Route::get('/schedule/hours', 'Api\ScheduleController@hours');

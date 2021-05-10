@@ -15,7 +15,12 @@
         <div class="alert alert-danger" role="alert">
             <ul>
                 @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
+                <li>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    {{ $error }}
+                </li>
                 @endforeach
             </ul>
         </div>
@@ -42,9 +47,9 @@
                 <div class="form-group col-md-6">
                     <label for="email">Médico</label>
                     <select name="doctor_id" id="doctor" class="form-control" required>
-                        {{--@foreach ($doctors as $doctor)
-                        <option value="{{ $doctor->id }}" @if(old('doctor_id')==$doctor->id) selected @endif>{{ $doctor->name }}</option>
-                        @endforeach--}}
+                        @foreach ($doctors as $doctor)
+                        <option value="{{ $doctor->id }}" @if(old('doctor_id')==$doctor->id) selected @endif>{{ $doctor->last_name }}</option>
+                        @endforeach
                     </select>
                 </div>
             </div>
@@ -61,6 +66,24 @@
             <div class="form-group">
                 <label for="address">Hora de atención</label>
                 <div id="hours">
+                    @if ($intervals)
+                    @foreach ($intervals['morning'] as $key=> $interval )
+                    <div class="custom-control custom-radio mb-3">
+                        <input type="radio" id="intervalMorning{{ $key }}" name="scheduled_time" class="custom-control-input" value="{{ $interval['start'] }}" required>
+                        <label class="custom-control-label" for="intervalMorning{{ $key }}">{{ $interval['start'] }} - {{ $interval['end'] }}</label>
+                    </div>
+                    @endforeach
+                    @foreach ($intervals['afternoon'] as $interval )
+                    <div class="custom-control custom-radio mb-3">
+                        <input type="radio" id="intervalAfternoon{{ $key }}" name="scheduled_time" class="custom-control-input" value="{{ $interval['start'] }}" required>
+                        <label class="custom-control-label" for="intervalAfternoon{{ $key }}">{{ $interval['start'] }} - {{ $interval['end'] }}</label>
+                    </div>
+                    @endforeach
+                    @else
+                    <div class="alert alert-info" role="alert">
+                        Seleccione un medico y una fecha para ver las horas disponibles.
+                    </div>
+                    @endif
 
                 </div>
             </div>
@@ -74,10 +97,7 @@
                     <input name="type" class="custom-control-input" id="type2" type="radio" @if(old('type')=='Examen' ) checked @endif value="Examen">
                     <label class="custom-control-label" for="type2">Examen</label>
                 </div>
-                <div class="custom-control custom-radio mb-3">
-                    <input name="type" class="custom-control-input" id="type3" type="radio" @if(old('type')=='Operación' ) checked @endif value="Operación">
-                    <label class="custom-control-label" for="type3">Operación</label>
-                </div>
+
             </div>
             <button type="submit" class="btn btn-primary">
                 Guardar

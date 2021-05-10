@@ -16,11 +16,11 @@ class CreateDoctorSpecialtyTable extends Migration
         Schema::create('doctor_specialty', function (Blueprint $table) {
             $table->id();
             // doctor
-            $table->unsignedInteger('doctor_id');
+            $table->unsignedBigInteger('doctor_id');
             $table->foreign('doctor_id')->references('id')->on('doctors');
 
             // specialty
-            $table->unsignedInteger('specialty_id');
+            $table->unsignedBigInteger('specialty_id');
             $table->foreign('specialty_id')->references('id')->on('specialties');
 
             $table->timestamps();

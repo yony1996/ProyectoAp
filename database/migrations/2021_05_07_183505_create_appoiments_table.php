@@ -18,15 +18,15 @@ class CreateAppoimentsTable extends Migration
             $table->string('description');
 
             // fk specialty
-            $table->unsignedInteger('specialty_id');
+            $table->unsignedBigInteger('specialty_id');
             $table->foreign('specialty_id')->references('id')->on('specialties');
 
             // fk doctor
-            $table->unsignedInteger('doctor_id');
+            $table->unsignedBigInteger('doctor_id');
             $table->foreign('doctor_id')->references('id')->on('doctors');
 
             // fk patient
-            $table->unsignedInteger('patient_id');
+            $table->unsignedBigInteger('patient_id');
             $table->foreign('patient_id')->references('id')->on('patients');
 
             $table->date('scheduled_date');

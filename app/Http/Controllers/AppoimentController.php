@@ -8,6 +8,7 @@ use App\Specialty;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Validator;
 
 class AppoimentController extends Controller
 {
@@ -33,7 +34,7 @@ class AppoimentController extends Controller
         return view('Appoiment.create', compact('specialties', 'doctors', 'intervals'));
     }
 
-    public function store(Request $request)
+    public function store(Request $request, ScheduleServiceInterface $scheduleService)
     {
         $rules = [
             'description' => 'required',
@@ -46,7 +47,26 @@ class AppoimentController extends Controller
             'scheduled_time.required' => 'Por favor seleccione una hora valida para la cita.'
         ];
 
-        $this->validate($request, $rules, $messages);
+        $validator = Validator::make($request->all(), $rules, $messages);
+        $validator->after(function ($validator) use ($request, $scheduleService) {
+            $date = $request->input('scheduled_date');
+            $doctorId = $request->input('doctor_id');
+            $scheduled_time = $request->input('scheduled_time');
+            if ($date && $doctorId && $scheduled_time) {
+                $start = new Carbon($scheduled_time);
+            } else {
+                return;
+            }
+            if (!$scheduleService->isAvailableInterval($date, $doctorId, $start)) {
+                $validator->errors()
+                    ->add('available_time', 'La hora seleccionada ya se encuentra reservada por otro paciente.');
+            }
+        });
+        if ($validator->fails()) {
+            return back()
+                ->withErrors($validator)
+                ->withInput();
+        }
         $data = $request->only([
             'description',
             'specialty_id',

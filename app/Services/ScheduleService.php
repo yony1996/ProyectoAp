@@ -2,12 +2,21 @@
 
 namespace App\Services;
 
+use App\Appoiment;
 use App\Interfaces\ScheduleServiceInterface;
 use App\WorkDay;
 use Carbon\Carbon;
 
 class ScheduleService implements ScheduleServiceInterface
 {
+    public function isAvailableInterval($date, $doctorId, Carbon $start)
+    {
+        $exists = Appoiment::where('doctor_id', $doctorId)
+            ->where('scheduled_date', $date)
+            ->where('scheduled_time', $start->format('H:i:s'))->exists();
+
+        return !$exists;
+    }
     private function getDayFromDate($date)
     {
 
@@ -35,15 +44,15 @@ class ScheduleService implements ScheduleServiceInterface
         }
 
 
-        $morningIntervals = $this->getIntervals($workDays->morning_start, $workDays->morning_end);
-        $afternoonIntervals = $this->getIntervals($workDays->afternoon_start, $workDays->afternoon_end);
+        $morningIntervals = $this->getIntervals($workDays->morning_start, $workDays->morning_end, $date, $doctorId);
+        $afternoonIntervals = $this->getIntervals($workDays->afternoon_start, $workDays->afternoon_end, $date, $doctorId);
 
         $data = [];
         $data['morning'] = $morningIntervals;
         $data['afternoon'] = $afternoonIntervals;
         return $data;
     }
-    private function getIntervals($start, $end)
+    private function getIntervals($start, $end, $date, $doctorId)
     {
         $start = new Carbon($start);
         $end = new Carbon($end);
@@ -54,12 +63,14 @@ class ScheduleService implements ScheduleServiceInterface
             $interval = [];
 
             $interval['start'] = $start->format('g:i A');
+            $available = $this->isAvailableInterval($date, $doctorId, $start);
             $start->addMinutes(30);
             $interval['end'] = $start->format('g:i A');
 
 
-
-            $intervals[] = $interval;
+            if ($available) {
+                $intervals[] = $interval;
+            }
         }
         return $intervals;
     }

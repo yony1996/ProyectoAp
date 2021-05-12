@@ -34,6 +34,8 @@ class CreateAppoimentsTable extends Migration
 
             $table->string('type');
 
+
+
             $table->timestamps();
         });
     }

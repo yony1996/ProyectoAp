@@ -9,6 +9,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Login') }}</title>
+
     <link rel="stylesheet" href="{{asset('dists/assets/css/stiles.css')}}">
 
 </head>

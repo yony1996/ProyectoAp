@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Appoiment;
+use App\CancelledAppoiment;
 use App\Interfaces\ScheduleServiceInterface;
 use App\Specialty;
 use Carbon\Carbon;
@@ -12,6 +13,18 @@ use Validator;
 
 class AppoimentController extends Controller
 {
+    public function index()
+    {
+        $PendingAppoiments = Appoiment::where('status', 'Reservada')->where('patient_id', Auth::user()->patient->id)->paginate(5);
+        $ConfirmedAppoiments = Appoiment::where('status', 'Confirmada')->where('patient_id', Auth::user()->patient->id)->paginate(5);
+        $OldAppoiments = Appoiment::whereIn('status', ['Atendida', 'Cancelada'])->where('patient_id', Auth::user()->patient->id)->paginate(5); //where('patiente', Auth::user()->patient->id)->get();
+        return view('Appoiment.index', compact('PendingAppoiments', 'ConfirmedAppoiments', 'OldAppoiments'));
+    }
+    public function show(Appoiment $appoiment)
+    {
+        return view('Appoiment.show', compact('appoiment'));
+    }
+
     public function create(ScheduleServiceInterface $scheduleService)
     {
         $specialties = Specialty::all();
@@ -82,5 +95,29 @@ class AppoimentController extends Controller
 
         $notification = 'La cita se ha registrado correctarmente.';
         return back()->with(compact('notification'));
+    }
+
+    public function PostCancel(Appoiment $appoiment, Request $request)
+    {
+        if ($request->has('justification')) {
+            $cancellation = new CancelledAppoiment();
+            $cancellation->justification = $request->input('justification');
+            $cancellation->cancelled_by = Auth::user()->id;
+
+            $appoiment->cancellation()->save($cancellation);
+        }
+        $appoiment->status = 'Cancelada';
+        $appoiment->save();
+
+        $notification = 'La cita se ha cancelado correcatamente.';
+        return redirect()->route('appoiment')->with(compact('notification'));
+    }
+
+    public function ShowCancelForm(Appoiment $appoiment)
+    {
+        if ($appoiment->status == 'Confirmada') {
+            return view('Appoiment.cancel', compact('appoiment'));
+        }
+        return redirect()->route('appoiment');
     }
 }

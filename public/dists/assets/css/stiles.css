@@ -13,7 +13,9 @@ body{
     background-image:  linear-gradient(to bottom, #7e0274, #95007c, #ad0084, #c6008a, #de008f, #e9219b, #f434a6, #ff43b2, #ff5cc7, #ff72db, #ff86ee, #ff99ff);
     padding: 20px;
 }
-
+.text-red{
+    color: #ec0c38;
+}
 .container-all{
     width: 100%;
     max-width: 1000px;

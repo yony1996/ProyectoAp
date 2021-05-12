@@ -10,19 +10,11 @@
             @csrf
             <label for="Email">Email</label>
             <input type="email" name="email">
-            @error('email')
-            <span class="invalid-feedback" role="alert">
-                <strong>{{ $message }}</strong>
-            </span>
-            @enderror
+            @error('email') <small class="invalid-feedback text-red" role="alert">{{ $message }}</small>@enderror
 
             <label for="password">Contraseña</label>
             <input type="password" name="password">
-            @error('password')
-            <span class="invalid-feedback" role="alert">
-                <strong>{{ $message }}</strong>
-            </span>
-            @enderror
+            @error('password') <small class="invalid-feedback text-red" role="alert">{{ $message }}</small>@enderror
             <button type="submit">Ingresar</button>
         </form>
         <span class="text-footer">¿Aún no estas registrado? <a href="{{route('register')}}">Registrate</a></span>

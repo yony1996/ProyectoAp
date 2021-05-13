@@ -36,6 +36,11 @@
             <i class="fas fa-user-md text-primary"></i> Mi horario
         </a>
     </li>
+    <li class="nav-item {{ Route::is('appoiment') ? 'active' : '' }}">
+        <a class="nav-link " href="{{route('appoiment')}}">
+            <i class="fas fa-user-md text-primary"></i> Mis Citas
+        </a>
+    </li>
     {{--medico--}}
     <li class="nav-item">
         <a class="nav-link " href="./index.html">

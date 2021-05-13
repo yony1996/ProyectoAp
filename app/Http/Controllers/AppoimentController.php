@@ -15,13 +15,27 @@ class AppoimentController extends Controller
 {
     public function index()
     {
-        $PendingAppoiments = Appoiment::where('status', 'Reservada')->where('patient_id', Auth::user()->patient->id)->paginate(5);
-        $ConfirmedAppoiments = Appoiment::where('status', 'Confirmada')->where('patient_id', Auth::user()->patient->id)->paginate(5);
-        $OldAppoiments = Appoiment::whereIn('status', ['Atendida', 'Cancelada'])->where('patient_id', Auth::user()->patient->id)->paginate(5); //where('patiente', Auth::user()->patient->id)->get();
+        $role = Auth::user()->getRoleNames()->first();
+
+        if ($role == 'admin') {
+            $PendingAppoiments = Appoiment::where('status', 'Reservada')->paginate(5);
+            $ConfirmedAppoiments = Appoiment::where('status', 'Confirmada')->paginate(5);
+            $OldAppoiments = Appoiment::whereIn('status', ['Atendida', 'Cancelada'])->paginate(5);
+        } elseif ($role == 'medico') {
+            $PendingAppoiments = Appoiment::where('status', 'Reservada')->where('doctor_id', Auth::user()->doctor->id)->paginate(5);
+            $ConfirmedAppoiments = Appoiment::where('status', 'Confirmada')->where('doctor_id', Auth::user()->doctor->id)->paginate(5);
+            $OldAppoiments = Appoiment::whereIn('status', ['Atendida', 'Cancelada'])->where('doctor_id', Auth::user()->doctor->id)->paginate(5);
+        } elseif ($role == 'paciente') {
+            $PendingAppoiments = Appoiment::where('status', 'Reservada')->where('patient_id', Auth::user()->patient->id)->paginate(5);
+            $ConfirmedAppoiments = Appoiment::where('status', 'Confirmada')->where('patient_id', Auth::user()->patient->id)->paginate(5);
+            $OldAppoiments = Appoiment::whereIn('status', ['Atendida', 'Cancelada'])->where('patient_id', Auth::user()->patient->id)->paginate(5); //where('patiente', Auth::user()->patient->id)->get();
+
+        }
         return view('Appoiment.index', compact('PendingAppoiments', 'ConfirmedAppoiments', 'OldAppoiments'));
     }
     public function show(Appoiment $appoiment)
     {
+
         return view('Appoiment.show', compact('appoiment'));
     }
 
@@ -119,5 +133,14 @@ class AppoimentController extends Controller
             return view('Appoiment.cancel', compact('appoiment'));
         }
         return redirect()->route('appoiment');
+    }
+
+    public function confirm(Appoiment $appoiment)
+    {
+        $appoiment->status = 'Cofirmada';
+        $appoiment->save();
+
+        $notification = 'La cita se ha con firmado correcatamente.';
+        return redirect()->route('appoiment')->with(compact('notification'));
     }
 }

@@ -54,6 +54,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/appoiments/{appoiment}', 'AppoimentController@show')->name('appoiment.show');
     Route::post('/appoiments/{appoiment}/cancel', 'AppoimentController@PostCancel')->name('appoiment.postcancel');
     Route::get('/appoiments/{appoiment}/cancel', 'AppoimentController@ShowCancelForm')->name('appoiment.cancelform');
+    Route::post('/appoiments/{appoiment}/confirm', 'AppoimentController@confirm')->name('appoiment.confirm');
 
     //JSON
     Route::get('/specialties/{specialty}/doctors', 'Api\SpecialtyController@doctors');

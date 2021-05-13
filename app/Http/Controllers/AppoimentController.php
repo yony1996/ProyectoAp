@@ -135,12 +135,12 @@ class AppoimentController extends Controller
         return redirect()->route('appoiment');
     }
 
-    public function confirm(Appoiment $appoiment)
+    public function PostConfirm(Appoiment $appoiment)
     {
-        $appoiment->status = 'Cofirmada';
+        $appoiment->status = 'Confirmada';
         $appoiment->save();
 
-        $notification = 'La cita se ha con firmado correcatamente.';
+        $notification = 'La cita se ha confirmado correcatamente.';
         return redirect()->route('appoiment')->with(compact('notification'));
     }
 }

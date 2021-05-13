@@ -38,13 +38,13 @@
                 </ul>
                 <div class="tab-content" id="pills-tabContent">
                     <div class="tab-pane fade show active" id="confirmed-appoiments" role="tabpanel">
-                        @include('Appoiment.confirmed-appoiments')
+                        @include('Appoiment.tabla.confirmed')
                     </div>
                     <div class="tab-pane fade" id="pending-appoiments" role="tabpanel">
-                        @include('Appoiment.pending-appoiments')
+                        @include('Appoiment.tabla.pending')
                     </div>
                     <div class="tab-pane fade" id="old-appoiments" role="tabpanel">
-                        @include('Appoiment.old-appoiments')
+                        @include('Appoiment.tabla.old')
                     </div>
                 </div>
 

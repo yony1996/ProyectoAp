@@ -39,17 +39,20 @@
 
 
                 <td>
-                    <a href="{{route('appoiment.postcancel',$appoiment->id)}}" class="btn btn-sm btn-outline-danger" data-toggle="tooltip" title="cancelar cita"> <i class="far fa-calendar-times"></i> </a>
-
                     @hasanyrole('medico|admin')
-                    <form action="#" method="POST" class="d-inline-block">
+                    <form action="{{route('appoiment.postconfirm',$appoiment->id)}}" method="POST" class="d-inline-block">
                         @csrf
 
-                        <button class="btn btn-sm btn-outline-success" type="submit" data-toggle="tooltip" title="Confirmar cita">
+                        <button class="btn btn-sm btn-outline-success" type="submit" data-toggle="tooltip" title="Confirmar Cita">
                             <i class="ni ni-check-bold"></i>
                         </button>
                     </form>
                     @endhasanyrole
+                    <a href="{{route('appoiment.postcancel',$appoiment->id)}}" class="btn btn-sm btn-outline-danger" data-toggle="tooltip" title="Cancelar Cita"> <i class="far fa-calendar-times"></i> </a>
+                    @hasrole('admin')
+                    <a href="{{route('appoiment.show',$appoiment->id)}}" class="btn btn-sm btn-outline-primary" data-toggle="tooltip" title="Ver Detalles "> <i class="fa fa-eye"></i> </a>
+                    @endhasrole
+
                 </td>
 
 

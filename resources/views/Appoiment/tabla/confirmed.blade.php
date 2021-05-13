@@ -39,8 +39,10 @@
 
 
                 <td>
-                    <a href="{{route('appoiment.cancelform',$appoiment->id)}}" class="btn btn-sm btn-outline-danger" title="cancelar cita"> <i class="far fa-calendar-times"></i> </a>
-
+                    <a href="{{route('appoiment.cancelform',$appoiment->id)}}" class="btn btn-sm btn-outline-danger" data-toggle="tooltip" title="Cancelar Cita"> <i class="far fa-calendar-times"></i> </a>
+                    @hasrole('admin')
+                    <a href="{{route('appoiment.show',$appoiment->id)}}" class="btn btn-sm btn-outline-primary" data-toggle="tooltip" title="Ver Detalles "> <i class="fa fa-eye"></i> </a>
+                    @endhasrole
                 </td>
 
 

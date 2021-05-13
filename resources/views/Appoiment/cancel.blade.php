@@ -22,34 +22,53 @@
         @endif
         @hasrole('paciente')
         <p>
-            Estás a punto de cancelar tu cita reservada con el médico: <br>
-            <strong>
-                {{ $appoiment->doctor->last_name }}
-                (especialidad: {{ $appoiment->specialty->name }})
-                para el día {{ $appoiment->scheduled_date }}
-            </strong>
-            :
+            Estás a punto de cancelar tu cita: <br>
+            <div class="alert alert-info" role="alert">
+                <ul>
+                    <strong>
+                        <li>Reservada con el médico:{{ $appoiment->doctor->last_name }}</li>
+                        <li>Especialidad: {{ $appoiment->specialty->name }}</li>
+                        <li>Para el día: {{ $appoiment->scheduled_date }}</li>
+                    </strong>
+
+                </ul>
+            </div>
         </p>
         @endhasrole
-        {{--@hasrole('medico')
+        @hasrole('medico')
         <p>
-            Estás a punto de cancelar tu cita con el paciente
-            {{ $appointment->patient->name }}
-        (especialidad {{ $appointment->specialty->name }})
-        para el día {{ $appointment->scheduled_date }}
-        (hora {{ $appointment->scheduled_time_12 }}):
+            Estás a punto de cancelar tu cita: <br>
+            <div class="alert alert-info" role="alert">
+                <ul>
+                    <strong>
+                        <li>Con el paciente:{{ $appoiment->patient->last_name }}</li>
+                        <li>Especialidad: {{ $appoiment->specialty->name }}</li>
+                        <li>Para el día: {{ $appoiment->scheduled_date }}</li>
+                        <li>Hora: {{ $appoiment->scheduled_time_12 }}</li>
+                    </strong>
+
+                </ul>
+            </div>
         </p>
         @endhasrole
         @hasrole('admin')
         <p>
-            Estás a punto de cancelar la cita reservada
-            por el paciente {{ $appointment->patient->name }}
-            para ser atendido por el médico {{ $appointment->doctor->name }}
-            (especialidad {{ $appointment->specialty->name }})
-            el día {{ $appointment->scheduled_date }}
-            (hora {{ $appointment->scheduled_time_12 }}):
+            Estás a punto de cancelar la cita reservada:<br>
+            <div class="alert alert-info" role="alert">
+                <ul>
+                    <strong>
+                        <li>Por el paciente:{{ $appoiment->patient->last_name }}</li>
+                        <li>Para ser atendido por el médico:{{ $appoiment->doctor->last_name }}</li>
+                        <li>Especialidad:{{ $appoiment->specialty->name }}</li>
+                        <li>El día:{{ $appoiment->scheduled_date }}</li>
+                        <li>Hora:{{ $appoiment->scheduled_time_12 }}</li>
+                    </strong>
+
+                </ul>
+            </div>
+
         </p>
-        @endhasrole--}}
+        @endhasrole
 
 
         <form action="{{route('appoiment.postcancel',$appoiment->id)}}" method="POST">

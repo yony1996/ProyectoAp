@@ -47,8 +47,17 @@
                             <i class="ni ni-check-bold"></i>
                         </button>
                     </form>
+                    <a href="{{route('appoiment.cancelform',$appoiment->id)}}" class="btn btn-sm btn-outline-danger" data-toggle="tooltip" title="Cancelar Cita"> <i class="far fa-calendar-times"></i> </a>
                     @endhasanyrole
-                    <a href="{{route('appoiment.postcancel',$appoiment->id)}}" class="btn btn-sm btn-outline-danger" data-toggle="tooltip" title="Cancelar Cita"> <i class="far fa-calendar-times"></i> </a>
+                    @hasrole('paciente')
+                    <form action="{{route('appoiment.postcancel',$appoiment->id)}}" method="POST" class="d-inline-block">
+                        @csrf
+
+                        <button class="btn btn-sm btn-outline-danger" type="submit" data-toggle="tooltip" title="Cancelar Cita">
+                            <i class="ni ni-check-bold"></i>
+                        </button>
+                    </form>
+                    @endhasrole
                     @hasrole('admin')
                     <a href="{{route('appoiment.show',$appoiment->id)}}" class="btn btn-sm btn-outline-primary" data-toggle="tooltip" title="Ver Detalles "> <i class="fa fa-eye"></i> </a>
                     @endhasrole

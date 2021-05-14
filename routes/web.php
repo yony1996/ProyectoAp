@@ -56,6 +56,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/appoiments/{appoiment}/cancel', 'AppoimentController@ShowCancelForm')->name('appoiment.cancelform');
     Route::post('/appoiments/{appoiment}/confirm', 'AppoimentController@PostConfirm')->name('appoiment.postconfirm');
 
+    //Exams
+    Route::get('/exams/create', 'ExamController@create')->name('exam.create');
+    Route::post('/exams', 'ExamController@store')->name('exam.store');
+
     //JSON
     Route::get('/specialties/{specialty}/doctors', 'Api\SpecialtyController@doctors');
     Route::get('/schedule/hours', 'Api\ScheduleController@hours');

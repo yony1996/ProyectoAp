@@ -57,7 +57,8 @@ Route::middleware('auth')->group(function () {
     Route::post('/appoiments/{appoiment}/confirm', 'AppoimentController@PostConfirm')->name('appoiment.postconfirm');
 
     //Exams
-    Route::get('/exams/create', 'ExamController@create')->name('exam.create');
+    Route::get('/exams', 'ExamController@index')->name('exam');
+    Route::get('/exams/{exam}/create', 'ExamController@create')->name('exam.create');
     Route::post('/exams', 'ExamController@store')->name('exam.store');
 
     //JSON

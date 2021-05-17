@@ -23,58 +23,63 @@
                 <ul class="nav nav-tabs " id="myTab" role="tablist">
 
                     <li class="nav-item " role="presentation">
-                        <a class="nav-link text-sm active" id="hematologia-tab" data-toggle="tab" href="#hematologia" role="tab" aria-selected="true">1 Hematologia</a>
+                        <a class="nav-link text-sm active" id="hematologia-tab" data-toggle="tab" href="#hematologia" aria-controls="hematologia" role="tab" aria-selected="true">1 Hematologia</a>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <a class="nav-link text-sm" id="uroanalisis-tab" data-toggle="tab" href="#uroanalisis" role="tab" aria-selected="false">2 Uroanalisis</a>
+                        <a class="nav-link text-sm" id="uroanalisis-tab" data-toggle="tab" href="#uroanalisis" aria-controls="uroanalisis" role="tab" aria-selected="false">2 Uroanalisis</a>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <a class="nav-link text-sm" id="coprologico-tab" data-toggle="tab" href="#coprologico" role="tab" aria-selected="false">3 Coprologico</a>
+                        <a class="nav-link text-sm" id="coprologico-tab" data-toggle="tab" href="#coprologico" aria-controls="coprologico" role="tab" aria-selected="false">3 Coprologico</a>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <a class="nav-link text-sm" id="quimicasanguinea-tab" data-toggle="tab" href="#quimicasanguinea" role="tab" aria-selected="false">4 Quimica Sanguínea</a>
+                        <a class="nav-link text-sm" id="quimicasanguinea-tab" data-toggle="tab" href="#quimicasanguinea" aria-controls="quimicasanguinea" role="tab" aria-selected="false">4 Quimica Sanguínea</a>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <a class="nav-link text-sm" id="serologia-tab" data-toggle="tab" href="#serologia" role="tab" aria-selected="false">5 Serología</a>
+                        <a class="nav-link text-sm" id="serologia-tab" data-toggle="tab" href="#serologia" aria-controls="serologia" role="tab" aria-selected="false">5 Serología</a>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <a class="nav-link text-sm" id="bacteriologia-tab" data-toggle="tab" href="#bacteriologia" role="tab" aria-selected="false">6 Bacteriología</a>
+                        <a class="nav-link text-sm" id="bacteriologia-tab" data-toggle="tab" href="#bacteriologia" aria-controls="bacteriologia" role="tab" aria-selected="false">6 Bacteriología</a>
                     </li>
-                    <li class="nav-item" role="presentation">
-                        <a class="nav-link text-sm" id="otros-tab" data-toggle="tab" href="#otros" role="tab" aria-selected="false">7 Otros</a>
-                    </li>
+
 
                 </ul>
 
 
                 <div class="card-body">
+
                     <form action="{{route('exam.store')}}" method="POST">
                         @csrf
                         <div class="col text-right">
                             <button type="submit" class="btn btn-sm btn-success">Crear Orden de Examen</button>
                         </div>
+                        <input type="hidden" name="patient_id" value="{{$patient->id}}">
+
                         <div class="tab-content d-flex justify-content-center" id="myTabContent">
-                            <div class="tab-pane fade show active" id="hematologia" role="tabpanel">
+
+                            <div class="tab-pane fade show active" id="hematologia" role="tabpanel" aria-labelledby="hematologia-tab">
                                 @include('Doctor.Documents.Exams.tablas.hematologia')
                             </div>
-                            <div class="tab-pane fade" id="uroanalisis" role="tabpanel">
+
+                            <div class="tab-pane fade" id="uroanalisis" role="tabpanel" aria-labelledby="uroanalisis-tab">
                                 @include('Doctor.Documents.Exams.tablas.uroanalisis')
                             </div>
-                            <div class="tab-pane fade" id="coprologico" role="tabpanel">
+
+                            <div class="tab-pane fade" id="coprologico" role="tabpanel" aria-labelledby="coprologico-tab">
                                 @include('Doctor.Documents.Exams.tablas.coprologico')
                             </div>
-                            <div class="tab-pane fade" id="quimicasanguinea" role="tabpanel">
+
+                            <div class="tab-pane fade" id="quimicasanguinea" role="tabpanel" aria-labelledby="quimicasanguinea-tab">
                                 @include('Doctor.Documents.Exams.tablas.quimicasanguinea')
                             </div>
-                            <div class="tab-pane fade" id="serologia" role="tabpanel">
+                            <div class="tab-pane fade" id="serologia" role="tabpanel" aria-labelledby="serologia-tab">
                                 @include('Doctor.Documents.Exams.tablas.serologia')
                             </div>
-                            <div class="tab-pane fade" id="bacteriologia" role="tabpanel">
+
+                            <div class="tab-pane fade" id="bacteriologia" role="tabpanel" aria-labelledby="bacteriologia-tab">
                                 @include('Doctor.Documents.Exams.tablas.bacteriologia')
                             </div>
-                            <div class="tab-pane fade" id="otros" role="tabpanel">
-                                @include('Doctor.Documents.Exams.tablas.otros')
-                            </div>
+
+
                         </div>
                     </form>
                 </div>

@@ -44,11 +44,11 @@
         </div>
         <div class="col-md-6 ">
             <div class="custom-control custom-checkbox mb-3">
-                <input type="checkbox" name="quimica[]" value="TRANSAMINASA PIRÚVICA (ALT)" class="custom-control-input text-sm" id="customCheck33">
+                <input type="checkbox" name="quimica[]" value="TRANSAMINASA PIRUVICA (ALT)" class="custom-control-input text-sm" id="customCheck33">
                 <label class="custom-control-label text-sm" for="customCheck33">TRANSAMINASA PIRÚVICA (ALT)</label>
             </div>
             <div class="custom-control custom-checkbox mb-3">
-                <input type="checkbox" name="quimica[]" value="TRANSAMINASA OXALACÉTICA (AST)" class="custom-control-input text-sm" id="customCheck34">
+                <input type="checkbox" name="quimica[]" value="TRANSAMINASA OXALACETICA (AST)" class="custom-control-input text-sm" id="customCheck34">
                 <label class="custom-control-label text-sm" for="customCheck34">TRANSAMINASA OXALACÉTICA (AST)</label>
             </div>
             <div class="custom-control custom-checkbox mb-3">
@@ -85,44 +85,5 @@
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-6">
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <div class="input-group-text">
-                        <input type="checkbox" name="quimica[]" id="qui_ad1" aria-label="Checkbox for following text input">
-                    </div>
-                </div>
-                <input type="text" oninput="document.getElementById('qui_ad1').value=this.value" class="form-control" aria-label="Text input with checkbox">
-            </div>
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <div class="input-group-text">
-                        <input type="checkbox" name="quimica[]" id="qui_ad2" aria-label="Checkbox for following text input">
-                    </div>
-                </div>
-                <input type="text" oninput="document.getElementById('qui_ad2').value=this.value" class="form-control" aria-label="Text input with checkbox">
-            </div>
 
-        </div>
-        <div class="col-md-6">
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <div class="input-group-text">
-                        <input type="checkbox" name="quimica[]" id="qui_ad3" aria-label="Checkbox for following text input">
-                    </div>
-                </div>
-                <input type="text" oninput="document.getElementById('qui_ad3').value=this.value" class="form-control" aria-label="Text input with checkbox">
-            </div>
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <div class="input-group-text">
-                        <input type="checkbox" name="quimica[]" id="qui_ad4" aria-label="Checkbox for following text input">
-                    </div>
-                </div>
-                <input type="text" oninput="document.getElementById('qui_ad4').value=this.value" class="form-control" aria-label="Text input with checkbox">
-            </div>
-
-        </div>
-    </div>
 </div>

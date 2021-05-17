@@ -14,8 +14,22 @@ class CreateExamsTable extends Migration
     public function up()
     {
         Schema::create('exams', function (Blueprint $table) {
+
             $table->id();
-            $table->$table->timestamps();
+            $table->string('hematologia')->nullable();
+            $table->string('uroanalisis')->nullable();
+            $table->string('coprologico')->nullable();
+            $table->string('quimica')->nullable();
+            $table->string('serologia')->nullable();
+            $table->string('bacteriologia')->nullable();
+
+            $table->unsignedBigInteger('doctor_id');
+            $table->foreign('doctor_id')->references('id')->on('doctors');
+
+            $table->unsignedBigInteger('patient_id');
+            $table->foreign('patient_id')->references('id')->on('patients');
+
+            $table->timestamps();
         });
     }
 

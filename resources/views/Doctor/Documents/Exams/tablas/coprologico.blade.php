@@ -14,11 +14,11 @@
                 <label class="custom-control-label text-sm" for="customCheck20">SANGRE OCULTA</label>
             </div>
             <div class="custom-control custom-checkbox mb-3">
-                <input type="checkbox" name="coprologico[]" value="INVESTIGACIÓN DE POLIMORFOS" class="custom-control-input text-sm" id="customCheck21">
+                <input type="checkbox" name="coprologico[]" value="INVESTIGACION DE POLIMORFOS" class="custom-control-input text-sm" id="customCheck21">
                 <label class="custom-control-label text-sm" for="customCheck21">INVESTIGACIÓN DE POLIMORFOS</label>
             </div>
             <div class="custom-control custom-checkbox mb-3">
-                <input type="checkbox" name="coprologico[]" value="INVESTIGACIÓN DE ROTAVIRUS" class="custom-control-input text-sm" id="customCheck22">
+                <input type="checkbox" name="coprologico[]" value="INVESTIGACION DE ROTAVIRUS" class="custom-control-input text-sm" id="customCheck22">
                 <label class="custom-control-label text-sm" for="customCheck22">INVESTIGACIÓN DE ROTAVIRUS</label>
             </div>
 

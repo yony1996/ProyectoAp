@@ -20,7 +20,7 @@
     </a>
 </li>
 <li class="nav-item">
-    <a class="nav-link " href="./index.html">
+    <a class="nav-link " href="{{route('exam')}}">
         <i class="fas fa-file-medical text-blue"></i> Examenes
     </a>
 </li>

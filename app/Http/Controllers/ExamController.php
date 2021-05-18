@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Doctor;
 use App\Exam;
 use App\Patient;
+use PDF;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -24,6 +25,12 @@ class ExamController extends Controller
 
         dd($exams, $examss);
         return view('Doctor.Documents.Exams.index', compact('exams'));
+    }
+    public function print()
+    {
+
+        $pdf = PDF::loadView('pdf.exam');
+        return $pdf->stream();
     }
     public function create($id)
     {

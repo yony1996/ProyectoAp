@@ -58,7 +58,7 @@
                                         @csrf
                                         @method('DELETE')
                                         <a class="btn btn-sm btn-info" href="{{route('exam.create',$patient->id)}}"><i class="fas fa-file-medical"></i></a>
-                                        <a class="btn btn-sm btn-info" href="#"><i class="fas fa-file-prescription"></i></a>
+                                        <a class="btn btn-sm btn-info" href="{{route('exam.print')}}"><i class="fas fa-file-prescription"></i></a>
                                         <a class="btn btn-sm btn-info" href="{{route('patient.edit',$patient->id)}}"> <i class="fas fa-pen"></i></a>
                                         <button class="btn btn-sm btn-danger" type="submit"><i class=" fa fa-trash"></i></button>
 

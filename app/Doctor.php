@@ -26,6 +26,6 @@ class Doctor extends Model
 
     public function exams()
     {
-        return $this->belongsToMany(Exam::class)->withTimestamps();
+        return $this->hasToMany(Exam::class);
     }
 }

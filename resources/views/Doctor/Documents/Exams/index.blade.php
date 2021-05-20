@@ -33,6 +33,7 @@
                                 <th>Apellido</th>
                                 <th>Email</th>
                                 <th>Status</th>
+                                <th>Tiempo de Emision</th>
                                 <th>Accion</th>
 
                             </tr>
@@ -41,8 +42,13 @@
 
                             @foreach ($exams as $exam)
                             <tr>
-                                <td>{{$exam->hematologia}}</td>
-                                <td>{{$exam->doctor->last_name}}</td>
+                                <td>{{$exam->patient->ci}}</td>
+                                <td>{{$exam->patient->user->name}}</td>
+                                <td>{{$exam->patient->last_name}}</td>
+                                <td>{{$exam->patient->user->email}}</td>
+                                <td>{{$exam->patient->user->status}}</td>
+                                <td>{{$exam->created_at->diffForHumans()}}</td>
+                                <td><a class="btn btn-sm btn-info" data-toggle="tooltip" title="Descargar orden" href="{{route('exam.print',$exam->patient->id)}}"> <i class="fa fa-download"></i></i></a></td>
 
                             </tr>
                             @endforeach

@@ -14,12 +14,12 @@
     </a>
 </li>
 {{--medico--}}
-<li class="nav-item">
-    <a class="nav-link " href="./index.html">
+<li class="nav-item {{ Route::is('record') ? 'active' : '' }}">
+    <a class="nav-link " href="{{route('record')}}">
         <i class="fas fa-file-prescription text-green"></i> Ficha Medica
     </a>
 </li>
-<li class="nav-item">
+<li class="nav-item {{ Route::is('exam') ? 'active' : '' }}">
     <a class="nav-link " href="{{route('exam')}}">
         <i class="fas fa-file-medical text-blue"></i> Examenes
     </a>

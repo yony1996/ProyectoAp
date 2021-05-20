@@ -17,6 +17,6 @@ class Patient extends Model
     }
     public function exams()
     {
-        return $this->belongsToMany(Exam::class)->withTimestamps();
+        return $this->hasMany(Exam::class);
     }
 }

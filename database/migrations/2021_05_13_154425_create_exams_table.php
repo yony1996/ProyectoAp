@@ -22,10 +22,10 @@ class CreateExamsTable extends Migration
             $table->string('quimica')->nullable();
             $table->string('serologia')->nullable();
             $table->string('bacteriologia')->nullable();
-
+            //doctos
             $table->unsignedBigInteger('doctor_id');
             $table->foreign('doctor_id')->references('id')->on('doctors');
-
+            //patients
             $table->unsignedBigInteger('patient_id');
             $table->foreign('patient_id')->references('id')->on('patients');
 

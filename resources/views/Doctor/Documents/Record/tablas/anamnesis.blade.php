@@ -1,13 +1,13 @@
 <div class="content">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="form-group">
-                <label for="exampleFormControlTextarea1">Example textarea</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-            </div>
 
-        </div>
 
+    <div class="form-group">
+        <label for="anamnesis">Anamnesis</label>
+        <textarea class="form-control" name="anamnesis" id="anamnesis" rows="3"></textarea>
     </div>
+
+
+
+
 
 </div>

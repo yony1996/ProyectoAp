@@ -40,7 +40,7 @@
                         <div class="col text-right">
                             <button type="submit" class="btn btn-sm btn-success">Crear Ficha Medica</button>
                         </div>
-                        <input type="hidden" name="patient_id" value="{{$patient->id}}">
+                        <input type="hidden" name="patient_id" value="#">
 
                         <div class="tab-content" id="myTabContent">
 

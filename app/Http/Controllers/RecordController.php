@@ -7,10 +7,12 @@ use Illuminate\Http\Request;
 
 class RecordController extends Controller
 {
-    public function create($id)
+    public function create()
     {
-        $patient = Patient::find($id);
+        return view('Doctor.Documents.Record.create');
+    }
 
-        return view('Doctor.Documents.Record.create', compact('patient'));
+    public function store(Request $request)
+    {
     }
 }

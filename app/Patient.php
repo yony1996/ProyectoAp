@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Patient extends Model
 {
     protected $fillable = [
-        'ci', 'middle_name', 'last_name', 'second_last_name', 'phone',
+        'ci', 'middle_name', 'last_name', 'second_last_name', 'phone', 'age',
     ];
 
 
@@ -18,5 +18,9 @@ class Patient extends Model
     public function exams()
     {
         return $this->hasMany(Exam::class);
+    }
+    public function record()
+    {
+        return $this->hasMany(Record::class);
     }
 }

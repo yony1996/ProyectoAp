@@ -92,8 +92,8 @@ class DoctorController extends Controller
 
         $doctor->specialties()->sync($request->input('specialties'));
 
-        $notification = 'El Medico se ha actualizado correctamente';
-        return redirect()->route('dashboard')->with(compact('notification'));
+        $notificationM = 'El Medico se ha actualizado correctamente';
+        return redirect()->route('dashboard')->with(compact('notificationM'));
     }
 
     public function destroy($id)
@@ -103,7 +103,7 @@ class DoctorController extends Controller
         $doctor = Doctor::find($id);
         $doctor->user->status = $status;
         $doctor->user->save();
-        $notification = 'El Medico se ha eliminado correctamente';
-        return redirect()->route('dashboard')->with(compact('notification'));
+        $notificationM = 'El Medico se ha eliminado correctamente';
+        return redirect()->route('dashboard')->with(compact('notificationM'));
     }
 }

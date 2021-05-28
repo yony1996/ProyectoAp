@@ -6,9 +6,9 @@
         {{--Pacientes--}}
         <div class="col-md-6 mt-4">
             <div class="card-body">
-                @if (session('notification'))
+                @if (session('notificationP'))
                 <div class="alert alert-success" role="alert">
-                    {{session('notification')}}
+                    {{session('notificationP')}}
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -87,9 +87,9 @@
         {{--Medicos--}}
         <div class="col-md-6 mt-4">
             <div class="card-body">
-                @if (session('notification'))
+                @if (session('notificationM'))
                 <div class="alert alert-success" role="alert">
-                    {{session('notification')}}
+                    {{session('notificationM')}}
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>

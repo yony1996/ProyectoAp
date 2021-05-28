@@ -9,24 +9,24 @@
             <div class="row">
                 <div class="col">
                     <label for="name">Nombre</label>
-                    <input type="text" name="name" id="name" class="form-control" placeholder="Nombre" required autocomplete="off">
+                    <input type="text" name="name" id="name" class="form-control" placeholder="Nombre" value="{{$patient->user->name}}" required autocomplete="off">
 
 
                 </div>
                 <div class="col">
                     <label for="last_name">Apellido</label>
-                    <input type="text" name="last_name" id="last_name" class="form-control" placeholder="Apellido" required autocomplete="off">
+                    <input type="text" name="last_name" id="last_name" class="form-control" value="{{$patient->last_name}}" placeholder="Apellido" required autocomplete="off">
 
 
                 </div>
                 <div class="col">
                     <label for="ci">Cedula</label>
-                    <input type="text" name="ci" id="ci" class="form-control" placeholder="Cedula" required autocomplete="off">
+                    <input type="text" name="ci" id="ci" class="form-control" value="{{$patient->ci}}" placeholder="Cedula" required autocomplete="off">
 
                 </div>
                 <div class="col">
                     <label for="age">Edad</label>
-                    <input type="text" name="age" id="age" class="form-control" placeholder="Edad" required autocomplete="off">
+                    <input type="text" name="age" id="age" value="{{$patient->age}}" class="form-control" placeholder="Edad" required autocomplete="off">
 
                 </div>
 
@@ -71,7 +71,7 @@
             <div class="row">
                 <div class="form-group col-md-4">
                     <label for="work">A que se dedica?</label>
-                    <input type="text" name="work" id="work" class="form-control" placeholder="A que se dedica" required autocomplete="off">
+                    <input type="text" name="work" id="work" class="form-control" placeholder="A que se dedica" autocomplete="off">
                 </div>
                 <div class="form-group col-md-4">
                     <label for="seaside">Lugar de nacimiento</label>
@@ -172,14 +172,12 @@
             <div class="row">
                 <div class="col">
                     <label for="direction">Dirección</label>
-                    <input type="text" name="direction" id="direction" class="form-control" placeholder="Dirección" required autocomplete="off">
-                    @error('direction') <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>@enderror
+                    <input type="text" name="direction" id="direction" class="form-control" placeholder="Dirección" autocomplete="off">
 
                 </div>
                 <div class="col">
                     <label for="phone">Telefono</label>
-                    <input type="text" name="phone" id="phone" class="form-control" placeholder="Telefono" required autocomplete="off">
-                    @error('phone') <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>@enderror
+                    <input type="text" name="phone" id="phone" value="{{$patient->phone}}" class="form-control" placeholder="Telefono" autocomplete="off">
 
                 </div>
             </div>
@@ -197,12 +195,12 @@
             <div class="row">
                 <div class="col">
                     <label for="reason">Motivo de la consulta / porque motivo vino? </label>
-                    <input type="text" name="reason" id="reason" class="form-control" placeholder="Motivo de la consulta" required autocomplete="off">
+                    <input type="text" name="reason" id="reason" class="form-control" placeholder="Motivo de la consulta" autocomplete="off">
 
                 </div>
                 <div class="col">
                     <label for="disease">Enfermedad Actual</label>
-                    <input type="text" name="disease" id="disease" class="form-control" placeholder="Enfermedad Actual" required autocomplete="off">
+                    <input type="text" name="disease" id="disease" class="form-control" placeholder="Enfermedad Actual" autocomplete="off">
 
                 </div>
             </div>
@@ -210,12 +208,12 @@
             <div class="row">
                 <div class="col">
                     <label for="fac">FAC?Cuando empezó la molestia? </label>
-                    <input type="text" name="fac" id="fac" class="form-control" placeholder="Cuando empezó la molestia?" required autocomplete="off">
+                    <input type="text" name="fac" id="fac" class="form-control" placeholder="Cuando empezó la molestia?" autocomplete="off">
 
                 </div>
                 <div class="col">
                     <label for="frc">FRC?Nunca antes presento esta molestia?</label>
-                    <input type="text" name="frc" id="frc" class="form-control" placeholder="Nunca antes presento esta molestia?" required autocomplete="off">
+                    <input type="text" name="frc" id="frc" class="form-control" placeholder="Nunca antes presento esta molestia?" autocomplete="off">
 
                 </div>
             </div>
@@ -223,12 +221,12 @@
             <div class="row">
                 <div class="col">
                     <label for="ca">CA?:Cuál cree usted que fue la causa de esta molestia?</label>
-                    <input type="text" name="ca" id="ca" class="form-control" placeholder="Cuál cree usted que fue la causa de esta molestia?" required autocomplete="off">
+                    <input type="text" name="ca" id="ca" class="form-control" placeholder="Cuál cree usted que fue la causa de esta molestia?" autocomplete="off">
 
                 </div>
                 <div class="col">
                     <label for="fc">FC?:Cómo empezó?</label>
-                    <input type="text" name="fc" id="fc" class="form-control" placeholder="Cómo empezó?" required autocomplete="off">
+                    <input type="text" name="fc" id="fc" class="form-control" placeholder="Cómo empezó?" autocomplete="off">
 
                 </div>
             </div>
@@ -236,12 +234,12 @@
             <div class="row">
                 <div class="col">
                     <label for="sa">SA?:Que otra molestia ha presentado?</label>
-                    <input type="text" name="sa" id="sa" class="form-control" placeholder="Que otra molestia ha presentado?" required autocomplete="off">
+                    <input type="text" name="sa" id="sa" class="form-control" placeholder="Que otra molestia ha presentado?" autocomplete="off">
 
                 </div>
                 <div class="col">
                     <label for="e">E?: En las últimas horas o días ha cambiado en alguna forma la molestia? </label>
-                    <input type="text" name="e" id="e" class="form-control" placeholder="En las últimas horas o días ha cambiado en alguna forma la molestia?" required autocomplete="off">
+                    <input type="text" name="e" id="e" class="form-control" placeholder="En las últimas horas o días ha cambiado en alguna forma la molestia?" autocomplete="off">
 
                 </div>
             </div>
@@ -249,12 +247,12 @@
             <div class="row">
                 <div class="col">
                     <label for="rm">RM?: A tomado algo para esta molestia?</label>
-                    <input type="text" name="rm" id="rm" class="form-control" placeholder="A tomado algo para esta molestia?" required autocomplete="off">
+                    <input type="text" name="rm" id="rm" class="form-control" placeholder="A tomado algo para esta molestia?" autocomplete="off">
 
                 </div>
                 <div class="col">
                     <label for="ea">EA?: En este momento como sigue su molestia? </label>
-                    <input type="text" name="ea" id="ea" class="form-control" placeholder="En este momento como sigue su molestia? " required autocomplete="off">
+                    <input type="text" name="ea" id="ea" class="form-control" placeholder="En este momento como sigue su molestia? " autocomplete="off">
 
                 </div>
             </div>
@@ -262,12 +260,12 @@
             <div class="row">
                 <div class="col">
                     <label for="eg">¿Enfermedades de gravedad por la que tome medicamentos?</label>
-                    <input type="text" name="eg" id="eg" class="form-control" placeholder="¿Enfermedades de gravedad por la que tome medicamentos?" required autocomplete="off">
+                    <input type="text" name="eg" id="eg" class="form-control" placeholder="¿Enfermedades de gravedad por la que tome medicamentos?" autocomplete="off">
 
                 </div>
                 <div class="col">
                     <label for="egs">¿Enfermedades Graves en sus familiares de sangre?</label>
-                    <input type="text" name="egs" id="egs" class="form-control" placeholder="¿Enfermedades Graves en sus familiares de sangre?" required autocomplete="off">
+                    <input type="text" name="egs" id="egs" class="form-control" placeholder="¿Enfermedades Graves en sus familiares de sangre?" autocomplete="off">
 
                 </div>
             </div>
@@ -275,12 +273,12 @@
             <div class="row">
                 <div class="col">
                     <label for="cir">¿Le han realizado cirugías?</label>
-                    <input type="text" name="cir" id="cir" class="form-control" placeholder="¿Le han realizado cirugías?" required autocomplete="off">
+                    <input type="text" name="cir" id="cir" class="form-control" placeholder="¿Le han realizado cirugías?" autocomplete="off">
 
                 </div>
                 <div class="col">
                     <label for="aler">¿Tiene alergias algún medicamento o alimento?</label>
-                    <input type="text" name="aler" id="aler" class="form-control" placeholder="¿Tiene alergias algún medicamento o alimento?" required autocomplete="off">
+                    <input type="text" name="aler" id="aler" class="form-control" placeholder="¿Tiene alergias algún medicamento o alimento?" autocomplete="off">
 
                 </div>
             </div>

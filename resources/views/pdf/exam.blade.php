@@ -60,7 +60,7 @@
 
         .section4 {
 
-            margin-top: -100px;
+            margin-top: -80px;
             margin-left: 360px;
         }
 
@@ -167,32 +167,32 @@
             <tr style="height: 34.0666656px">
                 <td style="vertical-align:middle;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:130.6304px;">
                     <p style="text-align:center;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;line-height:normal;margin-top:0pt;margin-bottom:0pt;text-indent:35.4pt;">
-                        <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">{{$patient->last_name}}</span>
+                        <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">{{$exams->patient->last_name}}</span>
                     </p>
                 </td>
                 <td style="vertical-align:middle;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:134.4444px;">
                     <p style="text-align:center;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;line-height:normal;margin-top:0pt;margin-bottom:0pt;">
-                        <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">{{$patient->second_last_name}}</span>
+                        <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">{{$exams->patient->second_last_name}}</span>
                     </p>
                 </td>
                 <td style="vertical-align:middle;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:112.9224px;">
                     <p style="text-align:center;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;line-height:normal;margin-top:0pt;margin-bottom:0pt;">
-                        <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">{{$patient->user->name}}</span>
+                        <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">{{$exams->patient->user->name}}</span>
                     </p>
                 </td>
                 <td style="vertical-align:middle;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:125.318px;">
                     <p style="text-align:center;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;line-height:normal;margin-top:0pt;margin-bottom:0pt;">
-                        <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">{{$patient->middle_name}}</span>
+                        <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">{{$exams->patient->middle_name}}</span>
                     </p>
                 </td>
                 <td style="vertical-align:middle;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:48.56073px;">
                     <p style="text-align:center;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;line-height:normal;margin-top:0pt;margin-bottom:0pt;">
-                        <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">34</span>
+                        <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">{{$exams->patient->age}}</span>
                     </p>
                 </td>
                 <td style="vertical-align:middle;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:160.2572px;">
                     <p style="text-align:center;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;line-height:normal;margin-top:0pt;margin-bottom:0pt;">
-                        <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">{{$patient->ci}}</span>
+                        <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">{{$exams->patient->ci}}</span>
                     </p>
                 </td>
             </tr>
@@ -204,7 +204,9 @@
 
     {{--hematologia_inicio--}}
     <div class="section2">
+
         <table cellspacing="0" style="width:70px; border-collapse: collapse; ">
+
             <tr style="height: 2px">
                 <td style="vertical-align:top;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:273.7333px;" colspan="4">
                     <p style="text-align:center;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
@@ -220,7 +222,9 @@
                 </td>
                 <td style="vertical-align:middle;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:18.93333px;">
                     <p style="text-align:center;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
-                        <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">X</span>
+                        <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">@if(in_array("BIOMETRIA HEMATICA", $hematologia))
+                            X
+                            @endif</span>
                     </p>
                 </td>
                 <td style="vertical-align:top;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:113.4px;">
@@ -230,7 +234,9 @@
                 </td>
                 <td style="vertical-align:middle;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:18.86667px;">
                     <p style="text-align:center;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
-                        <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">X</span>
+                        <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">@if(in_array("INDICES HEMATICOS", $hematologia))
+                            X
+                            @endif</span>
                     </p>
                 </td>
             </tr>
@@ -242,7 +248,9 @@
                 </td>
                 <td style="vertical-align:middle;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:18.93333px;">
                     <p style="text-align:center;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
-                        <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">X</span>
+                        <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">@if(in_array("PLAQUETAS", $hematologia))
+                            X
+                            @endif</span>
                     </p>
                 </td>
                 <td style="vertical-align:top;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:113.4px;">
@@ -252,7 +260,9 @@
                 </td>
                 <td style="vertical-align:middle;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:18.86667px;">
                     <p style="text-align:center;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
-                        <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">X</span>
+                        <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">@if(in_array("TIEMPO DE PROTROMBINA (TP)", $hematologia))
+                            X
+                            @endif</span>
                     </p>
                 </td>
             </tr>
@@ -264,7 +274,9 @@
                 </td>
                 <td style="vertical-align:middle;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:18.93333px;">
                     <p style="text-align:center;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
-                        <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">X</span>
+                        <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">@if(in_array("GRUPO SANGUINEO", $hematologia))
+                            X
+                            @endif</span>
                     </p>
                 </td>
                 <td style="vertical-align:top;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:113.4px;">
@@ -274,19 +286,23 @@
                 </td>
                 <td style="vertical-align:middle;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:18.86667px;">
                     <p style="text-align:center;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
-                        <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">X</span>
+                        <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">@if(in_array("T.TROMBOPLASTINA PARCIAL (TTP)", $hematologia))
+                            X
+                            @endif</span>
                     </p>
                 </td>
             </tr>
             <tr style="height: 2px">
                 <td style="vertical-align:top;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:122.5333px;">
                     <p style="text-align:right;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
-                        <span style="font-family:Times New Roman;font-size:6pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;mso-spacerun:yes;"> RETICULOSITOS</span>
+                        <span style="font-family:Times New Roman;font-size:6pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;mso-spacerun:yes;">RETICULOSITOS</span>
                     </p>
                 </td>
                 <td style="vertical-align:middle;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:18.93333px;">
                     <p style="text-align:center;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
-                        <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">X</span>
+                        <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">@if(in_array("RETICULOSITOS", $hematologia))
+                            X
+                            @endif</span>
                     </p>
                 </td>
                 <td style="vertical-align:top;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:113.4px;">
@@ -296,7 +312,9 @@
                 </td>
                 <td style="vertical-align:middle;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:18.86667px;">
                     <p style="text-align:center;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
-                        <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">X</span>
+                        <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">@if(in_array("DREPANOCITOS", $hematologia))
+                            X
+                            @endif</span>
                     </p>
                 </td>
             </tr>
@@ -308,7 +326,9 @@
                 </td>
                 <td style="vertical-align:middle;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:18.93333px;">
                     <p style="text-align:center;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
-                        <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">X</span>
+                        <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">@if(in_array("HEMATOZOARIO", $hematologia))
+                            X
+                            @endif</span>
                     </p>
                 </td>
                 <td style="vertical-align:top;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:113.4px;">
@@ -318,7 +338,9 @@
                 </td>
                 <td style="vertical-align:middle;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:18.86667px;">
                     <p style="text-align:center;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
-                        <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">X</span>
+                        <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">@if(in_array("COOMBS DIRECTO", $hematologia))
+                            X
+                            @endif</span>
                     </p>
                 </td>
             </tr>
@@ -330,7 +352,9 @@
                 </td>
                 <td style="vertical-align:middle;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:18.93333px;">
                     <p style="text-align:center;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
-                        <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">X</span>
+                        <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">@if(in_array("CÉLULA L.E", $hematologia))
+                            X
+                            @endif</span>
                     </p>
                 </td>
                 <td style="vertical-align:top;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:113.4px;">
@@ -340,7 +364,9 @@
                 </td>
                 <td style="vertical-align:middle;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:18.86667px;">
                     <p style="text-align:center;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
-                        <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">X</span>
+                        <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">@if(in_array("COOMBS INDIRECTO", $hematologia))
+                            X
+                            @endif</span>
                     </p>
                 </td>
             </tr>
@@ -352,7 +378,9 @@
                 </td>
                 <td style="vertical-align:middle;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:18.93333px;">
                     <p style="text-align:center;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
-                        <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">X</span>
+                        <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">@if(in_array("TIEMPO DE COAGULACION", $hematologia))
+                            X
+                            @endif</span>
                     </p>
                 </td>
                 <td style="vertical-align:top;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:113.4px;">
@@ -362,51 +390,9 @@
                 </td>
                 <td style="vertical-align:middle;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:18.86667px;">
                     <p style="text-align:center;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
-                        <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">X</span>
-                    </p>
-                </td>
-            </tr>
-            <tr style="height: 2px">
-                <td style="vertical-align:top;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:122.5333px;">
-                    <p style="text-align:right;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
-                        <span style="font-family:Times New Roman;font-size:6pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">KKKKKKK</span>
-                    </p>
-                </td>
-                <td style="vertical-align:middle;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:18.93333px;">
-                    <p style="text-align:center;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
-                        <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">X</span>
-                    </p>
-                </td>
-                <td style="vertical-align:top;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:113.4px;">
-                    <p style="text-align:right;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
-                        <span style="font-family:Times New Roman;font-size:6pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">HKKKLSJAHASAS</span>
-                    </p>
-                </td>
-                <td style="vertical-align:middle;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:18.86667px;">
-                    <p style="text-align:center;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
-                        <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">X</span>
-                    </p>
-                </td>
-            </tr>
-            <tr style="height: 2px">
-                <td style="vertical-align:top;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:122.5333px;">
-                    <p style="text-align:right;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
-                        <span style="font-family:Times New Roman;font-size:6pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">SDSDSDSDS</span>
-                    </p>
-                </td>
-                <td style="vertical-align:middle;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:18.93333px;">
-                    <p style="text-align:center;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
-                        <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">X</span>
-                    </p>
-                </td>
-                <td style="vertical-align:top;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:113.4px;">
-                    <p style="text-align:right;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
-                        <span style="font-family:Times New Roman;font-size:6pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">XSDSDSDSDS</span>
-                    </p>
-                </td>
-                <td style="vertical-align:middle;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:18.86667px;">
-                    <p style="text-align:center;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
-                        <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">X</span>
+                        <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">@if(in_array("TIEMPO DE SANGRIA", $hematologia))
+                            X
+                            @endif</span>
                     </p>
                 </td>
             </tr>
@@ -418,7 +404,7 @@
                 </td>
                 <td style="vertical-align:middle;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:18.93333px;">
                     <p style="text-align:center;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
-                        <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">X</span>
+                        <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">&#xa0;</span>
                     </p>
                 </td>
                 <td style="vertical-align:top;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:113.4px;">
@@ -428,7 +414,7 @@
                 </td>
                 <td style="vertical-align:middle;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:18.86667px;">
                     <p style="text-align:center;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
-                        <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">X</span>
+                        <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">&#xa0;</span>
                     </p>
                 </td>
             </tr>
@@ -440,7 +426,7 @@
                 </td>
                 <td style="vertical-align:middle;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:18.93333px;">
                     <p style="text-align:center;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
-                        <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">X</span>
+                        <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">&#xa0;</span>
                     </p>
                 </td>
                 <td style="vertical-align:top;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:113.4px;">
@@ -450,7 +436,7 @@
                 </td>
                 <td style="vertical-align:middle;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:18.86667px;">
                     <p style="text-align:center;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
-                        <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">X</span>
+                        <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">&#xa0;</span>
                     </p>
                 </td>
             </tr>
@@ -462,7 +448,7 @@
                 </td>
                 <td style="vertical-align:middle;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:18.93333px;">
                     <p style="text-align:center;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
-                        <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">X</span>
+                        <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">&#xa0;</span>
                     </p>
                 </td>
                 <td style="vertical-align:top;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:113.4px;">
@@ -472,7 +458,7 @@
                 </td>
                 <td style="vertical-align:middle;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:18.86667px;">
                     <p style="text-align:center;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
-                        <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">X</span>
+                        <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">&#xa0;</span>
                     </p>
                 </td>
             </tr>
@@ -484,7 +470,7 @@
                 </td>
                 <td style="vertical-align:middle;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:18.93333px;">
                     <p style="text-align:center;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
-                        <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">X</span>
+                        <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">&#xa0;</span>
                     </p>
                 </td>
                 <td style="vertical-align:top;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:113.4px;">
@@ -494,12 +480,60 @@
                 </td>
                 <td style="vertical-align:middle;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:18.86667px;">
                     <p style="text-align:center;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
-                        <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">X</span>
+                        <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">&#xa0;</span>
+                    </p>
+                </td>
+            </tr>
+            <tr style="height: 2px">
+                <td style="vertical-align:top;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:122.5333px;">
+                    <p style="text-align:right;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
+                        <span style="font-family:Times New Roman;font-size:6pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">&#xa0;</span>
+                    </p>
+                </td>
+                <td style="vertical-align:middle;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:18.93333px;">
+                    <p style="text-align:center;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
+                        <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">&#xa0;</span>
+                    </p>
+                </td>
+                <td style="vertical-align:top;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:113.4px;">
+                    <p style="text-align:right;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
+                        <span style="font-family:Times New Roman;font-size:6pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">&#xa0;</span>
+                    </p>
+                </td>
+                <td style="vertical-align:middle;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:18.86667px;">
+                    <p style="text-align:center;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
+                        <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">&#xa0;</span>
+                    </p>
+                </td>
+            </tr>
+            <tr style="height: 2px">
+                <td style="vertical-align:top;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:122.5333px;">
+                    <p style="text-align:right;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
+                        <span style="font-family:Times New Roman;font-size:6pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">&#xa0;</span>
+                    </p>
+                </td>
+                <td style="vertical-align:middle;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:18.93333px;">
+                    <p style="text-align:center;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
+                        <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">&#xa0;</span>
+                    </p>
+                </td>
+                <td style="vertical-align:top;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:113.4px;">
+                    <p style="text-align:right;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
+                        <span style="font-family:Times New Roman;font-size:6pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">&#xa0;</span>
+                    </p>
+                </td>
+                <td style="vertical-align:middle;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:18.86667px;">
+                    <p style="text-align:center;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
+                        <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">&#xa0;</span>
                     </p>
                 </td>
             </tr>
 
+
+
         </table>
+
+
         {{--uroanalisis_inicio--}}
         <div class="section3">
             <table cellspacing="0" style="width:70px; border-collapse: collapse;">
@@ -518,7 +552,9 @@
                     </td>
                     <td style="vertical-align:middle;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:22.13333px;">
                         <p style="text-align:center;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
-                            <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">X</span>
+                            <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">@if(in_array("ELEMENTAL Y MICROSCOPICO", $uroanalisis))
+                                X
+                                @endif</span>
                         </p>
                     </td>
                 </tr>
@@ -530,7 +566,9 @@
                     </td>
                     <td style="vertical-align:middle;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:22.13333px;">
                         <p style="text-align:center;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
-                            <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">X</span>
+                            <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">@if(in_array("GOTA FRESCA", $uroanalisis))
+                                X
+                                @endif</span>
                         </p>
                     </td>
                 </tr>
@@ -542,19 +580,9 @@
                     </td>
                     <td style="vertical-align:middle;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:22.13333px;">
                         <p style="text-align:center;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
-                            <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">X</span>
-                        </p>
-                    </td>
-                </tr>
-                <tr style="height: 2px">
-                    <td style="vertical-align:middle;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:141.4667px;">
-                        <p style="text-align:right;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
-                            <span style="font-family:Times New Roman;font-size:6pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">DFDFDFDFDFD</span>
-                        </p>
-                    </td>
-                    <td style="vertical-align:middle;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:22.13333px;">
-                        <p style="text-align:center;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
-                            <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">X</span>
+                            <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">@if(in_array("PRUEBA DE EMBARAZO", $uroanalisis))
+                                X
+                                @endif</span>
                         </p>
                     </td>
                 </tr>
@@ -566,7 +594,19 @@
                     </td>
                     <td style="vertical-align:middle;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:22.13333px;">
                         <p style="text-align:center;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
-                            <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">X</span>
+                            <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">&#xa0;</span>
+                        </p>
+                    </td>
+                </tr>
+                <tr style="height: 2px">
+                    <td style="vertical-align:middle;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:141.4667px;">
+                        <p style="text-align:right;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
+                            <span style="font-family:Times New Roman;font-size:6pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">&#xa0;</span>
+                        </p>
+                    </td>
+                    <td style="vertical-align:middle;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:22.13333px;">
+                        <p style="text-align:center;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
+                            <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">&#xa0;</span>
                         </p>
                     </td>
                 </tr>
@@ -586,12 +626,14 @@
                     <tr style="height: 10.2666664px">
                         <td style="vertical-align:middle;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:94.6px;">
                             <p style="text-align:right;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;line-height:normal;margin-top:0pt;margin-bottom:0pt;">
-                                <span style="font-family:Times New Roman;font-size:6pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">GLUCOS
+                                <span style="font-family:Times New Roman;font-size:6pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">GLUCOSA
                                     EN AYUNAS</span></p>
                         </td>
                         <td style="vertical-align:middle;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:22.13333px;">
                             <p style="text-align:right;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
-                                <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">X</span>
+                                <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">@if(in_array("GLUCOSA EN AYUNAS", $quimica))
+                                    X
+                                    @endif</span>
                             </p>
                         </td>
                         <td style="vertical-align:middle;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:91.73334px;">
@@ -601,7 +643,9 @@
                         </td>
                         <td style="vertical-align:top;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:22.13333px;">
                             <p style="text-align:left;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
-                                <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">X</span>
+                                <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">@if(in_array("TRANSAMINASA PIRUVICA(ALT)", $quimica))
+                                    X
+                                    @endif</span>
                             </p>
                         </td>
                     </tr>
@@ -613,7 +657,9 @@
                         </td>
                         <td style="vertical-align:middle;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:22.13333px;">
                             <p style="text-align:right;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;line-height:normal;margin-top:0pt;margin-bottom:0pt;">
-                                <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">X</span>
+                                <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">@if(in_array("GLUCOSA POST PRANDIAL 2 HORAS", $quimica))
+                                    X
+                                    @endif</span>
                             </p>
                         </td>
                         <td style="vertical-align:middle;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:91.73334px;">
@@ -623,7 +669,9 @@
                         </td>
                         <td style="vertical-align:top;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:22.13333px;">
                             <p style="text-align:left;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;line-height:normal;margin-top:0pt;margin-bottom:0pt;">
-                                <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">X</span>
+                                <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">@if(in_array("TRANSAMINASA OXALACÉTICA(AST)", $quimica))
+                                    X
+                                    @endif</span>
                             </p>
                         </td>
                     </tr>
@@ -635,7 +683,9 @@
                         </td>
                         <td style="vertical-align:middle;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:22.13333px;">
                             <p style="text-align:right;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
-                                <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">X</span>
+                                <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">@if(in_array("UREA", $quimica))
+                                    X
+                                    @endif</span>
                             </p>
                         </td>
                         <td style="vertical-align:middle;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:91.73334px;">
@@ -645,7 +695,9 @@
                         </td>
                         <td style="vertical-align:top;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:22.13333px;">
                             <p style="text-align:left;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
-                                <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">X</span>
+                                <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">@if(in_array("FOSFATASA ALCALINA", $quimica))
+                                    X
+                                    @endif</span>
                             </p>
                         </td>
                     </tr>
@@ -657,7 +709,9 @@
                         </td>
                         <td style="vertical-align:middle;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:22.13333px;">
                             <p style="text-align:right;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
-                                <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">X</span>
+                                <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">@if(in_array("CREATINA", $quimica))
+                                    X
+                                    @endif</span>
                             </p>
                         </td>
                         <td style="vertical-align:middle;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:91.73334px;">
@@ -667,7 +721,9 @@
                         </td>
                         <td style="vertical-align:top;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:22.13333px;">
                             <p style="text-align:left;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
-                                <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">X</span>
+                                <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">@if(in_array("FOSFATASA ACIDA", $quimica))
+                                    X
+                                    @endif</span>
                             </p>
                         </td>
                     </tr>
@@ -679,7 +735,9 @@
                         </td>
                         <td style="vertical-align:middle;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:22.13333px;">
                             <p style="text-align:right;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;line-height:normal;margin-top:0pt;margin-bottom:0pt;">
-                                <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">X</span>
+                                <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">@if(in_array("BILIRRUBINA TOTAL", $quimica))
+                                    X
+                                    @endif</span>
                             </p>
                         </td>
                         <td style="vertical-align:middle;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:91.73334px;">
@@ -689,7 +747,9 @@
                         </td>
                         <td style="vertical-align:top;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:22.13333px;">
                             <p style="text-align:left;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;line-height:normal;margin-top:0pt;margin-bottom:0pt;">
-                                <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">X</span>
+                                <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">@if(in_array("COLESTEROL TOTAL", $quimica))
+                                    X
+                                    @endif</span>
                             </p>
                         </td>
                     </tr>
@@ -701,7 +761,9 @@
                         </td>
                         <td style="vertical-align:middle;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:22.13333px;">
                             <p style="text-align:right;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;line-height:normal;margin-top:0pt;margin-bottom:0pt;">
-                                <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">X</span>
+                                <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">@if(in_array("BILIRRUBINA DIRECTA", $quimica))
+                                    X
+                                    @endif</span>
                             </p>
                         </td>
                         <td style="vertical-align:middle;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:91.73334px;">
@@ -711,7 +773,9 @@
                         </td>
                         <td style="vertical-align:top;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:22.13333px;">
                             <p style="text-align:left;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;line-height:normal;margin-top:0pt;margin-bottom:0pt;">
-                                <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">X</span>
+                                <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">@if(in_array("COLESTEROL HDL", $quimica))
+                                    X
+                                    @endif</span>
                             </p>
                         </td>
                     </tr>
@@ -723,7 +787,9 @@
                         </td>
                         <td style="vertical-align:middle;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:22.13333px;">
                             <p style="text-align:right;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
-                                <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">X</span>
+                                <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">@if(in_array("ACIDO URICO", $quimica))
+                                    X
+                                    @endif</span>
                             </p>
                         </td>
                         <td style="vertical-align:middle;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:91.73334px;">
@@ -733,7 +799,9 @@
                         </td>
                         <td style="vertical-align:top;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:22.13333px;">
                             <p style="text-align:left;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
-                                <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">X</span>
+                                <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">@if(in_array("COLESTEROL LDL", $quimica))
+                                    X
+                                    @endif</span>
                             </p>
                         </td>
                     </tr>
@@ -745,7 +813,9 @@
                         </td>
                         <td style="vertical-align:middle;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:22.13333px;">
                             <p style="text-align:right;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
-                                <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">X</span>
+                                <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">@if(in_array("PROTEINA TOTAL", $quimica))
+                                    X
+                                    @endif</span>
                             </p>
                         </td>
                         <td style="vertical-align:middle;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:91.73334px;">
@@ -755,7 +825,9 @@
                         </td>
                         <td style="vertical-align:top;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:22.13333px;">
                             <p style="text-align:left;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
-                                <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">X</span>
+                                <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">@if(in_array("TRIGLICERIDOS", $quimica))
+                                    X
+                                    @endif</span>
                             </p>
                         </td>
                     </tr>
@@ -767,7 +839,9 @@
                         </td>
                         <td style="vertical-align:middle;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:22.13333px;">
                             <p style="text-align:right;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
-                                <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">X</span>
+                                <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">@if(in_array("ALBUMINA", $quimica))
+                                    X
+                                    @endif</span>
                             </p>
                         </td>
                         <td style="vertical-align:middle;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:91.73334px;">
@@ -777,7 +851,9 @@
                         </td>
                         <td style="vertical-align:top;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:22.13333px;">
                             <p style="text-align:left;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
-                                <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">X</span>
+                                <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">@if(in_array("HIERRO SERIO", $quimica))
+                                    X
+                                    @endif</span>
                             </p>
                         </td>
                     </tr>
@@ -789,7 +865,9 @@
                         </td>
                         <td style="vertical-align:middle;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:22.13333px;">
                             <p style="text-align:right;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;line-height:normal;margin-top:0pt;margin-bottom:0pt;">
-                                <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">X</span>
+                                <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">@if(in_array("GLOBULINA", $quimica))
+                                    X
+                                    @endif</span>
                             </p>
                         </td>
                         <td style="vertical-align:middle;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:91.73334px;">
@@ -799,29 +877,31 @@
                         </td>
                         <td style="vertical-align:top;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:22.13333px;">
                             <p style="text-align:left;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;line-height:normal;margin-top:0pt;margin-bottom:0pt;">
-                                <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">X</span>
+                                <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">@if(in_array("AMILASA", $quimica))
+                                    X
+                                    @endif</span>
                             </p>
                         </td>
                     </tr>
                     <tr style="height: 8.066667px">
                         <td style="vertical-align:middle;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:94.6px;">
                             <p style="text-align:right;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;line-height:normal;margin-top:0pt;margin-bottom:0pt;">
-                                <span style="font-family:Times New Roman;font-size:6pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">CSCDS</span>
+                                <span style="font-family:Times New Roman;font-size:6pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">&#xa0;</span>
                             </p>
                         </td>
                         <td style="vertical-align:middle;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:22.13333px;">
                             <p style="text-align:right;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
-                                <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">X</span>
+                                <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">&#xa0;</span>
                             </p>
                         </td>
                         <td style="vertical-align:middle;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:91.73334px;">
                             <p style="text-align:right;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;line-height:normal;margin-top:0pt;margin-bottom:0pt;">
-                                <span style="font-family:Times New Roman;font-size:6pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">CDFDDF</span>
+                                <span style="font-family:Times New Roman;font-size:6pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">&#xa0;</span>
                             </p>
                         </td>
                         <td style="vertical-align:top;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:22.13333px;">
                             <p style="text-align:left;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
-                                <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">X</span>
+                                <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">&#xa0;</span>
                             </p>
                         </td>
                     </tr>
@@ -833,7 +913,7 @@
                         </td>
                         <td style="vertical-align:middle;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:22.13333px;">
                             <p style="text-align:right;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
-                                <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">X</span>
+                                <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">&#xa0;</span>
                             </p>
                         </td>
                         <td style="vertical-align:middle;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:91.73334px;">
@@ -873,7 +953,9 @@
                     </td>
                     <td style="vertical-align:middle;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:22.13333px;">
                         <p style="text-align:center;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
-                            <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">X</span>
+                            <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">@if(in_array("COPROPARASITARIO", $coprologico))
+                                X
+                                @endif</span>
                         </p>
                     </td>
                 </tr>
@@ -885,7 +967,9 @@
                     </td>
                     <td style="vertical-align:middle;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:22.13333px;">
                         <p style="text-align:center;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
-                            <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">X</span>
+                            <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">@if(in_array("COPRO SERIADO", $coprologico))
+                                X
+                                @endif</span>
                         </p>
                     </td>
                 </tr>
@@ -897,7 +981,9 @@
                     </td>
                     <td style="vertical-align:middle;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:22.13333px;">
                         <p style="text-align:center;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
-                            <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">X</span>
+                            <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">@if(in_array("SANGRE OCULTA", $coprologico))
+                                X
+                                @endif</span>
                         </p>
                     </td>
                 </tr>
@@ -909,7 +995,9 @@
                     </td>
                     <td style="vertical-align:middle;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:22.13333px;">
                         <p style="text-align:center;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
-                            <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">X</span>
+                            <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">@if(in_array("INVESTIGACION DE POLIMORFO", $coprologico))
+                                X
+                                @endif</span>
                         </p>
                     </td>
                 </tr>
@@ -924,7 +1012,9 @@
                     </td>
                     <td style="vertical-align:middle;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:22.13333px;">
                         <p style="text-align:center;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
-                            <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">X</span>
+                            <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">@if(in_array("INVESTIGACION DE ROTAVIRUS", $coprologico))
+                                X
+                                @endif</span>
                         </p>
                     </td>
                 </tr>
@@ -958,7 +1048,9 @@
                 </td>
                 <td style="vertical-align:top;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:22.13333px;">
                     <p style="text-align:left;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
-                        <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">X</span>
+                        <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">@if(in_array("VDRL", $serologia))
+                            X
+                            @endif</span>
                     </p>
                 </td>
                 <td style="vertical-align:top;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:113.2px;">
@@ -968,7 +1060,9 @@
                 </td>
                 <td style="vertical-align:top;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:22.13333px;">
                     <p style="text-align:left;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
-                        <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">X</span>
+                        <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">@if(in_array("LATEX", $serologia))
+                            X
+                            @endif</span>
                     </p>
                 </td>
             </tr>
@@ -980,7 +1074,9 @@
                 </td>
                 <td style="vertical-align:top;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:22.13333px;">
                     <p style="text-align:left;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
-                        <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">X</span>
+                        <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">@if(in_array("AGRUTINACIONES FEBRILES", $serologia))
+                            X
+                            @endif</span>
                     </p>
                 </td>
                 <td style="vertical-align:top;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:113.2px;">
@@ -990,29 +1086,9 @@
                 </td>
                 <td style="vertical-align:top;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:22.13333px;">
                     <p style="text-align:left;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
-                        <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">X</span>
-                    </p>
-                </td>
-            </tr>
-            <tr style="height: 2px">
-                <td style="vertical-align:top;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:118.7333px;">
-                    <p style="text-align:right;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
-                        <span style="font-family:Times New Roman;font-size:6pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">SSDSDSD</span>
-                    </p>
-                </td>
-                <td style="vertical-align:top;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:22.13333px;">
-                    <p style="text-align:left;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
-                        <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">X</span>
-                    </p>
-                </td>
-                <td style="vertical-align:top;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:113.2px;">
-                    <p style="text-align:right;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
-                        <span style="font-family:Times New Roman;font-size:6pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">&#xa0;</span>
-                    </p>
-                </td>
-                <td style="vertical-align:top;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:22.13333px;">
-                    <p style="text-align:left;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
-                        <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">X</span>
+                        <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">@if(in_array("ASTO", $serologia))
+                            X
+                            @endif</span>
                     </p>
                 </td>
             </tr>
@@ -1024,7 +1100,7 @@
                 </td>
                 <td style="vertical-align:top;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:22.13333px;">
                     <p style="text-align:left;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
-                        <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">X</span>
+                        <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">&#xa0;</span>
                     </p>
                 </td>
                 <td style="vertical-align:top;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:113.2px;">
@@ -1034,7 +1110,29 @@
                 </td>
                 <td style="vertical-align:top;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:22.13333px;">
                     <p style="text-align:left;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
-                        <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">X</span>
+                        <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">&#xa0;</span>
+                    </p>
+                </td>
+            </tr>
+            <tr style="height: 2px">
+                <td style="vertical-align:top;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:118.7333px;">
+                    <p style="text-align:right;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
+                        <span style="font-family:Times New Roman;font-size:6pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">&#xa0;</span>
+                    </p>
+                </td>
+                <td style="vertical-align:top;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:22.13333px;">
+                    <p style="text-align:left;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
+                        <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">&#xa0;</span>
+                    </p>
+                </td>
+                <td style="vertical-align:top;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:113.2px;">
+                    <p style="text-align:right;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
+                        <span style="font-family:Times New Roman;font-size:6pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">&#xa0;</span>
+                    </p>
+                </td>
+                <td style="vertical-align:top;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:22.13333px;">
+                    <p style="text-align:left;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
+                        <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">&#xa0;</span>
                     </p>
                 </td>
             </tr>
@@ -1058,7 +1156,9 @@
                     </td>
                     <td style="vertical-align:middle;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:22.13333px;">
                         <p style="text-align:right;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
-                            <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">X</span>
+                            <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">@if(in_array("GRAM", $bacteriologia))
+                                X
+                                @endif</span>
                         </p>
                     </td>
                     <td style="vertical-align:middle;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:110.1333px;" colspan="2">
@@ -1068,7 +1168,9 @@
                     </td>
                     <td style="vertical-align:middle;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:18.93333px;">
                         <p style="text-align:right;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
-                            <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">X</span>
+                            <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">@if(in_array("FRESCO", $bacteriologia))
+                                X
+                                @endif</span>
                         </p>
                     </td>
                 </tr>
@@ -1080,7 +1182,9 @@
                     </td>
                     <td style="vertical-align:middle;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:22.13333px;">
                         <p style="text-align:right;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
-                            <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">X</span>
+                            <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">@if(in_array("ZIEHL", $bacteriologia))
+                                X
+                                @endif</span>
                         </p>
                     </td>
                     <td style="vertical-align:middle;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:110.1333px;" colspan="2">
@@ -1090,7 +1194,9 @@
                     </td>
                     <td style="vertical-align:middle;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:18.93333px;">
                         <p style="text-align:right;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
-                            <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">X</span>
+                            <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">@if(in_array("CULTIVO-ANTIBIOGRAMA", $bacteriologia))
+                                X
+                                @endif</span>
                         </p>
                     </td>
                 </tr>
@@ -1102,7 +1208,9 @@
                     </td>
                     <td style="vertical-align:middle;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:22.13333px;">
                         <p style="text-align:right;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
-                            <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">X</span>
+                            <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">@if(in_array("HONGOS", $bacteriologia))
+                                X
+                                @endif</span>
                         </p>
                     </td>
                     <td style="vertical-align:middle;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:89.86667px;">
@@ -1112,19 +1220,19 @@
                     </td>
                     <td style="vertical-align:middle;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:39.2px;" colspan="2" rowspan="2">
                         <p style="text-align:right;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;margin-top:0pt;margin-bottom:0pt;">
-                            <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">HHHSJS</span>
+                            <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">&#xa0;</span>
                         </p>
                     </td>
                 </tr>
                 <tr style="height: 15.5999994px">
                     <td style="vertical-align:top;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:65.86667px;">
                         <p style="text-align:right;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;line-height:normal;margin-top:0pt;margin-bottom:0pt;">
-                            <span style="font-family:Times New Roman;font-size:6pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">CSSD</span>
+                            <span style="font-family:Times New Roman;font-size:6pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">&#xa0;</span>
                         </p>
                     </td>
                     <td style="vertical-align:top;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:22.13333px;">
                         <p style="text-align:left;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;line-height:normal;margin-top:0pt;margin-bottom:0pt;">
-                            <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">X</span>
+                            <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">&#xa0;</span>
                         </p>
                     </td>
                     <td style="vertical-align:top;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right:none;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:89.86667px;">
@@ -1151,48 +1259,48 @@
                 <tr style="height: 16.1333332px">
                     <td style="vertical-align:top;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:136px;">
                         <p style="text-align:right;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;line-height:normal;margin-top:0pt;margin-bottom:0pt;">
-                            <span style="font-family:Times New Roman;font-size:6pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">KSKSKKSKS</span>
+                            <span style="font-family:Times New Roman;font-size:6pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">&#xa0;</span>
                         </p>
                     </td>
                     <td style="vertical-align:top;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:23.06667px;">
                         <p style="text-align:left;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;line-height:normal;margin-top:0pt;margin-bottom:0pt;">
-                            <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">X</span>
+                            <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">&#xa0;</span>
                         </p>
                     </td>
                 </tr>
                 <tr style="height: 17.0666676px">
                     <td style="vertical-align:top;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:136px;">
                         <p style="text-align:right;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;line-height:normal;margin-top:0pt;margin-bottom:0pt;">
-                            <span style="font-family:Times New Roman;font-size:6pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">SSDSWDSDS</span>
+                            <span style="font-family:Times New Roman;font-size:6pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">&#xa0;</span>
                         </p>
                     </td>
                     <td style="vertical-align:top;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:23.06667px;">
                         <p style="text-align:left;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;line-height:normal;margin-top:0pt;margin-bottom:0pt;">
-                            <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">X</span>
+                            <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">&#xa0;</span>
                         </p>
                     </td>
                 </tr>
                 <tr style="height: 17.1333332px">
                     <td style="vertical-align:top;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:136px;">
                         <p style="text-align:right;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;line-height:normal;margin-top:0pt;margin-bottom:0pt;">
-                            <span style="font-family:Times New Roman;font-size:6pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">SDSDSDSDS</span>
+                            <span style="font-family:Times New Roman;font-size:6pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">&#xa0;</span>
                         </p>
                     </td>
                     <td style="vertical-align:top;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:23.06667px;">
                         <p style="text-align:left;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;line-height:normal;margin-top:0pt;margin-bottom:0pt;">
-                            <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">X</span>
+                            <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">&#xa0;</span>
                         </p>
                     </td>
                 </tr>
                 <tr style="height: 16.4px">
                     <td style="vertical-align:top;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:136px;">
                         <p style="text-align:right;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;line-height:normal;margin-top:0pt;margin-bottom:0pt;">
-                            <span style="font-family:Times New Roman;font-size:6pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">DWEDW</span>
+                            <span style="font-family:Times New Roman;font-size:6pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">&#xa0;</span>
                         </p>
                     </td>
                     <td style="vertical-align:top;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:23.06667px;">
                         <p style="text-align:left;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;line-height:normal;margin-top:0pt;margin-bottom:0pt;">
-                            <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">X</span>
+                            <span style="font-family:Times New Roman;font-size:8pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">&#xa0;</span>
                         </p>
                     </td>
                 </tr>
@@ -1224,7 +1332,7 @@
                 </td>
                 <td style="vertical-align:middle;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:153.1333px;">
                     <p style="text-align:left;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;line-height:normal;margin-top:0pt;margin-bottom:0pt;">
-                        <span style="font-family:Times New Roman;font-size:7pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">{{$doctor->user->name.' '.$doctor->last_name}}</span>
+                        <span style="font-family:Times New Roman;font-size:7pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">{{$exams->doctor->user->name.' '.$exams->doctor->last_name}}</span>
                     </p>
                 </td>
                 <td style="vertical-align:middle;background-color:#B4C6E7;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:116.2px;">
@@ -1234,7 +1342,7 @@
                 </td>
                 <td style="vertical-align:middle;border-top-style:solid;border-top-color:#000000;border-top-width:1pt;border-left-style:solid;border-left-color:#000000;border-left-width:1pt;border-right-style:solid;border-right-color:#000000;border-right-width:1pt;border-bottom-style:solid;border-bottom-color:#000000;border-bottom-width:1pt;padding-left:5.4pt;padding-right:5.4pt;padding-top:0pt;padding-bottom:0pt;width:116.2px;">
                     <p style="text-align:left;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;line-height:normal;margin-top:0pt;margin-bottom:0pt;">
-                        <span style="font-family:Times New Roman;font-size:7pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">JSJDSJDSKDKS</span>
+                        <span style="font-family:Times New Roman;font-size:7pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;">&#xa0;</span>
                     </p>
                 </td>
             </tr>

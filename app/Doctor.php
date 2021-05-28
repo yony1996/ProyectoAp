@@ -28,4 +28,8 @@ class Doctor extends Model
     {
         return $this->hasToMany(Exam::class);
     }
+    public function record()
+    {
+        return $this->hasToMany(Record::class);
+    }
 }

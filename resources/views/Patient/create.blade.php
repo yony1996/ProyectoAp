@@ -17,7 +17,7 @@
             <div class="card">
 
                 <div class="card-header">
-                    <a>Crear Medico</a>
+                    <a>Crear Paciente</a>
                 </div>
                 <div class="card-body">
                     <form action="{{route('patient.store')}}" method="POST">
@@ -27,6 +27,11 @@
                                 <label for="ci">Cedula</label>
                                 <input type="text" name="ci" id="ci" class="form-control" placeholder="Cedula" required autocomplete="off">
                                 @error('ci') <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>@enderror
+                            </div>
+                            <div class="col">
+                                <label for="age">Edad</label>
+                                <input type="text" name="age" id="age" class="form-control" placeholder="Edad" required autocomplete="off">
+                                @error('age') <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>@enderror
                             </div>
 
                         </div>

@@ -61,9 +61,13 @@ Route::middleware('auth')->group(function () {
     Route::get('/exams/{exam}/create', 'ExamController@create')->name('exam.create');
     Route::post('/exams', 'ExamController@store')->name('exam.store');
     Route::get('/exams/{print}/print', 'ExamController@print')->name('exam.print');
+    Route::get('/exams/{print}/preview', 'ExamController@preview')->name('exam.preview');
     //Record
     Route::get('/records', 'RecordController@index')->name('record');
     Route::get('/records/{record}/create', 'RecordController@create')->name('record.create');
+    Route::post('/records', 'RecordController@store')->name('record.store');
+    Route::get('/records/{print}/print', 'RecordController@print')->name('record.print');
+    Route::get('/records/{record}/preview', 'RecordController@preview')->name('record.preview');
 
     //JSON
     Route::get('/specialties/{specialty}/doctors', 'Api\SpecialtyController@doctors');

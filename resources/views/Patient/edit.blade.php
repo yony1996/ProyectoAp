@@ -20,6 +20,11 @@
                                 <input type="text" name="ci" id="ci" value="{{old('ci',$patient->ci)}}" class="form-control" placeholder="Cedula" required autocomplete="off">
                                 @error('ci') <small class="text-danger">{{$message}}</small>@enderror
                             </div>
+                            <div class="col">
+                                <label for="age">Edad</label>
+                                <input type="text" name="age" id="age" class="form-control" value="{{old('age',$patient->age)}}" placeholder="Edad" required autocomplete="off">
+                                @error('age') <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>@enderror
+                            </div>
 
                         </div>
                         <div class="row">

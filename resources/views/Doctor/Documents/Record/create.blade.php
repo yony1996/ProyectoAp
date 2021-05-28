@@ -35,12 +35,12 @@
 
                 <div class="card-body">
 
-                    <form action="#" method="POST">
+                    <form action="{{route('record.store')}}" method="POST">
                         @csrf
                         <div class="col text-right">
                             <button type="submit" class="btn btn-sm btn-success">Crear Ficha Medica</button>
                         </div>
-                        <input type="hidden" name="patient_id" value="#">
+                        <input type="hidden" name="patient_id" value="{{$patient->id}}">
 
                         <div class="tab-content" id="myTabContent">
 

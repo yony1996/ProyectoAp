@@ -18,7 +18,7 @@
             </div>
             <div class="card">
                 <div class="card-header">
-                    <a>Pacientes</a>
+                    <a>Examenes Pacientes</a>
 
                 </div>
                 <!-- /.card-header -->
@@ -48,7 +48,10 @@
                                 <td>{{$exam->patient->user->email}}</td>
                                 <td>{{$exam->patient->user->status}}</td>
                                 <td>{{$exam->created_at->diffForHumans()}}</td>
-                                <td><a class="btn btn-sm btn-info" data-toggle="tooltip" title="Descargar orden" href="{{route('exam.print',$exam->patient->id)}}"> <i class="fa fa-download"></i></i></a></td>
+                                <td>
+                                    <a class="btn btn-sm btn-info" data-toggle="tooltip" title="Descargar Orden de Examen" href="{{route('exam.print',$exam->patient->id)}}"> <i class="fa fa-download"></i></a>
+                                    <a class="btn btn-sm btn-info" data-toggle="tooltip" title="Vista Previa de Orden de Examen" href="{{route('exam.preview',$exam->id)}}" target="_blank"> <i class="fa fa-eye"></i></a>
+                                </td>
 
                             </tr>
                             @endforeach

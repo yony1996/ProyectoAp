@@ -29,7 +29,8 @@ class PatientController extends Controller
             'second_last_name' => 'required|regex:/^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+$/u',
             'email' => 'required|string|email|max:255|unique:users',
             'ci' => 'required|digits:10|unique:doctors',
-            'phone' => 'required|nullable|min:10'
+            'phone' => 'required|nullable|min:10',
+            'age' => 'required'
         ];
         $this->validate($request, $rules);
 
@@ -47,10 +48,11 @@ class PatientController extends Controller
         $patient->last_name = $request->input('last_name');
         $patient->second_last_name = $request->input('second_last_name');
         $patient->phone = $request->input('phone');
+        $patient->age = $request->input('age');
         $patient->save();
 
 
-        $notification = 'El Medico se ha creado correctamente';
+        $notification = 'El Paciente se ha creado correctamente';
         return redirect()->route('patient.create')->with(compact('notification'));
     }
     public function update(Request $request, $id)
@@ -80,12 +82,13 @@ class PatientController extends Controller
         $patient->last_name = $request->input('last_name');
         $patient->second_last_name = $request->input('second_last_name');
         $patient->phone = $request->input('phone');
+        $patient->age = $request->input('age');
         $patient->save();
 
 
 
-        $notification = 'El Medico se ha actualizado correctamente';
-        return redirect()->route('dashboard')->with(compact('notification'));
+        $notificationP = 'El Paciente se ha actualizado correctamente';
+        return redirect()->route('dashboard')->with(compact('notificationP'));
     }
 
     public function destroy($id)
@@ -95,7 +98,7 @@ class PatientController extends Controller
         $patient = Patient::find($id);
         $patient->user->status = $status;
         $patient->user->save();
-        $notification = 'El Medico se ha eliminado correctamente';
-        return redirect()->route('dashboard')->with(compact('notification'));
+        $notificationP = 'El Paciente se ha eliminado correctamente';
+        return redirect()->route('dashboard')->with(compact('notificationP'));
     }
 }

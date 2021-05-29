@@ -24,12 +24,24 @@ class ExamController extends Controller
     }
     public function print($id)
     {
-        $doctor_id = Auth::user()->doctor->id;
-        $doctor = Doctor::find($doctor_id);
+        $exams = Exam::where('id', $id)->first();
+        $hematologia = array_map('strval', explode(',', $exams->hematologia));
+        $uroanalisis = array_map('strval', explode(',', $exams->uroanalisis));
+        $coprologico = array_map('strval', explode(',', $exams->coprologico));
+        $quimica = array_map('strval', explode(',', $exams->quimica));
+        $serologia = array_map('strval', explode(',', $exams->serologia));
+        $bacteriologia = array_map('strval', explode(',', $exams->bacteriologia));
 
-        $patient = Patient::find($id);
 
-        $pdf = PDF::loadView('pdf.exam', compact('doctor', 'patient'));
+        $pdf = PDF::loadView('pdf.exam', compact(
+            'exams',
+            'hematologia',
+            'uroanalisis',
+            'coprologico',
+            'quimica',
+            'serologia',
+            'bacteriologia'
+        ));
         $pdf->setPaper('A4', 'landscape');
 
         $FechaHoy = Carbon::now()->format('Y-m-d_H:i:s');

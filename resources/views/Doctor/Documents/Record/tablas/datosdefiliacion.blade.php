@@ -38,29 +38,51 @@
                     <label for="gender">Sexo</label>
                     <select name="gender" id="gender" class="form-control">
                         <option selected>seleccione una opición</option>
-                        <option value="F">Femenino</option>
-                        <option value="M">Masculino</option>
+                        <option value="F" @if($records->gender=="F")
+                            selected
+                            @endif>Femenino</option>
+                        <option value="M" @if($records->gender=="M")
+                            selected
+                            @endif>Masculino</option>
                     </select>
                 </div>
                 <div class="form-group col-md-4">
                     <label for="ethnicity">Etnia</label>
                     <select name="ethnicity" id="ethnicity" class="form-control">
                         <option selected>seleccione una opición</option>
-                        <option value="Blanco">Blanco</option>
-                        <option value="Mestizo">Mestizo</option>
-                        <option value="Indigena">Indigena</option>
+                        <option value="Blanco" @if($records->ethnicity=="Blanco")
+                            selected
+                            @endif>Blanco</option>
+                        <option value="Mestizo" @if($records->ethnicity=="Mestizo")
+                            selected
+                            @endif>Mestizo</option>
+                        <option value="Indigena" @if($records->ethnicity=="Indigena")
+                            selected
+                            @endif>Indigena</option>
                     </select>
                 </div>
                 <div class="form-group col-md-4">
                     <label for="marital_status">Estado Civil</label>
                     <select name="marital_status" id="marital_status" class="form-control">
                         <option selected>seleccione una opición</option>
-                        <option value="Soltero/a">Soltero/a</option>
-                        <option value="Casado/a">Casado/a</option>
-                        <option value="Unión libre">Unión libre</option>
-                        <option value="Separado/a">Separado/a</option>
-                        <option value="Divorciado/a">Divorciado/a</option>
-                        <option value="Viudo/a">Viudo/a</option>
+                        <option value="Soltero/a" @if($records->marital_status=="Soltero/a")
+                            selected
+                            @endif>Soltero/a</option>
+                        <option value="Casado/a" @if($records->marital_status=="Casado/a")
+                            selected
+                            @endif>Casado/a</option>
+                        <option value="Unión libre" @if($records->marital_status=="Unión libre")
+                            selected
+                            @endif>Unión libre</option>
+                        <option value="Separado/a" @if($records->marital_status=="Separado/a")
+                            selected
+                            @endif>Separado/a</option>
+                        <option value="Divorciado/a" @if($records->marital_status=="Divorciado/a")
+                            selected
+                            @endif>Divorciado/a</option>
+                        <option value="Viudo/a" @if($records->marital_status=="Viudo/a")
+                            selected
+                            @endif>Viudo/a</option>
 
                     </select>
                 </div>
@@ -71,64 +93,156 @@
             <div class="row">
                 <div class="form-group col-md-4">
                     <label for="work">A que se dedica?</label>
-                    <input type="text" name="work" id="work" class="form-control" placeholder="A que se dedica" autocomplete="off">
+                    <input type="text" name="work" id="work" value="{{$records->work}}" class="form-control" placeholder="A que se dedica" autocomplete="off">
                 </div>
                 <div class="form-group col-md-4">
                     <label for="seaside">Lugar de nacimiento</label>
                     <select name="seaside" id="seaside" class="form-control">
                         <option selected>seleccione una opición</option>
-                        <option value="Azuay">Azuay</option>
-                        <option value="Cañar">Cañar</option>
-                        <option value="Loja">Loja</option>
-                        <option value="Carchi">Carchi</option>
-                        <option value="Imbabura">Imbabura</option>
-                        <option value="Pichincha">Pichincha</option>
-                        <option value="Cotopaxi">Cotopaxi</option>
-                        <option value="Tungurahua">Tungurahua</option>
-                        <option value="Bolívar">Bolívar</option>
-                        <option value="Chimborazo">Chimborazo</option>
-                        <option value="Sto. Domingo de los Tsachilas">Sto. Domingo de los Tsachilas</option>
-                        <option value="Esmeraldas">Esmeraldas</option>
-                        <option value="Manabí">Manabí</option>
-                        <option value="Guayas">Guayas</option>
-                        <option value="Los Ríos">Los Ríos</option>
-                        <option value="El Oro">El Oro</option>
-                        <option value="Santa Elena">Santa Elena</option>
-                        <option value="Sucumbíos">Sucumbíos</option>
-                        <option value="Napo">Napo</option>
-                        <option value="Pastaza">Pastaza</option>
-                        <option value="Orellana">Orellana</option>
-                        <option value="Morona Santiago">Morona Santiago</option>
-                        <option value="Zamora Chinchipe">Zamora Chinchipe</option>
+                        <option value="Azuay" @if($records->seaside=="Azuay")
+                            selected
+                            @endif>Azuay</option>
+                        <option value="Cañar" @if($records->seaside=="Cañar")
+                            selected
+                            @endif>Cañar</option>
+                        <option value="Loja" @if($records->seaside=="Loja")
+                            selected
+                            @endif>Loja</option>
+                        <option value="Carchi" @if($records->seaside=="Carchi")
+                            selected
+                            @endif>Carchi</option>
+                        <option value="Imbabura" @if($records->seaside=="Imbabura")
+                            selected
+                            @endif>Imbabura</option>
+                        <option value="Pichincha" @if($records->seaside=="Pichincha")
+                            selected
+                            @endif>Pichincha</option>
+                        <option value="Cotopaxi" @if($records->seaside=="Cotopaxi")
+                            selected
+                            @endif>Cotopaxi</option>
+                        <option value="Tungurahua" @if($records->seaside=="Tungurahua")
+                            selected
+                            @endif>Tungurahua</option>
+                        <option value="Bolivar" @if($records->seaside=="Bolivar")
+                            selected
+                            @endif>Bolívar</option>
+                        <option value="Chimborazo" @if($records->seaside=="Chimborazo")
+                            selected
+                            @endif>Chimborazo</option>
+                        <option value="Sto. Domingo de los Tsachilas" @if($records->seaside=="Sto. Domingo de los Tsachilas")
+                            selected
+                            @endif>Sto. Domingo de los Tsachilas</option>
+                        <option value="Esmeraldas" @if($records->seaside=="Esmeraldas")
+                            selected
+                            @endif>Esmeraldas</option>
+                        <option value="Manabi" @if($records->seaside=="Manabi")
+                            selected
+                            @endif>Manabí</option>
+                        <option value="Guayas" @if($records->seaside=="Guayas")
+                            selected
+                            @endif>Guayas</option>
+                        <option value="Los Rios" @if($records->seaside=="Los Rios")
+                            selected
+                            @endif>Los Ríos</option>
+                        <option value="El Oro" @if($records->seaside=="El Oro")
+                            selected
+                            @endif>El Oro</option>
+                        <option value="Santa Elena" @if($records->seaside=="Santa Elena")
+                            selected
+                            @endif>Santa Elena</option>
+                        <option value="Sucumbios" @if($records->seaside=="Sucumbios")
+                            selected
+                            @endif>Sucumbíos</option>
+                        <option value="Napo" @if($records->seaside=="Napo")
+                            selected
+                            @endif>Napo</option>
+                        <option value="Pastaza" @if($records->seaside=="Pastaza")
+                            selected
+                            @endif>Pastaza</option>
+                        <option value="Orellana" @if($records->seaside=="Orellana")
+                            selected
+                            @endif>Orellana</option>
+                        <option value="Morona Santiago" @if($records->seaside=="Morona Santiago")
+                            selected
+                            @endif>Morona Santiago</option>
+                        <option value="Zamora Chinchipe" @if($records->seaside=="Zamora Chinchipe")
+                            selected
+                            @endif>Zamora Chinchipe</option>
                     </select>
                 </div>
                 <div class="col">
                     <label for="residence">Residencia Actual</label>
-                    <select name="residence" id="residence" class="form-control">
+                    <select name="seaside" id="seaside" class="form-control">
                         <option selected>seleccione una opición</option>
-                        <option value="Azuay">Azuay</option>
-                        <option value="Cañar">Cañar</option>
-                        <option value="Loja">Loja</option>
-                        <option value="Carchi">Carchi</option>
-                        <option value="Imbabura">Imbabura</option>
-                        <option value="Pichincha">Pichincha</option>
-                        <option value="Cotopaxi">Cotopaxi</option>
-                        <option value="Tungurahua">Tungurahua</option>
-                        <option value="Bolívar">Bolívar</option>
-                        <option value="Chimborazo">Chimborazo</option>
-                        <option value="Sto. Domingo de los Tsachilas">Sto. Domingo de los Tsachilas</option>
-                        <option value="Esmeraldas">Esmeraldas</option>
-                        <option value="Manabí">Manabí</option>
-                        <option value="Guayas">Guayas</option>
-                        <option value="Los Ríos">Los Ríos</option>
-                        <option value="El Oro">El Oro</option>
-                        <option value="Santa Elena">Santa Elena</option>
-                        <option value="Sucumbíos">Sucumbíos</option>
-                        <option value="Napo">Napo</option>
-                        <option value="Pastaza">Pastaza</option>
-                        <option value="Orellana">Orellana</option>
-                        <option value="Morona Santiago">Morona Santiago</option>
-                        <option value="Zamora Chinchipe">Zamora Chinchipe</option>
+                        <option value="Azuay" @if($records->seaside=="Azuay")
+                            selected
+                            @endif>Azuay</option>
+                        <option value="Cañar" @if($records->seaside=="Cañar")
+                            selected
+                            @endif>Cañar</option>
+                        <option value="Loja" @if($records->seaside=="Loja")
+                            selected
+                            @endif>Loja</option>
+                        <option value="Carchi" @if($records->seaside=="Carchi")
+                            selected
+                            @endif>Carchi</option>
+                        <option value="Imbabura" @if($records->seaside=="Imbabura")
+                            selected
+                            @endif>Imbabura</option>
+                        <option value="Pichincha" @if($records->seaside=="Pichincha")
+                            selected
+                            @endif>Pichincha</option>
+                        <option value="Cotopaxi" @if($records->seaside=="Cotopaxi")
+                            selected
+                            @endif>Cotopaxi</option>
+                        <option value="Tungurahua" @if($records->seaside=="Tungurahua")
+                            selected
+                            @endif>Tungurahua</option>
+                        <option value="Bolivar" @if($records->seaside=="Bolivar")
+                            selected
+                            @endif>Bolívar</option>
+                        <option value="Chimborazo" @if($records->seaside=="Chimborazo")
+                            selected
+                            @endif>Chimborazo</option>
+                        <option value="Sto. Domingo de los Tsachilas" @if($records->seaside=="Sto. Domingo de los Tsachilas")
+                            selected
+                            @endif>Sto. Domingo de los Tsachilas</option>
+                        <option value="Esmeraldas" @if($records->seaside=="Esmeraldas")
+                            selected
+                            @endif>Esmeraldas</option>
+                        <option value="Manabi" @if($records->seaside=="Manabi")
+                            selected
+                            @endif>Manabí</option>
+                        <option value="Guayas" @if($records->seaside=="Guayas")
+                            selected
+                            @endif>Guayas</option>
+                        <option value="Los Rios" @if($records->seaside=="Los Rios")
+                            selected
+                            @endif>Los Ríos</option>
+                        <option value="El Oro" @if($records->seaside=="El Oro")
+                            selected
+                            @endif>El Oro</option>
+                        <option value="Santa Elena" @if($records->seaside=="Santa Elena")
+                            selected
+                            @endif>Santa Elena</option>
+                        <option value="Sucumbios" @if($records->seaside=="Sucumbios")
+                            selected
+                            @endif>Sucumbíos</option>
+                        <option value="Napo" @if($records->seaside=="Napo")
+                            selected
+                            @endif>Napo</option>
+                        <option value="Pastaza" @if($records->seaside=="Pastaza")
+                            selected
+                            @endif>Pastaza</option>
+                        <option value="Orellana" @if($records->seaside=="Orellana")
+                            selected
+                            @endif>Orellana</option>
+                        <option value="Morona Santiago" @if($records->seaside=="Morona Santiago")
+                            selected
+                            @endif>Morona Santiago</option>
+                        <option value="Zamora Chinchipe" @if($records->seaside=="Zamora Chinchipe")
+                            selected
+                            @endif>Zamora Chinchipe</option>
                     </select>
                 </div>
             </div>
@@ -140,9 +254,15 @@
                     <label for="instruction">Instrucción</label>
                     <select name="instruction" id="instruction" class="form-control">
                         <option selected>seleccione una opición</option>
-                        <option value="Basica">Basica</option>
-                        <option value="Media">Media</option>
-                        <option value="Superior">Superior</option>
+                        <option value="Basica" @if($records->instruction=="Basica")
+                            selected
+                            @endif>Basica</option>
+                        <option value="Media" @if($records->instruction=="Media")
+                            selected
+                            @endif>Media</option>
+                        <option value="Superior" @if($records->instruction=="Superior")
+                            selected
+                            @endif>Superior</option>
                     </select>
                 </div>
 
@@ -151,14 +271,30 @@
                     <label for="type_of_blood">Tipo de Sangre</label>
                     <select name="type_of_blood" id="type_of_blood" class="form-control">
                         <option selected>seleccione una opición</option>
-                        <option value="A+">A+</option>
-                        <option value="A-">A-</option>
-                        <option value="B+">B+</option>
-                        <option value="B-">B-</option>
-                        <option value="O+">O+</option>
-                        <option value="O-">O-</option>
-                        <option value="AB+">AB+</option>
-                        <option value="AB-">AB-</option>
+                        <option value="A+" @if($records->type_of_blood=="A+")
+                            selected
+                            @endif>A+</option>
+                        <option value="A-" @if($records->type_of_blood=="A-")
+                            selected
+                            @endif>A-</option>
+                        <option value="B+" @if($records->type_of_blood=="B+")
+                            selected
+                            @endif>B+</option>
+                        <option value="B-" @if($records->type_of_blood=="B-")
+                            selected
+                            @endif>B-</option>
+                        <option value="O+" @if($records->type_of_blood=="O+")
+                            selected
+                            @endif>O+</option>
+                        <option value="O-" @if($records->type_of_blood=="O-")
+                            selected
+                            @endif>O-</option>
+                        <option value="AB+" @if($records->type_of_blood=="AB+")
+                            selected
+                            @endif>AB+</option>
+                        <option value="AB-" @if($records->type_of_blood=="AB-")
+                            selected
+                            @endif>AB-</option>
 
 
                     </select>
@@ -172,7 +308,7 @@
             <div class="row">
                 <div class="col">
                     <label for="direction">Dirección</label>
-                    <input type="text" name="direction" id="direction" class="form-control" placeholder="Dirección" autocomplete="off">
+                    <input type="text" name="direction" id="direction" value="{{$records->direction}}" class="form-control" placeholder="Dirección" autocomplete="off">
 
                 </div>
                 <div class="col">
@@ -195,12 +331,12 @@
             <div class="row">
                 <div class="col">
                     <label for="reason">Motivo de la consulta / porque motivo vino? </label>
-                    <input type="text" name="reason" id="reason" class="form-control" placeholder="Motivo de la consulta" autocomplete="off">
+                    <input type="text" name="reason" id="reason" value="{{$records->reason}}" class="form-control" placeholder="Motivo de la consulta" autocomplete="off">
 
                 </div>
                 <div class="col">
                     <label for="disease">Enfermedad Actual</label>
-                    <input type="text" name="disease" id="disease" class="form-control" placeholder="Enfermedad Actual" autocomplete="off">
+                    <input type="text" name="disease" id="disease" value="{{$records->disease}}" class="form-control" placeholder="Enfermedad Actual" autocomplete="off">
 
                 </div>
             </div>
@@ -208,12 +344,12 @@
             <div class="row">
                 <div class="col">
                     <label for="fac">FAC?Cuando empezó la molestia? </label>
-                    <input type="text" name="fac" id="fac" class="form-control" placeholder="Cuando empezó la molestia?" autocomplete="off">
+                    <input type="text" name="fac" id="fac" value="{{$records->fac}}" class="form-control" placeholder="Cuando empezó la molestia?" autocomplete="off">
 
                 </div>
                 <div class="col">
                     <label for="frc">FRC?Nunca antes presento esta molestia?</label>
-                    <input type="text" name="frc" id="frc" class="form-control" placeholder="Nunca antes presento esta molestia?" autocomplete="off">
+                    <input type="text" name="frc" id="frc" value="{{$records->frc}}" class="form-control" placeholder="Nunca antes presento esta molestia?" autocomplete="off">
 
                 </div>
             </div>
@@ -221,12 +357,12 @@
             <div class="row">
                 <div class="col">
                     <label for="ca">CA?:Cuál cree usted que fue la causa de esta molestia?</label>
-                    <input type="text" name="ca" id="ca" class="form-control" placeholder="Cuál cree usted que fue la causa de esta molestia?" autocomplete="off">
+                    <input type="text" name="ca" id="ca" value="{{$records->ca}}" class="form-control" placeholder="Cuál cree usted que fue la causa de esta molestia?" autocomplete="off">
 
                 </div>
                 <div class="col">
                     <label for="fc">FC?:Cómo empezó?</label>
-                    <input type="text" name="fc" id="fc" class="form-control" placeholder="Cómo empezó?" autocomplete="off">
+                    <input type="text" name="fc" id="fc" value="{{$records->fc}}" class="form-control" placeholder="Cómo empezó?" autocomplete="off">
 
                 </div>
             </div>
@@ -234,12 +370,12 @@
             <div class="row">
                 <div class="col">
                     <label for="sa">SA?:Que otra molestia ha presentado?</label>
-                    <input type="text" name="sa" id="sa" class="form-control" placeholder="Que otra molestia ha presentado?" autocomplete="off">
+                    <input type="text" name="sa" id="sa" value="{{$records->sa}}" class="form-control" placeholder="Que otra molestia ha presentado?" autocomplete="off">
 
                 </div>
                 <div class="col">
                     <label for="e">E?: En las últimas horas o días ha cambiado en alguna forma la molestia? </label>
-                    <input type="text" name="e" id="e" class="form-control" placeholder="En las últimas horas o días ha cambiado en alguna forma la molestia?" autocomplete="off">
+                    <input type="text" name="e" id="e" value="{{$records->e}}" class="form-control" placeholder="En las últimas horas o días ha cambiado en alguna forma la molestia?" autocomplete="off">
 
                 </div>
             </div>
@@ -247,12 +383,12 @@
             <div class="row">
                 <div class="col">
                     <label for="rm">RM?: A tomado algo para esta molestia?</label>
-                    <input type="text" name="rm" id="rm" class="form-control" placeholder="A tomado algo para esta molestia?" autocomplete="off">
+                    <input type="text" name="rm" id="rm" value="{{$records->rm}}" class="form-control" placeholder="A tomado algo para esta molestia?" autocomplete="off">
 
                 </div>
                 <div class="col">
                     <label for="ea">EA?: En este momento como sigue su molestia? </label>
-                    <input type="text" name="ea" id="ea" class="form-control" placeholder="En este momento como sigue su molestia? " autocomplete="off">
+                    <input type="text" name="ea" id="ea" value="{{$records->ea}}" class="form-control" placeholder="En este momento como sigue su molestia? " autocomplete="off">
 
                 </div>
             </div>
@@ -260,12 +396,12 @@
             <div class="row">
                 <div class="col">
                     <label for="eg">¿Enfermedades de gravedad por la que tome medicamentos?</label>
-                    <input type="text" name="eg" id="eg" class="form-control" placeholder="¿Enfermedades de gravedad por la que tome medicamentos?" autocomplete="off">
+                    <input type="text" name="eg" id="eg" value="{{$records->eg}}" class="form-control" placeholder="¿Enfermedades de gravedad por la que tome medicamentos?" autocomplete="off">
 
                 </div>
                 <div class="col">
                     <label for="egs">¿Enfermedades Graves en sus familiares de sangre?</label>
-                    <input type="text" name="egs" id="egs" class="form-control" placeholder="¿Enfermedades Graves en sus familiares de sangre?" autocomplete="off">
+                    <input type="text" name="egs" id="egs" value="{{$records->egs}}" class="form-control" placeholder="¿Enfermedades Graves en sus familiares de sangre?" autocomplete="off">
 
                 </div>
             </div>
@@ -273,12 +409,12 @@
             <div class="row">
                 <div class="col">
                     <label for="cir">¿Le han realizado cirugías?</label>
-                    <input type="text" name="cir" id="cir" class="form-control" placeholder="¿Le han realizado cirugías?" autocomplete="off">
+                    <input type="text" name="cir" id="cir" value="{{$records->cir}}" class="form-control" placeholder="¿Le han realizado cirugías?" autocomplete="off">
 
                 </div>
                 <div class="col">
                     <label for="aler">¿Tiene alergias algún medicamento o alimento?</label>
-                    <input type="text" name="aler" id="aler" class="form-control" placeholder="¿Tiene alergias algún medicamento o alimento?" autocomplete="off">
+                    <input type="text" name="aler" id="aler" value="{{$records->aler}}" class="form-control" placeholder="¿Tiene alergias algún medicamento o alimento?" autocomplete="off">
 
                 </div>
             </div>

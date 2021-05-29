@@ -16,15 +16,16 @@ class RecordController extends Controller
         $doctor_id = Auth::user()->doctor->id;
 
         $records = Record::where('doctor_id', $doctor_id)->get();
+
         return view('Doctor.Documents.Record.index', compact('records'));
     }
     public function print($id)
     {
 
-        $patient = Patient::find($id);
-        $record = Record::where('patient_id', $id)->first();
 
-        $pdf = PDF::loadView('pdf.record', compact('patient', 'record'));
+        $record = Record::find($id)->first();
+
+        $pdf = PDF::loadView('pdf.record', compact('record'));
         $pdf->setPaper('A4');
 
         $FechaHoy = Carbon::now()->format('Y-m-d_H:i:s');
@@ -33,10 +34,10 @@ class RecordController extends Controller
     public function preview($id)
     {
 
-        $patient = Patient::find($id);
-        $record = Record::where('patient_id', $id)->first();
 
-        $pdf = PDF::loadView('pdf.record', compact('patient', 'record'));
+        $record = Record::where('id', $id)->first();
+
+        $pdf = PDF::loadView('pdf.record', compact('record'));
         $pdf->setPaper('A4');
         return $pdf->stream();
     }
@@ -47,7 +48,16 @@ class RecordController extends Controller
     public function create($id)
     {
         $patient = Patient::find($id);
+
         return view('Doctor.Documents.Record.create', compact('patient'));
+    }
+
+    public function edit($id)
+    {
+        $records = Record::where('id', $id)->first();
+        $patient = Patient::find($records->patient->id);
+
+        return view('Doctor.Documents.Record.create', compact('records', 'patient'));
     }
 
     public function store(Request $request)

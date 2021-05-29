@@ -87,7 +87,7 @@
                 </td>
                 <td style="width:25%; border-right-style:solid; border-right-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border-bottom:0.5pt single; -aw-border-left:0.5pt single; -aw-border-right:0.5pt single">
                     <p style="margin-bottom:0pt; font-size:8pt"><span style="font-family:'Times New Roman'">Nombre y
-                            Apellido:</span>{{ $patient->user->name.' '.$patient->last_name}}</p>
+                            Apellido:</span>{{ $record->patient->name.' '.$record->patient->last_name}}</p>
                 </td>
                 <td style="width:25%; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border-bottom:0.5pt single; -aw-border-left:0.5pt single">
                     <p style="margin-bottom:0pt; font-size:8pt"><span style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
@@ -95,16 +95,16 @@
             </tr>
             <tr style="height:19.2pt">
                 <td rowspan="25" style="width:25%; border-top-style:solid; border-top-width:0.75pt; border-right-style:solid; border-right-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border-bottom:0.5pt single; -aw-border-right:0.5pt single; -aw-border-top:0.5pt single">
-                    <p style="margin-bottom:0pt; font-size:8pt"><span style="font-family:'Times New Roman'">ueueuruerueruer</span></p>
+                    <p style="margin-bottom:0pt; font-size:8pt"><span style="font-family:'Times New Roman'">{{$record->anamnesis}}</span></p>
                 </td>
                 <td style="width:25%; border-style:solid; border-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border:0.5pt single">
                     <p style="margin-bottom:0pt; font-size:8pt"><span style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
                 </td>
                 <td style="width:25%; border-style:solid; border-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border:0.5pt single">
-                    <p style="margin-bottom:0pt; font-size:8pt"><span style="font-family:'Times New Roman'">Edad:</span>{{$patient->age}}</p>
+                    <p style="margin-bottom:0pt; font-size:8pt"><span style="font-family:'Times New Roman'">Edad:</span>{{$record->patient->age}}</p>
                 </td>
                 <td style="width:25%; border-top-style:solid; border-top-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border-bottom:0.5pt single; -aw-border-left:0.5pt single; -aw-border-top:0.5pt single">
-                    <p style="margin-bottom:0pt; font-size:8pt"><span style="font-family:'Times New Roman'">wewdw</span></p>
+                    <p style="margin-bottom:0pt; font-size:8pt"><span style="font-family:'Times New Roman'">&#xa0;</span></p>
                 </td>
             </tr>
             <tr style="height:17.1pt">
@@ -113,10 +113,10 @@
                 </td>
                 <td style="width:25%; border-style:solid; border-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border:0.5pt single">
                     <p style="margin-bottom:0pt; font-size:8pt"><span style="font-family:'Times New Roman'">Cedula
-                            de identidad:</span>{{$patient->ci}}</p>
+                            de identidad:</span>{{$record->patient->ci}}</p>
                 </td>
                 <td style="width:25%; border-top-style:solid; border-top-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border-bottom:0.5pt single; -aw-border-left:0.5pt single; -aw-border-top:0.5pt single">
-                    <p style="margin-bottom:0pt; font-size:8pt"><span style="font-family:'Times New Roman'">dwdw</span></p>
+                    <p style="margin-bottom:0pt; font-size:8pt"><span style="font-family:'Times New Roman'">&#xa0;</span></p>
                 </td>
             </tr>
             <tr style="height:17.1pt">
@@ -131,7 +131,7 @@
                     </p>
                 </td>
                 <td style="width:25%; border-top-style:solid; border-top-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border-bottom:0.5pt single; -aw-border-left:0.5pt single; -aw-border-top:0.5pt single">
-                    <p style="margin-bottom:0pt; font-size:8pt"><span style="font-family:'Times New Roman'">dwdwd</span></p>
+                    <p style="margin-bottom:0pt; font-size:8pt"><span style="font-family:'Times New Roman'">&#xa0;</span></p>
                 </td>
             </tr>
             <tr style="height:17.1pt">
@@ -175,7 +175,9 @@
                 </td>
                 <td style="width:25%; border-style:solid; border-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border:0.5pt single">
                     <p style="margin-bottom:0pt; font-size:8pt"><span style="font-family:'Times New Roman'">Lugar de
-                            Nacimiento:</span></p>
+                            Nacimiento:</span>@if($record->seaside != 'seleccione una opición')
+                        {{$record->seaside}}
+                        @endif</p>
                 </td>
                 <td style="width:25%; border-top-style:solid; border-top-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border-bottom:0.5pt single; -aw-border-left:0.5pt single; -aw-border-top:0.5pt single">
                     <p style="margin-bottom:0pt; font-size:8pt"><span style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
@@ -199,7 +201,9 @@
                     <p style="margin-bottom:0pt; font-size:8pt"><span style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
                 </td>
                 <td style="width:25%; border-style:solid; border-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border:0.5pt single">
-                    <p style="margin-bottom:0pt; font-size:8pt"><span style="font-family:'Times New Roman'">Dirección:</span></p>
+                    <p style="margin-bottom:0pt; font-size:8pt"><span style="font-family:'Times New Roman'">Dirección:</span>@if($record->direction != 'seleccione una opición')
+                        {{$record->direction}}
+                        @endif</p>
                 </td>
                 <td style="width:25%; border-top-style:solid; border-top-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border-bottom:0.5pt single; -aw-border-left:0.5pt single; -aw-border-top:0.5pt single">
                     <p style="margin-bottom:0pt; font-size:8pt"><span style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
@@ -210,7 +214,7 @@
                     <p style="margin-bottom:0pt; font-size:8pt"><span style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
                 </td>
                 <td style="width:25%; border-style:solid; border-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border:0.5pt single">
-                    <p style="margin-bottom:0pt; font-size:8pt"><span style="font-family:'Times New Roman'">Teléfono:</span>{{$patient->phone}}</p>
+                    <p style="margin-bottom:0pt; font-size:8pt"><span style="font-family:'Times New Roman'">Teléfono:</span>{{$record->patient->phone}}</p>
                 </td>
                 <td style="width:25%; border-top-style:solid; border-top-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border-bottom:0.5pt single; -aw-border-left:0.5pt single; -aw-border-top:0.5pt single">
                     <p style="margin-bottom:0pt; font-size:8pt"><span style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
@@ -221,7 +225,9 @@
                     <p style="margin-bottom:0pt; font-size:8pt"><span style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
                 </td>
                 <td style="width:25%; border-style:solid; border-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border:0.5pt single">
-                    <p style="margin-bottom:0pt; font-size:8pt"><span style="font-family:'Times New Roman'">Instrucción:</span></p>
+                    <p style="margin-bottom:0pt; font-size:8pt"><span style="font-family:'Times New Roman'">Instrucción:</span>@if($record->instruction != 'seleccione una opición')
+                        {{$record->instruction}}
+                        @endif</p>
                 </td>
                 <td style="width:25%; border-top-style:solid; border-top-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border-bottom:0.5pt single; -aw-border-left:0.5pt single; -aw-border-top:0.5pt single">
                     <p style="margin-bottom:0pt; font-size:8pt"><span style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
@@ -233,7 +239,9 @@
                 </td>
                 <td style="width:25%; border-style:solid; border-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border:0.5pt single">
                     <p style="margin-bottom:0pt; font-size:8pt"><span style="font-family:'Times New Roman'">Tipo de
-                            Sangre:</span></p>
+                            Sangre:</span>@if($record->type_of_blood != 'seleccione una opición')
+                        {{$record->type_of_blood}}
+                        @endif</p>
                 </td>
                 <td style="width:25%; border-top-style:solid; border-top-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border-bottom:0.5pt single; -aw-border-left:0.5pt single; -aw-border-top:0.5pt single">
                     <p style="margin-bottom:0pt; font-size:8pt"><span style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
@@ -242,7 +250,7 @@
             <tr style="height:34.3pt">
                 <td style="width:25%; border-style:solid; border-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border:0.5pt single">
                     <p style="margin-bottom:0pt; font-size:8pt"><span style="font-family:'Times New Roman'">Motivo
-                            de Consulta/ Porque motivo viene usted?</span></p>
+                            de Consulta/ Porque motivo viene usted?</span>{{$record->reason}}</p>
                     <p style="margin-bottom:0pt; font-size:8pt"><span style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
 
                 </td>
@@ -255,11 +263,11 @@
             </tr>
             <tr style="height:34.3pt">
                 <td style="width:25%; border-style:solid; border-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border:0.5pt single">
-                    <p style="margin-bottom:0pt; font-size:8pt"><span style="font-family:'Times New Roman'">Enfermedad Actual.</span></p>
+                    <p style="margin-bottom:0pt; font-size:8pt"><span style="font-family:'Times New Roman'">Enfermedad Actual.</span>{{$record->disease}}</p>
                 </td>
                 <td style="width:25%; border-style:solid; border-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border:0.5pt single">
                     <p style="margin-bottom:0pt; font-size:8pt"><span style="font-family:'Times New Roman'">FAC?:
-                            Cuando empezó la molestia?</span></p>
+                            Cuando empezó la molestia?</span>{{$record->fac}}</p>
                     <p style="margin-bottom:0pt; font-size:8pt"><span style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
                 </td>
                 <td style="width:25%; border-top-style:solid; border-top-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border-bottom:0.5pt single; -aw-border-left:0.5pt single; -aw-border-top:0.5pt single">
@@ -272,7 +280,7 @@
                 </td>
                 <td style="width:25%; border-style:solid; border-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border:0.5pt single">
                     <p style="margin-bottom:0pt; font-size:8pt"><span style="font-family:'Times New Roman'">FRC?:
-                            Nunca antes presento esta molestia?</span></p>
+                            Nunca antes presento esta molestia?</span>{{$record->frc}}</p>
                     <p style="margin-bottom:0pt; font-size:8pt"><span style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
                 </td>
                 <td style="width:25%; border-top-style:solid; border-top-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border-bottom:0.5pt single; -aw-border-left:0.5pt single; -aw-border-top:0.5pt single">
@@ -282,7 +290,7 @@
             <tr style="height:34.3pt">
                 <td style="width:25%; border-style:solid; border-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border:0.5pt single">
                     <p style="margin-bottom:0pt; font-size:8pt"><span style="font-family:'Times New Roman'">CA?:
-                            Cuál cree usted que fue la causa de esta molestia?</span></p>
+                            Cuál cree usted que fue la causa de esta molestia?</span>{{$record->ca}}</p>
                     <p style="margin-bottom:0pt; font-size:8pt"><span style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
                 </td>
                 <td style="width:25%; border-top-style:solid; border-top-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border-bottom:0.5pt single; -aw-border-left:0.5pt single; -aw-border-top:0.5pt single">
@@ -292,7 +300,7 @@
             <tr style="height:17.1pt">
                 <td style="width:25%; border-style:solid; border-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border:0.5pt single">
                     <p style="margin-bottom:0pt; font-size:8pt"><span style="font-family:'Times New Roman'">FC?:
-                            Cómo empezó?</span></p>
+                            Cómo empezó?</span>{{$record->fc}}</p>
                     <p style="margin-bottom:0pt; font-size:8pt"><span style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
                 </td>
                 <td style="width:25%; border-top-style:solid; border-top-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border-bottom:0.5pt single; -aw-border-left:0.5pt single; -aw-border-top:0.5pt single">
@@ -302,7 +310,7 @@
             <tr style="height:34.3pt">
                 <td style="width:25%; border-style:solid; border-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border:0.5pt single">
                     <p style="margin-bottom:0pt; font-size:8pt"><span style="font-family:'Times New Roman'">SA?: Que
-                            otra molestia ha presentado?</span></p>
+                            otra molestia ha presentado?</span>{{$record->sa}}</p>
                     <p style="margin-bottom:0pt; font-size:8pt"><span style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
                 </td>
                 <td style="width:25%; border-top-style:solid; border-top-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border-bottom:0.5pt single; -aw-border-left:0.5pt single; -aw-border-top:0.5pt single">
@@ -312,7 +320,7 @@
             <tr style="height:51.6pt">
                 <td style="width:25%; border-style:solid; border-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border:0.5pt single">
                     <p style="margin-bottom:0pt; font-size:8pt"><span style="font-family:'Times New Roman'">E?: En
-                            las últimas horas o días ha cambiado en alguna forma la molestia?</span></p>
+                            las últimas horas o días ha cambiado en alguna forma la molestia?</span>{{$record->e}}</p>
                     <p style="margin-bottom:0pt; font-size:8pt"><span style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
                 </td>
                 <td style="width:25%; border-top-style:solid; border-top-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border-bottom:0.5pt single; -aw-border-left:0.5pt single; -aw-border-top:0.5pt single">
@@ -322,7 +330,7 @@
             <tr style="height:36.5pt">
                 <td style="width:25%; border-style:solid; border-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border:0.5pt single">
                     <p style="margin-bottom:0pt; font-size:8pt"><span style="font-family:'Times New Roman'">RM?: A
-                            tomado algo para esta molestia?</span></p>
+                            tomado algo para esta molestia?</span>{{$record->rm}}</p>
                     <p style="margin-bottom:0pt; font-size:8pt"><span style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
                 </td>
                 <td style="width:25%; border-top-style:solid; border-top-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border-bottom:0.5pt single; -aw-border-left:0.5pt single; -aw-border-top:0.5pt single">
@@ -332,7 +340,7 @@
             <tr style="height:42.55pt">
                 <td style="width:25%; border-style:solid; border-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border:0.5pt single">
                     <p style="margin-bottom:0pt; font-size:8pt"><span style="font-family:'Times New Roman'">EA?: En
-                            este momento como sigue su molestia?</span></p>
+                            este momento como sigue su molestia?</span>{{$record->ea}}</p>
                     <p style="margin-bottom:0pt; font-size:8pt"><span style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
                 </td>
                 <td style="width:25%; border-top-style:solid; border-top-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border-bottom:0.5pt single; -aw-border-left:0.5pt single; -aw-border-top:0.5pt single">
@@ -343,7 +351,7 @@
             <tr style="height:51.6pt">
                 <td style="width:25%; border-style:solid; border-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border:0.5pt single">
                     <p style="margin-bottom:0pt; font-size:8pt"><span style="font-family:'Times New Roman'">¿Enfermedades de gravedad por la que tome
-                            medicamentos?</span></p>
+                            medicamentos?</span>{{$record->eg}}</p>
                 </td>
                 <td style="width:25%; border-style:solid; border-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border:0.5pt single">
                     <p style="margin-bottom:0pt; font-size:8pt"><span style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
@@ -355,7 +363,7 @@
             <tr style="height:34.3pt">
                 <td style="width:25%; border-style:solid; border-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border:0.5pt single">
                     <p style="margin-bottom:0pt; font-size:8pt"><span style="font-family:'Times New Roman'">¿Enfermedades Graves en sus familiares de
-                            sangre?</span></p>
+                            sangre?</span>{{$record->egs}}</p>
                 </td>
                 <td style="width:25%; border-style:solid; border-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border:0.5pt single">
                     <p style="margin-bottom:0pt; font-size:8pt"><span style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
@@ -367,7 +375,7 @@
             <tr style="height:18.9pt">
                 <td style="width:25%; border-style:solid; border-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border:0.5pt single">
                     <p style="margin-bottom:0pt; font-size:8pt"><span style="font-family:'Times New Roman'">¿Le han
-                            realizado cirugías?</span></p>
+                            realizado cirugías?</span>{{$record->cir}}</p>
                 </td>
                 <td style="width:25%; border-style:solid; border-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border:0.5pt single">
                     <p style="margin-bottom:0pt; font-size:8pt"><span style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
@@ -379,7 +387,7 @@
             <tr style="height:28.45pt">
                 <td style="width:25%; border-top-style:solid; border-top-width:0.75pt; border-right-style:solid; border-right-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border-left:0.5pt single; -aw-border-right:0.5pt single; -aw-border-top:0.5pt single">
                     <p style="margin-bottom:0pt; font-size:8pt"><span style="font-family:'Times New Roman'">¿Tiene
-                            alergias algún medicamento o alimento?</span></p>
+                            alergias algún medicamento o alimento?</span>{{$record->aler}}</p>
                 </td>
                 <td style="width:25%; border-top-style:solid; border-top-width:0.75pt; border-right-style:solid; border-right-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border-left:0.5pt single; -aw-border-right:0.5pt single; -aw-border-top:0.5pt single">
                     <p style="margin-bottom:0pt; font-size:8pt"><span style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>

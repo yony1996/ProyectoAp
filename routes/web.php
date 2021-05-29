@@ -65,6 +65,7 @@ Route::middleware('auth')->group(function () {
     //Record
     Route::get('/records', 'RecordController@index')->name('record');
     Route::get('/records/{record}/create', 'RecordController@create')->name('record.create');
+    Route::get('/records/{record}/edit', 'RecordController@edit')->name('record.edit');
     Route::post('/records', 'RecordController@store')->name('record.store');
     Route::get('/records/{print}/print', 'RecordController@print')->name('record.print');
     Route::get('/records/{record}/preview', 'RecordController@preview')->name('record.preview');

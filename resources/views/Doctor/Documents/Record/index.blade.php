@@ -49,8 +49,9 @@
                                 <td>{{$record->patient->user->status}}</td>
                                 <td>{{$record->updated_at->diffForHumans()}}</td>
                                 <td>
-                                    <a class="btn btn-sm btn-info" data-toggle="tooltip" title="Descargar Ficha Medica" href="{{route('record.print',$record->patient->id)}}"> <i class="fa fa-download"></i></a>
-                                    <a class="btn btn-sm btn-info" data-toggle="tooltip" title="Vista Previa de Ficha Medica" href="{{route('record.preview',$record->patient->id)}}" target="_blank"> <i class="fa fa-eye"></i></a>
+                                    <a class="btn btn-sm btn-info" data-toggle="tooltip" title="Editar Ficha Medica" href="{{route('record.edit',$record->id)}}"> <i class="fas fa-pen"></i></a>
+                                    <a class="btn btn-sm btn-info" data-toggle="tooltip" title="Descargar Ficha Medica" href="{{route('record.print',$record->id)}}"> <i class="fa fa-download"></i></a>
+                                    <a class="btn btn-sm btn-info" data-toggle="tooltip" title="Vista Previa de Ficha Medica" href="{{route('record.preview',$record->id)}}" target="_blank"> <i class="fa fa-eye"></i></a>
                                 </td>
 
                             </tr>

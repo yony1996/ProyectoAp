@@ -47,8 +47,8 @@ class RecordController extends Controller
 
     public function create($id)
     {
-        $patient = Patient::find($id);
 
+        $patient = Patient::find($id);
         return view('Doctor.Documents.Record.create', compact('patient'));
     }
 
@@ -57,7 +57,7 @@ class RecordController extends Controller
         $records = Record::where('id', $id)->first();
         $patient = Patient::find($records->patient->id);
 
-        return view('Doctor.Documents.Record.create', compact('records', 'patient'));
+        return view('Doctor.Documents.Record.edit', compact('records', 'patient'));
     }
 
     public function store(Request $request)
@@ -65,7 +65,8 @@ class RecordController extends Controller
         // dd($request->all());
 
         $patient_id = $request->input('patient_id');
-        $anamnesis = $request->input('anamnesis');
+        $tratamiento = $request->input('tratamiento');
+        $examen = $request->input('examen');
         $gender = $request->input('gender');
         $ethnicity = $request->input('ethnicity');
         $marital_status = $request->input('marital_status');
@@ -96,7 +97,8 @@ class RecordController extends Controller
                 'doctor_id' => Auth::user()->doctor->id,
             ],
             [
-                'anamnesis' => $anamnesis,
+                'tratamiento' => $tratamiento,
+                'examen' => $examen,
                 'gender' => $gender,
                 'ethnicity' => $ethnicity,
                 'marital_status' => $marital_status,

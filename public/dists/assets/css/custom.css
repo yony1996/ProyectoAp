@@ -1,3 +1,5 @@
+/*slider*/
+/*
 .slider{
     max-width: 1150px;
     display: flex;
@@ -101,7 +103,62 @@
     border:0px solid black;
 }
 .owl-prev i, .owl-next i {transform : scale(1,6); color: #ccc;}
+*/
+/*card*/
 
+.wrapper{
+   width:100%;
+   height:100%;
+        
+    background:#fbebe1;
+    padding-top:100px;
+    padding-bottom:30px;
+   
+    
+}
+.content1{
+    margin-left:340px;
+    width: 680px;
+    height: 320px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0,0,0.5);
+    
+    
+}
 
+.img-container{
+    width: 40%;
+    height: 100%;
+    float: left;
+    position: relative;
+}
 
+.img-container img{
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5pX;
+}
 
+.content2{
+    width: 60%;
+    height: 100%;
+    float: left;
+    padding: 30px 40px;
+    box-sizing: border-box;
+
+}
+.head2{
+    padding-bottom: 30px;
+}
+.head2 p{
+    font-size: 32px;
+    color: black;
+    font-weight: 600;
+}
+
+.head2 span{
+    color: gray;
+    font-size: 20px;
+}

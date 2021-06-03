@@ -61,6 +61,10 @@
             opacity: 0.3;
         }
 
+        .page-break {
+            page-break-after: always;
+        }
+
     </style>
 </head>
 <body>
@@ -400,11 +404,54 @@
 
         </table>
     </div>
+    <div class="page-break"></div>
+    <div class="header">
+        <div class="conter">
+            <img class="img" src="{{public_path('dists/assets/img/logo-removebg-preview.png')}}" height="10%" width="10%" alt="">
+        </div>
+        <div class="title">
+            Ficha Médica
+        </div>
+    </div>
+    <table cellspacing="0" cellpadding="0" class="TableGrid" style="height:auto;margin-top:10px ;width:100%; margin-right:50px; margin-left:50px; margin-bottom:0; border:0.75pt solid #000000; -aw-border:0.5pt single; border-collapse:collapse">
 
+        <tr>
+            <td width="100%" valign="top" style="border: 1px solid #000000; padding: 0in 0.08in">
+                <p>
+                    <font face="Times New Roman, serif">
+                        <font size="3" style="font-size: 12pt">Examen
+                            F&iacute;sico</font>
+                    </font>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="100%" height="315" valign="top" style="border: 1px solid #000000; padding: 0in 0.08in">
+                <p>
+                    {{$record->examen}}
 
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="100%" height="4" valign="top" style="border: 1px solid #000000; padding: 0in 0.08in">
+                <p>
+                    <font face="Times New Roman, serif">
+                        <font size="3" style="font-size: 12pt">Tratamiento
+                        </font>
+                    </font>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="100%" height="315" valign="top" style="border: 1px solid #000000; padding: 0in 0.08in">
+                <p>
+                    {{$record->tratamiento}}
 
-
-
+                </p>
+            </td>
+        </tr>
+    </table>
 
 </body>
 </html>

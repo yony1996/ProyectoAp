@@ -18,13 +18,13 @@
         <i class="fa fa-calendar  text-green"></i> Citas Medicas
     </a>
 </li>
-<li class="nav-item {{ Route::is('appoiment') ? 'active' : '' }}">
-    <a class="nav-link " href="{{route('appoiment')}}">
+<li class="nav-item">
+    <a class="nav-link " href="#">
         <i class="far fa-chart-bar  text-red"></i> Frecuencia de Citas
     </a>
 </li>
-<li class="nav-item {{ Route::is('appoiment') ? 'active' : '' }}">
-    <a class="nav-link " href="{{route('appoiment')}}">
+<li class="nav-item ">
+    <a class="nav-link " href="#">
         <i class="far fa-chart-bar  text-orange"></i> Medicos más Activos
     </a>
 </li>

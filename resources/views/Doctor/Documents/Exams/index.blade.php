@@ -46,7 +46,14 @@
                                 <td>{{$exam->patient->user->name}}</td>
                                 <td>{{$exam->patient->last_name}}</td>
                                 <td>{{$exam->patient->user->email}}</td>
-                                <td>{{$exam->patient->user->status}}</td>
+                                <td>
+                                    @if ($exam->patient->user->status==1)
+                                    <span class="badge badge-pill badge-success">Activo</span>
+                                    @else
+                                    <span class="badge badge-pill badge-danger">Inactivo</span>
+                                    @endif
+
+                                </td>
                                 <td>{{$exam->created_at->diffForHumans()}}</td>
                                 <td>
                                     <a class="btn btn-sm btn-info" data-toggle="tooltip" title="Descargar Orden de Examen" href="{{route('exam.print',$exam->id)}}"> <i class="fa fa-download"></i></a>

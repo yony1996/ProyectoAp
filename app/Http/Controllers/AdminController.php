@@ -23,9 +23,13 @@ class AdminController extends Controller
             return view('Admin.index', compact('patients', 'doctors'));
         } elseif ($user == 'medico') {
             $patients = Patient::all();
-            return view('Doctor.index', compact('patients'));
+            $PendingAppoiments = Appoiment::where('status', 'Reservada')->where('doctor_id', Auth::user()->doctor->id)->paginate(5);
+            return view('Doctor.index', compact('patients', 'PendingAppoiments'));
         } else {
-            return view('Patient.index');
+
+            $ConfirmedAppoiments = Appoiment::where('status', 'Confirmada')->where('patient_id', Auth::user()->patient->id)->paginate(5);
+
+            return view('Patient.index', compact('ConfirmedAppoiments'));
         }
     }
 }

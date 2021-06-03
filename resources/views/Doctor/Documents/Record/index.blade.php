@@ -46,7 +46,13 @@
                                 <td>{{$record->patient->user->name}}</td>
                                 <td>{{$record->patient->last_name}}</td>
                                 <td>{{$record->patient->user->email}}</td>
-                                <td>{{$record->patient->user->status}}</td>
+                                <td>
+                                    @if ($record->patient->user->status==1)
+                                    <span class="badge badge-pill badge-success">Activo</span>
+                                    @else
+                                    <span class="badge badge-pill badge-danger">Inactivo</span>
+                                    @endif
+                                </td>
                                 <td>{{$record->updated_at->diffForHumans()}}</td>
                                 <td>
                                     <a class="btn btn-sm btn-info" data-toggle="tooltip" title="Editar Ficha Medica" href="{{route('record.edit',$record->id)}}"> <i class="fas fa-pen"></i></a>

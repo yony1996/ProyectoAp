@@ -56,8 +56,8 @@
                                     <form action="{{route('patient.destroy',$patient->id)}}" method="POST">
                                         @csrf
                                         @method('DELETE')
-                                        <a class="btn btn-sm btn-info" href="{{route('patient.edit',$patient->id)}}"> <i class="fas fa-pen"></i></a>
-                                        <button class="btn btn-sm btn-danger" type="submit"><i class=" fa fa-trash"></i></button>
+                                        <a class="btn btn-sm btn-info" data-toggle="tooltip" title="Editar paciente" href="{{route('patient.edit',$patient->id)}}"> <i class="fas fa-pen"></i></a>
+                                        <button class="btn btn-sm btn-danger" data-toggle="tooltip" title="Eliminar paciente" type="submit"><i class=" fa fa-trash"></i></button>
 
                                     </form>
 
@@ -137,8 +137,8 @@
                                     <form action="{{route('doctor.destroy', $doctor->id)}}" method="POST">
                                         @csrf
                                         @method('DELETE')
-                                        <a class="btn btn-sm btn-info" href="{{route('doctor.edit',$doctor->id)}}"> <i class="fas fa-pen"></i></a>
-                                        <button class="btn btn-sm btn-danger" type="submit"><i class=" fa fa-trash"></i></button>
+                                        <a class="btn btn-sm btn-info" data-toggle="tooltip" title="Editar doctor" href="{{route('doctor.edit',$doctor->id)}}"> <i class="fas fa-pen"></i></a>
+                                        <button class="btn btn-sm btn-danger" data-toggle="tooltip" title="Eliminar doctor" type="submit"><i class=" fa fa-trash"></i></button>
 
                                     </form>
 
@@ -155,7 +155,7 @@
                     </table>
                     @else
                     <div class="col-md-12 text-center">
-                        <h1>Aun no existen asignaturas registradas</h1>
+                        <h1>Aun no existen doctores registrados</h1>
                     </div>
 
                     @endif

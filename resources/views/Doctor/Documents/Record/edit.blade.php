@@ -32,10 +32,7 @@
                         <a class="nav-link text-sm " id="tratamiento-tab" data-toggle="tab" href="#tratamiento" aria-controls="tratamiento" role="tab" aria-selected="true">Tratamiento</a>
                     </li>
 
-
-
                 </ul>
-
 
                 <div class="card-body">
 
@@ -48,17 +45,16 @@
 
                         <div class="tab-content" id="myTabContent">
 
+
                             <div class="tab-pane fade show active" id="anamnesis" role="tabpanel" aria-labelledby="anamnesis-tab">
-                                @include('Doctor.Documents.Record.tablas.anamnesis')
+                                @include('Doctor.Documents.Record.tablas.anamnesisedit')
                             </div>
                             <div class="tab-pane fade show " id="examen" role="tabpanel" aria-labelledby="examen-tab">
-                                @include('Doctor.Documents.Record.tablas.examen')
+                                @include('Doctor.Documents.Record.tablas.examenedit')
                             </div>
                             <div class="tab-pane fade show" id="tratamiento" role="tabpanel" aria-labelledby="tratamiento-tab">
-                                @include('Doctor.Documents.Record.tablas.tratamiento')
+                                @include('Doctor.Documents.Record.tablas.tratamientoedit')
                             </div>
-
-
 
                         </div>
                     </form>

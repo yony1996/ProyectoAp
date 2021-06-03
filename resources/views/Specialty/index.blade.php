@@ -47,8 +47,8 @@
                             @csrf
                             @method('DELETE')
 
-                            <a href="{{ route('specialty.edit',$specialty->id) }}" class="btn btn-sm btn-primary"> <i class="fas fa-pen"></i></a>
-                            <button class="btn btn-sm btn-danger" type="submit"> <i class="fa fa-trash"></i></button>
+                            <a href="{{ route('specialty.edit',$specialty->id) }}" data-toggle="tooltip" title="Editar especialidad" class="btn btn-sm btn-primary"> <i class="fas fa-pen"></i></a>
+                            <button class="btn btn-sm btn-danger" data-toggle="tooltip" title="Eliminar especialidad" type="submit"> <i class="fa fa-trash"></i></button>
                         </form>
                     </td>
                 </tr>

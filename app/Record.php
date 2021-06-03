@@ -9,7 +9,8 @@ class Record extends Model
     protected $fillable = [
         'patient_id',
         'doctor_id',
-        'anamnesis',
+        'examen',
+        'tratamiento',
         'gender',
         'ethnicity',
         'marital_status',

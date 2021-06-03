@@ -10,8 +10,8 @@
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>AP salud</title>
-
+    <title>AP Salud</title>
+    <link rel="icon" type="image/vnd.microsoft.icon" href="{{asset('dists/assets/img/logo.ico')}}">
     <!-- plugins -->
     <link rel="stylesheet" type="text/css" href="{{asset('dists/assets/css/plugin.css')}}" />
 
@@ -36,6 +36,7 @@
 
     <!-- custom CSS -->
     <link href="{{asset('dists/assets/css/custom.css')}}" rel="stylesheet">
+    <!--
     <script data-dapp-detection="">
         ! function() {
             let e = !1;
@@ -103,7 +104,7 @@
             clip: rect(0, 1349px, 650px, 0);
         }
 
-    </style>
+    </style>-->
 </head>
 
 <body>
@@ -117,7 +118,7 @@
                                 <li><a href="#"><span class="ti-facebook"></span></a></li>
                                 <li><a href="#"><span class="ti-instagram"></span></a></li>
                                 <li><a href="#"><span class="ti-twitter-alt"></span></a></li>
-                                <li><a href=""><i class="fab fa-whatsapp"></i></a></li>
+                                <li><a href="https://api.whatsapp.com/send?phone=+593992993372" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
                             </ul>
                         </div>
                     </div>
@@ -144,13 +145,13 @@
                 </button>
             </div>
             <ul class="menu">
-                <li class="scrollspy active"><a href="#home">Home</a></li>
-                <li class="scrollspy"><a href="#services">Services</a></li>
-                <li class="scrollspy"><a href="#appointment">Appointment</a></li>
+                <li class="scrollspy active"><a href="#home">Inicio</a></li>
+                <li class="scrollspy"><a href="#services">Servicios</a></li>
+                <li class="scrollspy"><a href="#appointment">Citas</a></li>
                 <!--<li class="scrollspy"><a href="#testimonials">Testimonials</a></li>-->
                 <li class="scrollspy"><a href="#doctor">Doctor</a></li>
-                <li class="scrollspy"><a href="#blog">News</a></li>
-                <li class="scrollspy"><a href="#contactus">Contact</a></li>
+                {{--<li class="scrollspy"><a href="#blog">Noticias</a></li>--}}
+                <li class="scrollspy"><a href="#contactus">Contacto</a></li>
                 @guest
                 <a class="mt-10 cs-button x-small" href="{{route('login')}}">Iniciar Sesion</a>
                 @else
@@ -176,29 +177,27 @@
                         <!-- SLIDE  -->
                         <li data-index="rs-3070" data-transition="parallaxhorizontal" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="default" data-rotate="0" data-fstransition="fade" data-fsmasterspeed="1500" data-fsslotamount="7" data-saveperformance="off" data-title="Number One" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
                             <!-- MAIN IMAGE -->
-                            <img src="{{asset('dists/assets/img/travel2.jpg')}}" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+                            <img src="{{asset('dists/assets/img/slide333.jpeg')}}" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
                             <!-- LAYERS -->
                         </li>
                         <!-- SLIDE  -->
                         <li data-index="rs-3071" data-transition="parallaxhorizontal" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="default" data-rotate="0" data-saveperformance="off" data-title="Number Two" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
                             <!-- MAIN IMAGE -->
-                            <img src="{{asset('dists/assets/img/travel3.jpg')}}" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+                            <img src="{{asset('dists/assets/img/slide222.jpeg')}}" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
                             <!-- LAYERS -->
                         </li>
                     </ul>
                     <div style="" class="tp-static-layers">
                         <!-- LAYER NR. 1 -->
-                        <div class="tp-caption Travel-BigCaption   tp-resizeme tp-static-layer" id="slider-1083-layer-1" data-x="['left','left','left','left']" data-hoffset="['90','90','60','40']" data-y="['center','center','center','center']" data-voffset="['0','0','0','0']" data-fontsize="['50','50','50','35']" data-lineheight="['50','50','50','35']" data-width="none" data-height="none" data-whitespace="nowrap" data-type="text" data-responsive_offset="on" data-startslide="0" data-endslide="3" data-frames='[{"from":"opacity:0;","speed":300,"to":"o:1;","delay":500,"ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"to":"opacity:0;","ease":"nothing"}]' data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" style="z-index: 5; white-space: nowrap;text-transform:left; color: #470521;">Feel Safe with
-                            <br> Mom’s Care
+                        <div class="tp-caption Travel-BigCaption   tp-resizeme tp-static-layer" id="slider-1083-layer-1" data-x="['left','left','left','left']" data-hoffset="['90','90','60','40']" data-y="['center','center','center','center']" data-voffset="['0','0','0','0']" data-fontsize="['50','50','50','35']" data-lineheight="['50','50','50','35']" data-width="none" data-height="none" data-whitespace="nowrap" data-type="text" data-responsive_offset="on" data-startslide="0" data-endslide="3" data-frames='[{"from":"opacity:0;","speed":300,"to":"o:1;","delay":500,"ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"to":"opacity:0;","ease":"nothing"}]' data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" style="z-index: 5; white-space: nowrap;text-transform:left; color:#ff3399; font-weight:bold;">Sientete libre, segura y<br> lista para cada etapa de tu vida.
                         </div>
 
                         <!-- LAYER NR. 2 -->
-                        <div class="tp-caption Travel-SmallCaption   tp-resizeme tp-static-layer" id="slider-1083-layer-2" data-x="['left','left','left','left']" data-hoffset="['90','90','60','40']" data-y="['center','center','center','center']" data-voffset="['80','80','80','80']" data-fontsize="['25','25','25','20']" data-lineheight="['30','30','30','20']" data-width="none" data-height="none" data-whitespace="nowrap" data-type="text" data-responsive_offset="on" data-startslide="0" data-endslide="3" data-frames='[{"from":"opacity:0;","speed":300,"to":"o:1;","delay":500,"ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"to":"opacity:0;","ease":"nothing"}]' data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" style="z-index: 6; white-space: nowrap;text-transform:left; color: #222222;">The best Care
-                            in the Pregnancy Industry </div>
+                        <div class="tp-caption Travel-SmallCaption   tp-resizeme tp-static-layer" id="slider-1083-layer-2" data-x="['left','left','left','left']" data-hoffset="['90','90','60','40']" data-y="['center','center','center','center']" data-voffset="['80','80','80','80']" data-fontsize="['25','25','25','20']" data-lineheight="['30','30','30','20']" data-width="none" data-height="none" data-whitespace="nowrap" data-type="text" data-responsive_offset="on" data-startslide="0" data-endslide="3" data-frames='[{"from":"opacity:0;","speed":300,"to":"o:1;","delay":500,"ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"to":"opacity:0;","ease":"nothing"}]' data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" style="z-index: 6; white-space: nowrap;text-transform:left; color: #fff;">Los Mejores Cuidados en tu Embarazo </div>
 
                         <!-- LAYER NR. 3 -->
                         <div class="tp-caption Travel-CallToAction cs-button x-small  tp-static-layer" id="slider-1083-layer-3" data-x="['left','left','left','left']" data-hoffset="['90','90','60','40']" data-y="['center','center','center','center']" data-voffset="['150','150','150','150']" data-width="none" data-height="none" data-whitespace="nowrap" data-type="button" data-actions='[{"event":"click","action":"scrollbelow","offset":"px","delay":""}]' data-responsive_offset="on" data-responsive="off" data-startslide="0" data-endslide="3" data-frames='[{"from":"opacity:0;","speed":300,"to":"o:1;","delay":500,"ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"to":"opacity:0;","ease":"nothing"},{"frame":"hover","speed":"300","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(61, 9, 31, 1.00);bg:rgba(61, 9, 31, 0.15);bw:2px 2px 2px 2px;"}]' data-textAlign="['left','left','left','left']" data-paddingtop="[10,10,10,10]" data-paddingright="[20,20,20,20]" data-paddingbottom="[10,10,10,10]" data-paddingleft="[20,20,20,20]" style="z-index: 7; white-space: nowrap;text-transform:left;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;">
-                            Talk To Us</div>
+                            Sobre Nosotros</div>
                     </div>
                     <div class="tp-bannertimer tp-bottom" style="height: 7px; background-color: rgba(0, 0, 0, 0.25);">
                     </div>
@@ -214,12 +213,11 @@
             <div class="col-lg-6 col-12" data-jarallax='{"speed": 0.0}' style="background-image: url({{asset('dists/assets/img/about.jpg')}});">
                 <div class="px-100 py-140 sm-pl-30 sm-pr-30 sm-pb-30 sm-pt-30 text-right xs-text-center">
                     <div class="section-heading text-right">
-                        <h6 class="sub-heading">About us</h6>
-                        <h1 class="heading fs-40">Welcome to the<br> <span class="theme-color">Healthy Pregnancy<br>
-                                Center!</span></h1>
+
+                        <h1 class="heading fs-40">Bienvenido a<br> <span class="theme-color">AP Salud Sexual y Reproductiva</span></h1>
                     </div>
                     <div class="mt-30">
-                        <a class="cs-button medium" href="#">Make an Appointment</a>
+                        <a class="cs-button medium" href="{{route('appoiment.create')}}">Reservar Cita</a>
                     </div>
                 </div>
             </div>
@@ -231,8 +229,8 @@
                                 <img src="{{asset('dists/assets/img/icon-1.png')}}" class="" alt="" />
                             </div>
                             <div class="feature-info ">
-                                <h4 class="text-back mb-20">Birth Control</h4>
-                                <p>while the lovely valley teems with vapour around me, and the...</p>
+                                <h4 class="text-back mb-20">Control<br> Prenatal</h4>
+                                <p>Todo para asegurarse que mamá y bebé estén bien.</p>
                             </div>
                         </div>
                     </div>
@@ -242,7 +240,7 @@
                                 <img src="{{asset('dists/assets/img/icon-2.png')}}" class="" alt="" />
                             </div>
                             <div class="feature-info ">
-                                <h4 class="text-back mb-20">Pregnancy Testing</h4>
+                                <h4 class="text-back mb-20">Pruebas de laboratorio</h4>
                                 <p>while the lovely valley teems with vapour around me, and the...</p>
                             </div>
                         </div>
@@ -253,7 +251,7 @@
                                 <img src="{{asset('dists/assets/img/icon-3.png')}}" class="" alt="" />
                             </div>
                             <div class="feature-info ">
-                                <h4 class="text-back mb-20">Family planning</h4>
+                                <h4 class="text-back mb-20">Planificación familiar</h4>
                                 <p>while the lovely valley teems with vapour around me, and the...</p>
                             </div>
                         </div>
@@ -264,7 +262,7 @@
                                 <img src="{{asset('dists/assets/img/icon-4.png')}}" class="" alt="" />
                             </div>
                             <div class="feature-info ">
-                                <h4 class="text-back mb-20">Gynecology</h4>
+                                <h4 class="text-back mb-20">Ginecología</h4><br>
                                 <p>while the lovely valley teems with vapour around me, and the...</p>
                             </div>
                         </div>
@@ -275,7 +273,7 @@
                                 <img src="{{asset('dists/assets/img/icon-6.png')}}" class="" alt="" />
                             </div>
                             <div class="feature-info ">
-                                <h4 class="text-back mb-20">Fertility medication</h4>
+                                <h4 class="text-back mb-20">Tratamiento de fertilidad</h4>
                                 <p>while the lovely valley teems with vapour around me, and the...</p>
                             </div>
                         </div>
@@ -286,7 +284,7 @@
                                 <img src="{{asset('dists/assets/img/icon-5.png')}}" class="" alt="" />
                             </div>
                             <div class="feature-info">
-                                <h4 class="text-back mb-20">Abortion Services</h4>
+                                <h4 class="text-back mb-20">Servicios medicos</h4>
                                 <p>while the lovely valley teems with vapour around me, and the...</p>
                             </div>
                         </div>
@@ -303,12 +301,12 @@
                             <i class="far fa-clock theme-color"></i>
                         </div>
                         <div class="feature-info mb-20 px-30">
-                            <h4 class="fs-16 f-w6">Opening Hours</h4>
-                            <p>Monday - Friday: 09.00 - 19.00</p>
-                            <p>Saturday: 09.00 - 17.00</p>
-                            <p>Sunday: 09.30 - 18.00</p>
+                            <h4 class="fs-16 f-w6">Horario de Atención</h4>
+                            <p>Lunes a Viernes: 08:00 am - 04:00 pm</p>
+                            <p>Domiciliaria</p>
+                            <p>Previa cita</p>
                         </div>
-                        <a class="cs-button cs-button-border x-small" href="#">Read More</a>
+
                     </div>
                 </div>
                 <div class="col-md-4 col-12">
@@ -317,11 +315,10 @@
                             <i class="fa fa-stethoscope theme-color"></i>
                         </div>
                         <div class="feature-info mb-20 px-30">
-                            <h4 class="fs-16 f-w6">Medical Care</h4>
-                            <p>Lorem ipsum dolor sit ametcon sect. adipiscing elit, sed do eiusmod tempor incididunt ut
-                                lab</p>
+                            <h4 class="fs-16 f-w6">Atención Médica</h4>
+                            <p>AP Sexual y Reproductiva te brinda la mejor atención médica.</p>
                         </div>
-                        <a class="cs-button cs-button-border x-small" href="#">Read More</a>
+
                     </div>
                 </div>
                 <div class="col-md-4 col-12">
@@ -330,11 +327,10 @@
                             <i class="fa fa-ambulance theme-color"></i>
                         </div>
                         <div class="feature-info mb-20 px-30">
-                            <h4 class="fs-16 f-w6">Emergency Care</h4>
-                            <p>A small river named Duden flows by their place and supplies it with the necessary
-                                regelialial.</p>
+                            <h4 class="fs-16 f-w6">Atención de Emergencia</h4>
+                            <p>AP Sexual y Reproductiva te atiende por emergencia</p>
                         </div>
-                        <a class="cs-button cs-button-border x-small" href="#">Read More</a>
+
                     </div>
                 </div>
             </div>
@@ -347,41 +343,11 @@
             <div class="row">
                 <div class="col-md-6 col-12">
                     <div class="section-heading text-left mb-50">
-                        <h1 class="heading">Fix an Appointment</h1>
+                        <h1 class="heading">Reserva una cita con nosotros</h1>
                     </div>
-
-                    <form class="mt-30" action="" id="contact" name="contact" method="post">
-                        <div class="contact-form app-form form-border clearfix">
-                            <div class="form-field">
-                                <input type="text" class="form-control" name="InputName" id="InputName" placeholder="Your Name" required>
-                            </div>
-                            <div class="form-field">
-                                <input type="email" class="form-control" name="InputEmail" id="InputEmail" placeholder="Your Email" required>
-                            </div>
-                            <div class="form-field">
-                                <input type="text" class="form-control" name="InputPhone" id="InputPhone" placeholder="Phone Number" required>
-                            </div>
-                            <div class="form-field clearfix">
-                                <select class="wide">
-                                    <option value="2">Type of Service</option>
-                                    <option value="1">Some option</option>
-                                    <option valur="3">Another option</option>
-                                    <option value="4">An option</option>
-                                    <option value="5">Potato</option>
-                                </select>
-                            </div>
-                            <div class="form-field">
-                                <input type="date" class="form-control" id='datetimepicker1' placeholder="Select Date" />
-                            </div>
-                            <div class="form-field">
-                                <input type="time" class="form-control" id='datetimepicker1' placeholder="Select Time" />
-                            </div>
-                            <div class="form-field w-100">
-                                <button name="submit" type="submit" class="cs-button"> Check Availability </button>
-                            </div>
-                        </div>
-                    </form>
-
+                    <div class="btn">
+                        <a href="{{route('appoiment.create')}}" class="cs-button medium">Reserva ya!</a>
+                    </div>
 
                 </div>
             </div>
@@ -441,8 +407,7 @@
     </section>-->
 
 
-
-    <section class="section-ptb-0 bg-light">
+    {{--<section class="section-ptb-0 bg-light">
         <div class="row align-items-center no-gutter">
             <div class="col-lg-6 col-12">
                 <div class="px-100 xs-px-20 xs-py-30">
@@ -470,13 +435,14 @@
             <div class="col-lg-6 col-12">
                 <div class="portfolio-item video">
                     <img src="{{asset('dists/assets/img/video.jpg')}}" class="img-fluid" alt="">
-                    <a class="popup portfolio-img" rel="prettyPhoto[gallery1]" href="https://youtu.be/nl5vUwaHZ8U"><img src="{{asset('dists/assets/img/play.png')}}" class="img-fluid" alt=""></a>
-                </div>
-            </div>
-        </div>
-    </section>
+    <a class="popup portfolio-img" rel="prettyPhoto[gallery1]" href="https://youtu.be/nl5vUwaHZ8U"><img src="{{asset('dists/assets/img/play.png')}}" class="img-fluid" alt=""></a>
+    </div>
+    </div>
+    </div>
+    </section>--}}
 
-    <section class="section-ptb-80" data-jarallax="{&quot;speed&quot;: 0.0}" style="background-image: none; position: relative; z-index: 0; background-attachment: scroll; background-size: auto;" data-jarallax-original-styles="background-image: url(assets/img/bg-img.jpg);">
+
+    {{--<section class="section-ptb-80" data-jarallax="{&quot;speed&quot;: 0.0}" style="background-image: none; position: relative; z-index: 0; background-attachment: scroll; background-size: auto;" data-jarallax-original-styles="background-image: url(assets/img/bg-img.jpg);">
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-sm-6 col-xs-6 sm-mb-30 text-center">
@@ -514,274 +480,160 @@
             <div style="background-position: 50% 50%; background-size: 100%; background-repeat: no-repeat; background-image: url(&quot;http://html.multipurposethemes.com/pregnancy/pregnancy-two/images/bg-img.jpg&quot;); position: fixed; top: 0px; left: 0px; width: 1682.01px; height: 629px; overflow: hidden; pointer-events: none; margin-left: -166.503px; margin-top: 0px; visibility: visible; transform: translateY(0px) translateZ(0px);">
             </div>
         </div>
-    </section>
+    </section>--}}
+    <section id="doctor" class="section-ptb-0">
 
-    <section id="doctor" class="section-ptb-80">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-heading text-center max-width-550 mx-auto">
-                        <h1 class="heading">Our Specialised Team</h1>
-                        <p>A small river name Duden flows by their place es supplies with the necessary regelialia
-                            esser
-                            paradisematic country.</p>
+        <div class="wrapper">
+
+            <div class="content1">
+                <div class="img-container">
+                    <img src="{{asset('dists/assets/img/team/team-5.jpg')}}" alt="">
+                </div>
+                <div class="content2">
+                    <div class="head2">
+                        <p>Andres Peñaherrera</p>
+                        <span>Médico obstetriz</span>
                     </div>
                 </div>
             </div>
-            <div class="row mt-50  slider owl-carousel">
-                <!--<div class="col-md-4 col-12 xs-mb-30 ">
-                    <div class="team team-hover team-shadow">
-                        <div class="team-photo">
-                            <img class="img-fluid mx-auto" src="assets/img/team/team-4.jpg" alt="">
-                        </div>
-                        <div class="team-description">
-                            <div class="team-info">
-                                <h4><a href="team-single.html"> Dr. Laura Dixon</a></h4>
-                            </div>
-                            <div class="team-contact">
-                                <p class="fs-16 mb-10"> Medicine Specialist </p>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-12 xs-mb-30">
-                    <div class="team team-hover team-shadow">
-                        <div class="team-photo">
-                            <img class="img-fluid mx-auto" src="assets/img/team/team-5.jpg" alt="">
-                        </div>
-                        <div class="team-description">
-                            <div class="team-info">
-                                <h4><a href="team-single.html"> Druid Wensleydale</a></h4>
-                            </div>
-                            <div class="team-contact">
-                                <p class="fs-16 mb-10"> Medicine Specialist </p>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-12 xs-mb-30">
-                    <div class="team team-hover team-shadow">
-                        <div class="team-photo">
-                            <img class="img-fluid mx-auto" src="assets/img/team/team-7.jpg" alt="">
-                        </div>
-                        <div class="team-description">
-                            <div class="team-info">
-                                <h4><a href="team-single.html"> Phillip Anthropy</a></h4>
-                            </div>
-                            <div class="team-contact">
-                                <p class="fs-16 mb-10"> Medicine Specialist </p>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>-->
-
-
-                <div class="card">
-                    <div class="img"><img src="{{asset('dists/assets/img/team/team-5.jpg')}}" alt=""></div>
-                    <div class="content">
-                        <div class="title">Lorem.</div>
-                        <div class="sub-title">Lorem, ipsum.</div>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas, ut illum quod eaque
-                            laborum nihil
-                            molestias soluta. Itaque, distinctio dolorum?</p>
-                        <div class="btn">
-                            <a>Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="img"><img src="{{asset('dists/assets/img/team/team-4.jpg')}}" alt=""></div>
-                    <div class="content">
-                        <div class="title">Lorem.</div>
-                        <div class="sub-title">Lorem, ipsum.</div>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas, ut illum quod eaque
-                            laborum nihil
-                            molestias soluta. Itaque, distinctio dolorum?</p>
-                        <div class="btn">
-                            <a>Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="img"><img src="{{asset('dists/assets/img/team/team-7.jpg')}}" alt=""></div>
-                    <div class="content">
-                        <div class="title">Lorem.</div>
-                        <div class="sub-title">Lorem, ipsum.</div>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas, ut illum quod eaque
-                            laborum nihil
-                            molestias soluta. Itaque, distinctio dolorum?</p>
-                        <div class="btn">
-                            <a>Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="img"><img src="{{asset('dists/assets/img/team/team-5.jpg')}}" alt=""></div>
-                    <div class="content">
-                        <div class="title">Lorem.</div>
-                        <div class="sub-title">Lorem, ipsum.</div>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas, ut illum quod eaque
-                            laborum nihil
-                            molestias soluta. Itaque, distinctio dolorum?</p>
-                        <div class="btn">
-                            <a>Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="img"><img src="{{asset('dists/assets/img/team/team-4.jpg')}}" alt=""></div>
-                    <div class="content">
-                        <div class="title">Lorem.</div>
-                        <div class="sub-title">Lorem, ipsum.</div>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas, ut illum quod eaque
-                            laborum nihil
-                            molestias soluta. Itaque, distinctio dolorum?</p>
-                        <div class="btn">
-                            <a>Read More</a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
         </div>
     </section>
 
+
+
+    {{--
     <section id="blog" class="section-ptb-80" data-jarallax='{"speed": 0.0}' style="background-image: url({{asset('dists/assets/img/bg-img2.jpg')}});">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-12">
-                    <div class="section-heading text-center max-width-550 mx-auto">
-                        <h1 class="heading">Our New Facilities</h1>
-                        <p>A small river name Duden flows by their place es supplies with the necessary regelialia
-                            esser
-                            paradisematic country.</p>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <div class="section-heading text-center max-width-550 mx-auto">
+                    <h1 class="heading">Our New Facilities</h1>
+                    <p>A small river name Duden flows by their place es supplies with the necessary regelialia
+                        esser
+                        paradisematic country.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-50">
+            <div class="col-lg-4 col-md-4">
+                <div class="blog-post xs-mb-50">
+                    <div class="entry-image clearfix">
+                        <img class="img-fluid" src="{{asset('dists/assets/img/blog-01.jpg')}}" alt="">
+                    </div>
+                    <div class="blog-detail">
+                        <div class="entry-title mb-10">
+                            <a href="#">Norepeat have Distribution Publishing Packages</a>
+                        </div>
+                        <div class="entry-meta mb-10">
+                            <ul>
+                                <li><a href="#"><i class="fa fa-calendar-o"></i> 12 Aug 2019</a></li>
+                            </ul>
+                        </div>
+                        <div class="entry-content">
+                            <p>Raise your design from the dead with an army of Zombie Ipsum, frightful filler
+                                text
+                                that just won't die. Try the lorem ipsum of the undead if you dare.</p>
+                        </div>
+                        <div class="entry-share clearfix">
+                            <div class="entry-button">
+                                <a class="cs-button arrow" href="#">Read More<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                            </div>
+                            <div class="social list-style-none float-right">
+                                <strong>Share : </strong>
+                                <ul>
+                                    <li>
+                                        <a href="#"> <i class="fab fa-facebook"></i> </a>
+                                    </li>
+                                    <li>
+                                        <a href="#"> <i class="fab fa-twitter"></i> </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="row mt-50">
-                <div class="col-lg-4 col-md-4">
-                    <div class="blog-post xs-mb-50">
-                        <div class="entry-image clearfix">
-                            <img class="img-fluid" src="{{asset('dists/assets/img/blog-01.jpg')}}" alt="">
+            <div class="col-lg-4 col-md-4">
+                <div class="blog-post xs-mb-50">
+                    <div class="entry-image clearfix">
+                        <img class="img-fluid" src="{{asset('dists/assets/img/blog-02.jpg')}}" alt="">
+                    </div>
+                    <div class="blog-detail">
+                        <div class="entry-title mb-10">
+                            <a href="#">Versions Over the Years Have Been Readable</a>
                         </div>
-                        <div class="blog-detail">
-                            <div class="entry-title mb-10">
-                                <a href="#">Norepeat have Distribution Publishing Packages</a>
+                        <div class="entry-meta mb-10">
+                            <ul>
+                                <li><a href="#"><i class="fa fa-calendar-o"></i> 12 Aug 2019</a></li>
+                            </ul>
+                        </div>
+                        <div class="entry-content">
+                            <p>Raise your design from the dead with an army of Zombie Ipsum, frightful filler
+                                text
+                                that just won't die. Try the lorem ipsum of the undead if you dare.</p>
+                        </div>
+                        <div class="entry-share clearfix">
+                            <div class="entry-button">
+                                <a class="cs-button arrow" href="#">Read More<i class="fa fa-angle-right" aria-hidden="true"></i></a>
                             </div>
-                            <div class="entry-meta mb-10">
+                            <div class="social list-style-none float-right">
+                                <strong>Share : </strong>
                                 <ul>
-                                    <li><a href="#"><i class="fa fa-calendar-o"></i> 12 Aug 2019</a></li>
+                                    <li>
+                                        <a href="#"> <i class="fab fa-facebook"></i> </a>
+                                    </li>
+                                    <li>
+                                        <a href="#"> <i class="fab fa-twitter"></i> </a>
+                                    </li>
                                 </ul>
-                            </div>
-                            <div class="entry-content">
-                                <p>Raise your design from the dead with an army of Zombie Ipsum, frightful filler
-                                    text
-                                    that just won't die. Try the lorem ipsum of the undead if you dare.</p>
-                            </div>
-                            <div class="entry-share clearfix">
-                                <div class="entry-button">
-                                    <a class="cs-button arrow" href="#">Read More<i class="fa fa-angle-right" aria-hidden="true"></i></a>
-                                </div>
-                                <div class="social list-style-none float-right">
-                                    <strong>Share : </strong>
-                                    <ul>
-                                        <li>
-                                            <a href="#"> <i class="fab fa-facebook"></i> </a>
-                                        </li>
-                                        <li>
-                                            <a href="#"> <i class="fab fa-twitter"></i> </a>
-                                        </li>
-                                    </ul>
-                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-4">
-                    <div class="blog-post xs-mb-50">
-                        <div class="entry-image clearfix">
-                            <img class="img-fluid" src="{{asset('dists/assets/img/blog-02.jpg')}}" alt="">
-                        </div>
-                        <div class="blog-detail">
-                            <div class="entry-title mb-10">
-                                <a href="#">Versions Over the Years Have Been Readable</a>
-                            </div>
-                            <div class="entry-meta mb-10">
-                                <ul>
-                                    <li><a href="#"><i class="fa fa-calendar-o"></i> 12 Aug 2019</a></li>
-                                </ul>
-                            </div>
-                            <div class="entry-content">
-                                <p>Raise your design from the dead with an army of Zombie Ipsum, frightful filler
-                                    text
-                                    that just won't die. Try the lorem ipsum of the undead if you dare.</p>
-                            </div>
-                            <div class="entry-share clearfix">
-                                <div class="entry-button">
-                                    <a class="cs-button arrow" href="#">Read More<i class="fa fa-angle-right" aria-hidden="true"></i></a>
-                                </div>
-                                <div class="social list-style-none float-right">
-                                    <strong>Share : </strong>
-                                    <ul>
-                                        <li>
-                                            <a href="#"> <i class="fab fa-facebook"></i> </a>
-                                        </li>
-                                        <li>
-                                            <a href="#"> <i class="fab fa-twitter"></i> </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+            </div>
+            <div class="col-lg-4 col-md-4">
+                <div class="blog-post">
+                    <div class="entry-image clearfix">
+                        <img class="img-fluid" src="{{asset('dists/assets/img/blog-03.jpg')}}" alt="">
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-4">
-                    <div class="blog-post">
-                        <div class="entry-image clearfix">
-                            <img class="img-fluid" src="{{asset('dists/assets/img/blog-03.jpg')}}" alt="">
+                    <div class="blog-detail">
+                        <div class="entry-title mb-10">
+                            <a href="#">Wed page editers now use here Lorem ipsum</a>
                         </div>
-                        <div class="blog-detail">
-                            <div class="entry-title mb-10">
-                                <a href="#">Wed page editers now use here Lorem ipsum</a>
+                        <div class="entry-meta mb-10">
+                            <ul>
+                                <li><a href="#"><i class="fa fa-calendar-o"></i> 12 Aug 2019</a></li>
+                            </ul>
+                        </div>
+                        <div class="entry-content">
+                            <p>Raise your design from the dead with an army of Zombie Ipsum, frightful filler
+                                text
+                                that just won't die. Try the lorem ipsum of the undead if you dare.</p>
+                        </div>
+                        <div class="entry-share clearfix">
+                            <div class="entry-button">
+                                <a class="cs-button arrow" href="#">Read More<i class="fa fa-angle-right" aria-hidden="true"></i></a>
                             </div>
-                            <div class="entry-meta mb-10">
+                            <div class="social list-style-none float-right">
+                                <strong>Share : </strong>
                                 <ul>
-                                    <li><a href="#"><i class="fa fa-calendar-o"></i> 12 Aug 2019</a></li>
+                                    <li>
+                                        <a href="#"> <i class="fab fa-facebook"></i> </a>
+                                    </li>
+                                    <li>
+                                        <a href="#"> <i class="fab fa-twitter"></i> </a>
+                                    </li>
                                 </ul>
-                            </div>
-                            <div class="entry-content">
-                                <p>Raise your design from the dead with an army of Zombie Ipsum, frightful filler
-                                    text
-                                    that just won't die. Try the lorem ipsum of the undead if you dare.</p>
-                            </div>
-                            <div class="entry-share clearfix">
-                                <div class="entry-button">
-                                    <a class="cs-button arrow" href="#">Read More<i class="fa fa-angle-right" aria-hidden="true"></i></a>
-                                </div>
-                                <div class="social list-style-none float-right">
-                                    <strong>Share : </strong>
-                                    <ul>
-                                        <li>
-                                            <a href="#"> <i class="fab fa-facebook"></i> </a>
-                                        </li>
-                                        <li>
-                                            <a href="#"> <i class="fab fa-twitter"></i> </a>
-                                        </li>
-                                    </ul>
-                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     </section>
-
-    <section class="section-ptb-80">
+    --}}
+    {{--<section class="section-ptb-80">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -799,75 +651,51 @@
                         <ul class="list-unstyled">
                             <li>
                                 <img class="img-fluid mx-auto" src="{{asset('dists/assets/img/logo-1.png')}}" alt="">
-                            </li>
-                            <li>
-                                <img class="img-fluid mx-auto" src="{{asset('dists/assets/img/logo-2.png')}}" alt="">
-                            </li>
-                            <li>
-                                <img class="img-fluid mx-auto" src="{{asset('dists/assets/img/logo-3.png')}}" alt="">
-                            </li>
-                            <li>
-                                <img class="img-fluid mx-auto" src="{{asset('dists/assets/img/logo-4.png')}}" alt="">
-                            </li>
-                            <li>
-                                <img class="img-fluid mx-auto" src="{{asset('dists/assets/img/logo-5.png')}}" alt="">
-                            </li>
-                            <li>
-                                <img class="img-fluid mx-auto" src="{{asset('dists/assets/img/logo-6.png')}}" alt="">
-                            </li>
-                            <li>
-                                <img class="img-fluid mx-auto" src="{{asset('dists/assets/img/logo-1.png')}}" alt="">
-                            </li>
-                            <li>
-                                <img class="img-fluid mx-auto" src="{{asset('dists/assets/img/logo-2.png')}}" alt="">
-                            </li>
-                            <li>
-                                <img class="img-fluid mx-auto" src="{{asset('dists/assets/img/logo-3.png')}}" alt="">
-                            </li>
-                            <li>
-                                <img class="img-fluid mx-auto" src="{{asset('dists/assets/img/logo-4.png')}}" alt="">
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+    </li>
+    <li>
+        <img class="img-fluid mx-auto" src="{{asset('dists/assets/img/logo-2.png')}}" alt="">
+    </li>
+    <li>
+        <img class="img-fluid mx-auto" src="{{asset('dists/assets/img/logo-3.png')}}" alt="">
+    </li>
+    <li>
+        <img class="img-fluid mx-auto" src="{{asset('dists/assets/img/logo-4.png')}}" alt="">
+    </li>
+    <li>
+        <img class="img-fluid mx-auto" src="{{asset('dists/assets/img/logo-5.png')}}" alt="">
+    </li>
+    <li>
+        <img class="img-fluid mx-auto" src="{{asset('dists/assets/img/logo-6.png')}}" alt="">
+    </li>
+    <li>
+        <img class="img-fluid mx-auto" src="{{asset('dists/assets/img/logo-1.png')}}" alt="">
+    </li>
+    <li>
+        <img class="img-fluid mx-auto" src="{{asset('dists/assets/img/logo-2.png')}}" alt="">
+    </li>
+    <li>
+        <img class="img-fluid mx-auto" src="{{asset('dists/assets/img/logo-3.png')}}" alt="">
+    </li>
+    <li>
+        <img class="img-fluid mx-auto" src="{{asset('dists/assets/img/logo-4.png')}}" alt="">
+    </li>
+    </ul>
+    </div>
+    </div>
 
+    </div>
+    </div>
+    </section>--}}
+
+    <section id="contactus" class="section-ptb-0" data-jarallax='{"speed": 0.0}'>
+
+        <div class="row">
+            <div class="col">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d510694.056744402!2d-78.71074516936699!3d-0.18590534316641!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d59a4002427c9f%3A0x44b991e158ef5572!2sQuito!5e0!3m2!1sen!2sec!4v1616954922629!5m2!1sen!2sec" width="100%" height="460" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </div>
-    </section>
 
-    <section id="contactus" class="section-ptb-0 bg-overlay-white-50" data-jarallax='{"speed": 0.0}' style="background-image: url({{asset('dists/assets/img/bg-img3.jpg')}});">
-        <div class="row no-gutters align-items-center">
-            <div class="col-lg-6">
-                <div class="p-100 xs-px-15">
-                    <div class="section-heading text-left max-width-550">
-                        <h1 class="heading">Need a Solution?</h1>
-                        <p>For unplanned pregnancy plans Contact Us</p>
-                    </div>
-                    <form class="mt-30" action="send_email.php" id="contact" name="contact" method="post">
-                        <div class="contact-form clearfix">
-                            <div class="form-field">
-                                <input type="text" class="form-control" name="InputName" id="InputName" placeholder="Your Name" required>
-                            </div>
-                            <div class="form-field">
-                                <input type="email" class="form-control" name="InputEmail" id="InputEmail" placeholder="Your Email" required>
-                            </div>
-                            <div class="form-field">
-                                <input type="text" class="form-control" name="InputPhone" id="InputPhone" placeholder="Phone Number" required>
-                            </div>
-                            <div class="form-field textarea">
-                                <textarea class="form-control input-message" placeholder="Comment*" rows="7" name="InputMessage" id="InputMessage"></textarea>
-                            </div>
-                            <div class="form-field submit-button w-100">
-                                <button name="submit" type="submit" class="cs-button"> Send your message </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d510694.056744402!2d-78.71074516936699!3d-0.18590534316641!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d59a4002427c9f%3A0x44b991e158ef5572!2sQuito!5e0!3m2!1sen!2sec!4v1616954922629!5m2!1sen!2sec" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-            </div>
-        </div>
+
     </section>
 
     <section class="actionbox2 bg-theme">
@@ -875,9 +703,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="actionbox2 actionbox-res actionbox-border text-center">
-                        <h3>For any Queries or assistance please call: <span class="fa fa-phone"></span> (221) 3351
-                            331
-                            (Toll Free)</h3>
+                        <h3>Para cualquier consulta o asistencia, llame al teléfono: <span class="fa fa-phone"></span> (+593)0992993372</h3>
                     </div>
                 </div>
             </div>
@@ -886,53 +712,31 @@
 
     <footer class="footer bg-black pt-50">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-sm-6">
-                    <h4 class="txt-white mb-30 mt-10 text-uppercase">Subscribe</h4>
-                    <p class="mb-30">Sign Up to our Newsletter and get the latest offers.</p>
-                    <input class="form-control placeholder" type="text" placeholder="Email address" name="email1" value="">
-                    <div class="clear">
-                        <button type="submit" class="cs-button cs-button-border white mt-20 form-button"> Get
-                            notified
-                        </button>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6 xs-pt-30">
-                    <h4 class="text-white mb-30 mt-10 text-uppercase">Contact Us</h4>
+            <div class="row ">
+
+                <div class="col xs-pt-30">
+                    <h4 class="text-white mb-30 mt-10 text-uppercase">Contáctanos</h4>
                     <ul class="address">
                         <li><i class="fa fa-map-marker"></i>
-                            <p>Location: 4328 White Avenue, Suite # 865 Sacramento, CA 95817 USA</p>
+                            <p>Ubicación: 4328 White Avenue, Suite # 865 Sacramento, CA 95817 USA</p>
                         </li>
                         <li><i class="fa fa-phone"></i>
-                            <a href="tel:7806249821"> <span>1-780-624-9821 </span> </a>
+                            <p>+593992993372</p>
                         </li>
                         <li><i class="fa fa-envelope-o"></i>Email: info@pregnancycare.com</li>
                     </ul>
                 </div>
-                <div class="col-lg-2 col-sm-6 sm-mt-30">
+                <div class="col  sm-mt-30">
                     <div class="footer-link footer-link-hedding">
-                        <h4 class="txt-white mb-30 mt-10 text-uppercase">Quick Link</h4>
+                        <h4 class="txt-white mb-30 mt-10 text-uppercase">Enlace rápido</h4>
                         <ul>
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">Our Services</a></li>
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Health Info</a></li>
-                            <li><a href="#">Appointments</a></li>
+                            <li><a href="#home">Inicio</a></li>
+                            <li><a href="#services">Servicios</a></li>
+                            <li><a href="#appointment">Citas</a></li>
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-2 col-sm-6 sm-mt-30">
-                    <div class="footer-link footer-link-hedding">
-                        <h4 class="txt-white mb-30 mt-10 text-uppercase">Information</h4>
-                        <ul>
-                            <li><a href="#">Pregnancy Care</a></li>
-                            <li><a href="#">NICU Facilities</a></li>
-                            <li><a href="#">Trisemester Care</a></li>
-                            <li><a href="#">Maternal Practise</a></li>
-                            <li><a href="#">Contact</a></li>
-                        </ul>
-                    </div>
-                </div>
+
             </div>
             <div class="footer-copyright mt-20">
                 <div class="row">

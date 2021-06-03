@@ -18,7 +18,8 @@ class CreateRecordsTable extends Migration
 
 
 
-            $table->string('anamnesis')->nullable();
+            $table->string('tratamiento')->nullable();
+            $table->string('examen')->nullable();
             $table->string('gender')->nullable();
             $table->string('ethnicity')->nullable();
             $table->string('marital_status')->nullable();

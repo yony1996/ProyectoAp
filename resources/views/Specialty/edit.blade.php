@@ -21,12 +21,12 @@
             @method('PUT')
             <div class="form-group">
                 <label for="name">Nombre de la especialidad</label>
-                <input type="text" name="name" class="form-control" value="{{ old('name', $specialty->name) }}" required>
+                <input type="text" style="text-transform: uppercase;" oninput="this.value = this.value.replace(/[^A-Za-z&ntilde; ]/g, '').replace(/(\..*?)\..*/g, '$1');" name="name" class="form-control" value="{{ old('name', $specialty->name) }}" required>
                 @error('name') <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>@enderror
             </div>
             <div class="form-group">
                 <label for="description">Descripción</label>
-                <input type="text" name="description" class="form-control" value="{{ old('description', $specialty->description) }}">
+                <input type="text" style="text-transform: uppercase;" oninput="this.value = this.value.replace(/[^A-Za-z&ntilde; ]/g, '').replace(/(\..*?)\..*/g, '$1');" name="description" class="form-control" value="{{ old('description', $specialty->description) }}">
                 @error('description') <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>@enderror
             </div>
             <button type="submit" class="btn btn-primary">

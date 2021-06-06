@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Appoiment;
 use App\Doctor;
 use App\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use DB;
 
@@ -12,54 +13,69 @@ class ChartController extends Controller
 {
     public function appoiments()
     {
-        
-           $monthlyCounts= Appoiment::select(
-                DB::raw('MONTH(created_at) as month'),
-                DB::raw('COUNT(1) as count')
-            )->groupBy('month')->get()->toArray();
+
+        $monthlyCounts = Appoiment::select(
+            DB::raw('MONTH(created_at) as month'),
+            DB::raw('COUNT(1) as count')
+        )->groupBy('month')->get()->toArray();
 
 
-            $counts=array_fill(0,12,0);
+        $counts = array_fill(0, 12, 0);
 
-            foreach ($monthlyCounts as $monthlyCount) {
-                $index=$monthlyCount['month']-1;
-                $counts[$index]=$monthlyCount['count'];
-            }
-        
-           
-        return view('charts.appoiment',compact('counts'));
+        foreach ($monthlyCounts as $monthlyCount) {
+            $index = $monthlyCount['month'] - 1;
+            $counts[$index] = $monthlyCount['count'];
+        }
+
+
+        return view('charts.appoiment', compact('counts'));
     }
 
     public function doctors()
     {
-        return view('charts.doctors');
+
+        $now=Carbon::now();
+        $end=$now->format('Y-m-d');
+        $start=$now->subYear()->format('Y-m-d');
+        
+        
+        return view('charts.doctors',compact('start','end'));
     }
 
-    public function doctorsJson()
+    public function doctorsJson(Request $request)
     {
-        $doctors=Doctor::join('users','users.id','=','doctors.user_id')
-                        ->select('doctors.id','users.name')
-                        ->withCount([
-                            'attendedAppoiments',
-                            'cancelledAppoiments'
-                            ])
-                        ->OrderBy('attended_appoiments_count','desc')
-                        ->take(3)
-                        ->get()->toArray();
-        dd($doctors);
-        //dd($doctors);
-        
-      
-        $data=[];
-        $data['categories']=User::role('medico')->pluck('name');
-        $series=[];
+        $start=$request->input('start');
+        $end=$request->input('end');
+        $doctors = Doctor::join('users', 'users.id', '=', 'doctors.user_id')
+            ->select('users.name')
+            ->withCount([
+                'attendedAppoiments'=>function($query) use ($start,$end){
+                    $query->whereBetween('scheduled_date',[$start,$end]);
+                },
+                'cancelledAppoiments'=>function($query) use ($start,$end){
+                    $query->whereBetween('scheduled_date',[$start,$end]);
+                }
+            ])
+            ->OrderBy('attended_appoiments_count', 'desc')
+            ->take(3)
+            ->get();
+
+
+
+        $data = [];
+        $data['categories'] = $doctors->pluck('name');      
+        $series = [];
         //Atendidas
-        $series1=1;
+        $series1['name']='Citas atendidas';
+        $series1['data'] = $doctors->pluck('attended_appoiments_count');
+        $series1['color']='#e600e6';
         //canceladas
-        $series2=2;
-        $series[]=$series1;
-        $series[]=$series2;
-        $data['series']=$series;
+        $series2['name']='Citas canceladas';
+        $series2['data'] = $doctors->pluck('cancelled_appoiments_count');
+        $series2['color']='#f05697';
+        $series[] = $series1;
+        $series[] = $series2;
+        $data['series'] = $series;
 
         return $data;
     }

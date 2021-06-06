@@ -55,6 +55,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/appoiments/{appoiment}/cancel', 'AppoimentController@PostCancel')->name('appoiment.postcancel');
     Route::get('/appoiments/{appoiment}/cancel', 'AppoimentController@ShowCancelForm')->name('appoiment.cancelform');
     Route::post('/appoiments/{appoiment}/confirm', 'AppoimentController@PostConfirm')->name('appoiment.postconfirm');
+    Route::post('/appoiments/{appoiment}/attended','AppoimentController@Attended')->name('appoiment.attended');
 
     //Exams
     Route::get('/exams', 'ExamController@index')->name('exam');

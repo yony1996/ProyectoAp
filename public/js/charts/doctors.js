@@ -1,4 +1,4 @@
-const chart = Highcharts.setOptions({
+Highcharts.setOptions({
     lang: {
         loading: "Cargando...",
         months: [
@@ -54,7 +54,7 @@ const chart = Highcharts.setOptions({
         decimalPoint: "."
     }
 });
-Highcharts.chart("container", {
+const chart = Highcharts.chart("container", {
     chart: {
         type: "column"
     },
@@ -84,12 +84,33 @@ Highcharts.chart("container", {
     series: []
 });
 
+let $start, $end;
+
 function fetchData() {
-    fetch('/charts/doctors/column/data')
-        .then(function(response) {
-            return response.json();
-        })
-        .then(function(myJson) {
-            console.log(myJson);
+    const startDate = $start.val();
+    const endDate = $end.val();
+
+    const url = `/charts/doctors/column/data?start=${startDate}&end=${endDate}`;
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            //console.log(data);
+            chart.xAxis[0].setCategories(data.categories);
+            if (chart.series.length > 0) {
+                chart.series[1].remove();
+                chart.series[0].remove();
+            }
+
+            chart.addSeries(data.series[0]); //atendidas
+            chart.addSeries(data.series[1]); //canceladas
         });
 }
+
+$(function() {
+    $start = $("#startDate");
+    $end = $("#endDate");
+
+    fetchData();
+    $start.change(fetchData);
+    $end.change(fetchData);
+});

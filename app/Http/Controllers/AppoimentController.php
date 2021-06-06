@@ -143,4 +143,14 @@ class AppoimentController extends Controller
         $notification = 'La cita se ha confirmado correcatamente.';
         return redirect()->route('appoiment')->with(compact('notification'));
     }
+
+    public function Attended(Appoiment $appoiment)
+    {
+        $appoiment->status = 'Atendida';
+        $appoiment->save();
+
+        $notification = 'La cita fue se ha marcado como atendida.';
+        return redirect()->route('appoiment')->with(compact('notification'));
+        
+    }
 }

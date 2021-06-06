@@ -70,6 +70,11 @@ Route::middleware('auth')->group(function () {
     Route::get('/records/{print}/print', 'RecordController@print')->name('record.print');
     Route::get('/records/{record}/preview', 'RecordController@preview')->name('record.preview');
 
+    //charts
+    Route::get('/charts/appoiment/line','ChartController@appoiments')->name('chart.appoiment');
+    Route::get('/charts/doctors/column','ChartController@doctors')->name('chart.doctors');
+    Route::get('/charts/doctors/column/data','ChartController@doctorsJson');
+
     //JSON
     Route::get('/specialties/{specialty}/doctors', 'Api\SpecialtyController@doctors');
     Route::get('/schedule/hours', 'Api\ScheduleController@hours');

@@ -32,4 +32,19 @@ class Doctor extends Model
     {
         return $this->hasToMany(Record::class);
     }
+
+    public function asDoctorAppoiments()
+    {
+        return $this->hasMany(Appoiment::class, 'doctor_id');
+    }
+
+    public function attendedAppoiments()
+    {
+        return $this->asDoctorAppoiments()->where('status','Atendida');
+    }
+
+    public function cancelledAppoiments()
+    {
+        return $this->asDoctorAppoiments()->where('status','Cancelada');
+    }
 }

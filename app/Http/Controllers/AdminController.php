@@ -17,7 +17,7 @@ class AdminController extends Controller
         $user = Auth::user()->getRoleNames()->first();
         $patients = Patient::all();
         $doctors = Doctor::all();
-
+        
         if ($user == 'admin') {
 
             return view('Admin.index', compact('patients', 'doctors'));

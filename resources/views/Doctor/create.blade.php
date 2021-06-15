@@ -31,7 +31,7 @@
                         <div class="form-row">
                             <div class="col">
                                 <label for="ci">Cedula</label>
-                                <input type="text" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*?)\..*/g, '$1');" maxlength="10" minlength="10" name="ci" id="ci" class="form-control" placeholder="Cedula" required autocomplete="off">
+                                <input type="text" value="{{old('ci')}}" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*?)\..*/g, '$1');" maxlength="10" minlength="10" name="ci" id="ci" class="form-control" placeholder="Cedula" required autocomplete="off">
                                 @error('ci') <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>@enderror
                             </div>
 
@@ -48,13 +48,13 @@
                         <div class="row">
                             <div class="col">
                                 <label for="name">Nombre</label>
-                                <input type="text" style="text-transform: uppercase;" oninput="this.value = this.value.replace(/[^A-Za-z&ntilde; ]/g, '').replace(/(\..*?)\..*/g, '$1');" name="name" id="name" class="form-control" placeholder="Nombre" required autocomplete="off">
+                                <input type="text"  value="{{old('name')}}"style="text-transform: uppercase;" oninput="this.value = this.value.replace(/[^A-Za-z&ntilde; ]/g, '').replace(/(\..*?)\..*/g, '$1');" name="name" id="name" class="form-control" placeholder="Nombre" required autocomplete="off">
                                 @error('name') <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>@enderror
 
                             </div>
                             <div class="col">
                                 <label for="middle_name">Segundo Nombre</label>
-                                <input type="text" style="text-transform: uppercase;" oninput="this.value = this.value.replace(/[^A-Za-z&ntilde; ]/g, '').replace(/(\..*?)\..*/g, '$1');" name="middle_name" id="middle_name" class="form-control" placeholder="Segundo Nombre" required autocomplete="off">
+                                <input type="text"  value="{{old('middle_name')}}"style="text-transform: uppercase;" oninput="this.value = this.value.replace(/[^A-Za-z&ntilde; ]/g, '').replace(/(\..*?)\..*/g, '$1');" name="middle_name" id="middle_name" class="form-control" placeholder="Segundo Nombre" required autocomplete="off">
                                 @error('middle_name') <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>@enderror
 
                             </div>
@@ -63,13 +63,13 @@
                         <div class="row">
                             <div class="col">
                                 <label for="last_name">Apellido</label>
-                                <input type="text" style="text-transform: uppercase;" oninput="this.value = this.value.replace(/[^A-Za-z&ntilde; ]/g, '').replace(/(\..*?)\..*/g, '$1');" name="last_name" id="last_name" class="form-control" placeholder="Apellido" required autocomplete="off">
+                                <input type="text"  value="{{old('last_name')}}"style="text-transform: uppercase;" oninput="this.value = this.value.replace(/[^A-Za-z&ntilde; ]/g, '').replace(/(\..*?)\..*/g, '$1');" name="last_name" id="last_name" class="form-control" placeholder="Apellido" required autocomplete="off">
                                 @error('last_name') <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>@enderror
 
                             </div>
                             <div class="col">
                                 <label for="second_last_name">Segundo Apellido</label>
-                                <input type="text" style="text-transform: uppercase;" oninput="this.value = this.value.replace(/[^A-Za-z&ntilde; ]/g, '').replace(/(\..*?)\..*/g, '$1');" name="second_last_name" id="second_last_name" class="form-control" placeholder="Segundo Apellido" required autocomplete="off">
+                                <input type="text"   value="{{old('second_last_name')}}"style="text-transform: uppercase;" oninput="this.value = this.value.replace(/[^A-Za-z&ntilde; ]/g, '').replace(/(\..*?)\..*/g, '$1');" name="second_last_name" id="second_last_name" class="form-control" placeholder="Segundo Apellido" required autocomplete="off">
                                 @error('second_last_name') <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>@enderror
 
                             </div>
@@ -78,13 +78,13 @@
                         <div class="row">
                             <div class="col">
                                 <label for="email">Correo</label>
-                                <input type="email" name="email" id="email" class="form-control" placeholder="Correo" required autocomplete="off">
+                                <input type="email"  value="{{old('email')}}" name="email" id="email" class="form-control" placeholder="Correo" required autocomplete="off">
                                 @error('email') <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>@enderror
 
                             </div>
                             <div class="col">
                                 <label for="phone">Telefono</label>
-                                <input type="text" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*?)\..*/g, '$1');" maxlength="10" minlength="9" name="phone" id="phone" class="form-control" placeholder="Telefono" required autocomplete="off">
+                                <input type="text"  value="{{old('phone')}}"oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*?)\..*/g, '$1');" maxlength="10" minlength="9" name="phone" id="phone" class="form-control" placeholder="Telefono" required autocomplete="off">
                                 @error('phone') <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>@enderror
 
                             </div>

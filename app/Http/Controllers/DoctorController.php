@@ -58,7 +58,7 @@ class DoctorController extends Controller
         $doctor->specialties()->attach($request->input('specialties'));
 
         $notification = 'El Medico se ha creado correctamente';
-        return redirect()->route('dashboard')->with(compact('notification'));
+        return redirect()->route('doctor.create')->with(compact('notification'));
     }
 
     public function update(Request $request, $id)

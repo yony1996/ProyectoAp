@@ -77,6 +77,5 @@ Route::middleware('auth')->group(function () {
     Route::get('/charts/doctors/column/data','ChartController@doctorsJson');
 
     //JSON
-    Route::get('/specialties/{specialty}/doctors', 'Api\SpecialtyController@doctors');
-    Route::get('/schedule/hours', 'Api\ScheduleController@hours');
+    
 });

@@ -19,7 +19,6 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
            $table->boolean('status')->default(1);
            $table->string('password',255);
-            $table->apiToken();
             $table->timestamps();
         });
     }

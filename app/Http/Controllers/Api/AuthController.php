@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-
+use Illuminate\Support\Arr;
 class AuthController extends Controller
 {
    
@@ -17,13 +17,14 @@ class AuthController extends Controller
             $passport=  $user->createToken(env('APP_NAME'))-> accessToken; 
             $rol=$user->getRoleNames()->first();
             $success=true;
-            $addInf='';
-            if($rol=='medico'){
-                $addInf=$user->doctor;
-            }else if($rol=='paciente'){
-                $addInf=$user->patient;
-            }
-            return compact('success','rol','user','addInf','passport');
+        
+
+            $user=Arr::add($user, 'rol',$rol);
+            
+           
+           
+            $data=compact('success','user','passport');
+            return $data;
         } 
         else{ 
             $success=false;

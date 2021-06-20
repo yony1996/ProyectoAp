@@ -9,6 +9,9 @@ class Patient extends Model
     protected $fillable = [
         'ci', 'middle_name', 'last_name', 'second_last_name', 'phone', 'age',
     ];
+     protected $hidden = [
+        'created_at','updated_at','user_id','id'
+    ];
 
 
     public function user()

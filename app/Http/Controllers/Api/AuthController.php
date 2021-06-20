@@ -17,13 +17,19 @@ class AuthController extends Controller
             $passport=  $user->createToken(env('APP_NAME'))-> accessToken; 
             $rol=$user->getRoleNames()->first();
             $success=true;
-        
+            
+            $info='';
+            if($rol=='medico'){
+                $info=$user->doctor;
+            }elseif ($rol=='paciente') {
+                $info=$user->patient;
+            }
 
             $user=Arr::add($user, 'rol',$rol);
             
            
            
-            $data=compact('success','user','passport');
+            $data=compact('success','user','info','passport');
             return $data;
         } 
         else{ 

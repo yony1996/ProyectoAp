@@ -10,7 +10,7 @@ class Doctor extends Model
         'ci', 'middle_name', 'last_name', 'second_last_name', 'phone',
     ];
     protected $hidden = [
-        'pivot','created_at','updated_at','user_id','id'
+        'pivot','created_at','updated_at','user_id'
     ];
 
 

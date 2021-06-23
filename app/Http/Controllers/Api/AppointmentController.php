@@ -39,7 +39,7 @@ class AppointmentController extends Controller
 	        "status"
     	]);
 
-    	return compact('appointments');
+    	return $appointments;
 
     }
 

@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Patient;
 use App\Appoiment;
-use App\Http\Request\StoreAppointment;
+use App\Http\Requests\StoreAppointment;
 
 class AppointmentController extends Controller
 {

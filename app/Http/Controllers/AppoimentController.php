@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Appoiment;
 use App\CancelledAppoiment;
 use App\Interfaces\ScheduleServiceInterface;
-use App\Http\Request\StoreAppointment;
+use App\Http\Requests\StoreAppointment;
 use App\Specialty;
 use Carbon\Carbon;
 use Illuminate\Http\Request;

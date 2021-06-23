@@ -14,6 +14,7 @@ class Appoiment extends Model
         'doctor_id',
         'patient_id',
         'scheduled_date',
+         'scheduled_time',
         'type'
     ];
 
@@ -54,7 +55,7 @@ class Appoiment extends Model
         return $this->hasOne(CancelledAppoiment::class);
     }
 
-    static public function cresteForPatient(Request $request,$patientId){
+    static public function createForPatient(Request $request,$patientId){
 
         $data = $request->only([
             'description',

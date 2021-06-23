@@ -65,8 +65,8 @@ return [
             ]) : [],
         ],
 
-      /* 
-        'pgsql' => [
+       
+       /*  'pgsql' => [
             'driver' => 'pgsql',
             'url' => env('DATABASE_URL'),
             'host' => env('DB_HOST', '127.0.0.1'),
@@ -80,7 +80,7 @@ return [
             'schema' => 'public',
             'sslmode' => 'prefer',
         ],*/
-        'pgsql' => array(
+       'pgsql' => array(
             'driver' => 'pgsql',
             'host' => $url["host"],
             'database' => substr($url["path"], 1),

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Appoiment;
 use App\CancelledAppoiment;
 use App\Interfaces\ScheduleServiceInterface;
+use App\Http\Request\StoreAppointment;
 use App\Specialty;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -61,53 +62,17 @@ class AppoimentController extends Controller
         return view('Appoiment.create', compact('specialties', 'doctors', 'intervals'));
     }
 
-    public function store(Request $request, ScheduleServiceInterface $scheduleService)
+    public function store(StoreAppointment $request)
     {
-        $rules = [
-            'description' => 'required',
-            'specialty_id' => 'exists:specialties,id',
-            'doctor_id' => 'exists:doctors,id',
-            'scheduled_time' => 'required',
+            
+        $created= Appoiment::createForPatient($request,Auth::user()->patient->id);
 
-        ];
-        $messages = [
-            'scheduled_time.required' => 'Por favor seleccione una hora valida para la cita.'
-        ];
-
-        $validator = Validator::make($request->all(), $rules, $messages);
-        $validator->after(function ($validator) use ($request, $scheduleService) {
-            $date = $request->input('scheduled_date');
-            $doctorId = $request->input('doctor_id');
-            $scheduled_time = $request->input('scheduled_time');
-            if ($date && $doctorId && $scheduled_time) {
-                $start = new Carbon($scheduled_time);
-            } else {
-                return;
-            }
-            if (!$scheduleService->isAvailableInterval($date, $doctorId, $start)) {
-                $validator->errors()
-                    ->add('available_time', 'La hora seleccionada ya se encuentra reservada por otro paciente.');
-            }
-        });
-        if ($validator->fails()) {
-            return back()
-                ->withErrors($validator)
-                ->withInput();
+        if($created){
+            $notification = 'La cita se ha registrado correctarmente.';
+        }else{
+            $notification = 'Ocurrio un problema al registrar la cita medica.';
         }
-        $data = $request->only([
-            'description',
-            'specialty_id',
-            'doctor_id',
-            'scheduled_date',
-            'scheduled_time',
-            'type',
-        ]);
-        $data['patient_id'] = Auth::user()->patient->id;
-        $carbonTime = Carbon::createFromFormat('g:i A', $data['scheduled_time']);
-        $data['scheduled_time'] = $carbonTime->format('H:i:s');
-        Appoiment::create($data);
-
-        $notification = 'La cita se ha registrado correctarmente.';
+        
         return back()->with(compact('notification'));
     }
 

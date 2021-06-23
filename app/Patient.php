@@ -10,7 +10,7 @@ class Patient extends Model
         'ci', 'middle_name', 'last_name', 'second_last_name', 'phone', 'age',
     ];
      protected $hidden = [
-        'created_at','updated_at','user_id','id'
+        'created_at','updated_at','user_id'
     ];
 
 
@@ -21,6 +21,10 @@ class Patient extends Model
     public function exams()
     {
         return $this->hasMany(Exam::class);
+    }
+    public function asPatientAppoiments()
+    {
+        return $this->hasMany(Appoiment::class, 'patient_id');
     }
     public function record()
     {

@@ -9,6 +9,7 @@ use App\Patient;
 use App\Appoiment;
 use App\Http\Requests\StoreAppointment;
 
+
 class AppointmentController extends Controller
 {
 	
@@ -39,6 +40,7 @@ class AppointmentController extends Controller
 	        "status"
     	]);
 
+    	
     	return $appointments;
 
     }

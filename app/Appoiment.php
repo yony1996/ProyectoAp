@@ -14,8 +14,10 @@ class Appoiment extends Model
         'doctor_id',
         'patient_id',
         'scheduled_date',
-         'scheduled_time',
-        'type'
+        'scheduled_time',
+        'type',
+
+
     ];
 
     protected $hidden=[
@@ -28,7 +30,10 @@ class Appoiment extends Model
         'scheduled_time_12'
 
     ];
-
+    protected $casts = [
+    'created_at' => 'datetime:Y-m-d', // Change your format
+    'updated_at' => 'datetime:Y-m-d',
+    ];
 
 
     public function specialty()

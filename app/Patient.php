@@ -7,10 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class Patient extends Model
 {
     protected $fillable = [
-        'ci', 'middle_name', 'last_name', 'second_last_name', 'phone', 'age',
+        'ci', 'middle_name', 'last_name', 'second_last_name', 'phone', 'age','user_id'
     ];
      protected $hidden = [
-        'created_at','updated_at','user_id'
+        'created_at','updated_at'
     ];
 
 

@@ -15,6 +15,7 @@ class AdminController extends Controller
     {
 
         $user = Auth::user()->getRoleNames()->first();
+      
         $patients = Patient::all();
         $doctors = Doctor::all();
         
@@ -26,10 +27,13 @@ class AdminController extends Controller
             $PendingAppoiments = Appoiment::where('status', 'Reservada')->where('doctor_id', Auth::user()->doctor->id)->paginate(5);
             return view('Doctor.index', compact('patients', 'PendingAppoiments'));
         } else {
+            
 
             $ConfirmedAppoiments = Appoiment::where('status', 'Confirmada')->where('patient_id', Auth::user()->patient->id)->paginate(5);
 
             return view('Patient.index', compact('ConfirmedAppoiments'));
+            
+            
         }
     }
 }

@@ -4,7 +4,7 @@
 
 <div class="container-all">
     <div class="ctn-form">
-        <img class="logo" src="{{asset('dists/assets/img/logo-removebg-preview.png')}}" alt="">
+        <img class="logo" src="{{asset('dists/assets/img/logo.png')}}" alt="">
         <h1 class="title">Registrarme</h1>
         <form method="POST" action="{{route('register')}}">
             @csrf
@@ -39,10 +39,8 @@
 
     <div class="ctn-text2">
         <div class="capa"></div>
-        <h1 class="title-description">Lorem ipsum dolor sit amet.</h1>
-        <p class="text-description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores cumque facilis
-            minima ea voluptates quaerat provident consectetur, laborum asperiores voluptas nostrum porro nulla
-            mollitia assumenda possimus illum? Debitis, fugit sed.</p>
+        <h1 class="title-description">AP Salud Sexual y Reproductiva</h1>
+        <p class="text-description" style="font-size:25px;">Tomar la decisíon de <strong>tener un bebé es trascendental:</strong> significa decidir que desde ese momento tu corazón empezará tambíen a caminer fuera de tu cuerpo</p>
     </div>
 </div>
 @endsection

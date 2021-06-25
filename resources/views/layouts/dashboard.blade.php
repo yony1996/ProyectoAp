@@ -30,7 +30,7 @@
             </button>
             <!-- Brand -->
             <a class="navbar-brand pt-0" href="{{route('home')}}">
-                <img src="{{asset('dists/assets/img/brand/Sin título-1.png')}}">
+                <img src="{{asset('dists/assets/img/brand/logoApIndex.png')}}">
             </a>
             <!-- User -->
             <ul class="nav align-items-center d-md-none">

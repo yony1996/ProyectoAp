@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'pgsql'),
+    'default' => env('DB_CONNECTION', 'mysql'),
 
     /*
     |--------------------------------------------------------------------------
@@ -32,7 +32,7 @@ return [
     | choice installed on your machine before you begin development.
     |
     */
-   $url = parse_url(getenv("DATABASE_URL")),
+   //$url = parse_url(getenv("DATABASE_URL")),
 
 
     'connections' => [
@@ -65,7 +65,7 @@ return [
             ]) : [],
         ],
 
-       
+
        /* 'pgsql' => [
             'driver' => 'pgsql',
             'url' => env('DATABASE_URL'),
@@ -79,7 +79,7 @@ return [
             'prefix_indexes' => true,
             'schema' => 'public',
             'sslmode' => 'prefer',
-        ],*/
+        ],
         'pgsql' => array(
             'driver' => 'pgsql',
             'host' => $url["host"],
@@ -89,7 +89,7 @@ return [
             'charset' => 'utf8',
             'prefix' => '',
             'schema' => 'public'
-        ),
+        ),*/
 
         'sqlsrv' => [
             'driver' => 'sqlsrv',

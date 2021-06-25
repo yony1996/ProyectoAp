@@ -2,6 +2,17 @@
 
 @section('content')
 <div class="container">
+    <div class="card-body">
+                @if (session('notification'))
+                <div class="alert alert-warning" role="alert">
+                    {{session('notification')}}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                @endif
+
+            </div>
     <div class="row">
         {{--Pacientes--}}
         <div class="col-md-6 mt-4">
@@ -16,6 +27,7 @@
                 @endif
 
             </div>
+
             <div class="card">
                 <div class="card-header">
                     <a>Pacientes</a>

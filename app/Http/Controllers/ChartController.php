@@ -13,22 +13,29 @@ class ChartController extends Controller
 {
     public function appoiments()
     {
+        $appoiments=Appoiment::all()->count();
 
-        $monthlyCounts = Appoiment::select(
+        if($appoiments>0){
+            $monthlyCounts = Appoiment::select(
             DB::raw('MONTH(created_at) as month'),
             DB::raw('COUNT(1) as count')
-        )->groupBy('month')->get()->toArray();
+            )->groupBy('month')->get()->toArray();
 
 
-        $counts = array_fill(0, 12, 0);
+            $counts = array_fill(0, 12, 0);
 
-        foreach ($monthlyCounts as $monthlyCount) {
-            $index = $monthlyCount['month'] - 1;
-            $counts[$index] = $monthlyCount['count'];
+            foreach ($monthlyCounts as $monthlyCount) {
+                $index = $monthlyCount['month'] - 1;
+                $counts[$index] = $monthlyCount['count'];
+            }
+
+            return view('charts.appoiment', compact('counts'));
+        }else{
+            $notification='Aun no existen citas registradas para mostrar esta grafica.';
+            return back()->with(compact('notification'));
         }
 
-
-        return view('charts.appoiment', compact('counts'));
+        
     }
 
     public function doctors()

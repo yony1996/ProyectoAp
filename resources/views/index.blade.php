@@ -107,7 +107,7 @@
     </style>-->
 </head>
 
-<body>
+<body >
     <header class="top-bar header-fancy-topbar">
         <div class="topbar">
             <div class="container">
@@ -813,6 +813,10 @@
 
 <!--jarallax javascript -->
 <script src="{{asset('dists/assets/js/jarallax.js')}}"></script>
+<script src="{{asset('js/addons/addons.js')}}" type="text/javascript"></script>
+
+
+
 
 
 </html>

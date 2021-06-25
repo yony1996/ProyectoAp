@@ -10,6 +10,11 @@ class Exam extends Model
         'hematologia', 'uroanalisis', 'coprologico', 'quimica', 'serologia', 'bacteriologia', 'otros'
     ];
 
+     protected $casts = [
+    'created_at' => 'datetime:Y-m-d', 
+    'updated_at' => 'datetime:Y-m-d',
+    ];
+
     public function doctor()
     {
         return $this->belongsTo(Doctor::class);

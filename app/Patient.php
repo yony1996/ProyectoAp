@@ -26,6 +26,10 @@ class Patient extends Model
     {
         return $this->hasMany(Appoiment::class, 'patient_id');
     }
+    public function asPatientExams()
+    {
+        return $this->hasMany(Exam::class, 'patient_id');
+    }
     public function record()
     {
         return $this->hasMany(Record::class);

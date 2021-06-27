@@ -281,6 +281,7 @@
 
         </div>
     </section>
+
      <section id="doctor" class="section-ptb-0">
 
         <div class="wrapper">
@@ -292,7 +293,7 @@
                 <div class="content2">
                     <div class="head2">
                         <p>Andres Peñaherrera</p>
-                        <span>Médico obstetriz</span>
+                        <span>Médico obstetra</span>
                     </div>
                 </div>
             </div>
@@ -427,6 +428,7 @@
 
 <!--jarallax javascript -->
 <script src="{{asset('dists/assets/js/jarallax.js')}}"></script>
+
 <script src="{{asset('js/addons/addons.js')}}" type="text/javascript"></script>
 
 

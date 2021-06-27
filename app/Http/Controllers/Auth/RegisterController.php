@@ -7,6 +7,8 @@ use App\Providers\RouteServiceProvider;
 use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Hash;
+use App\Patient;
 
 class RegisterController extends Controller
 {
@@ -48,7 +50,12 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
-        return Validator::make($data, User::$rules);
+        return Validator::make($data,[
+
+            'name' => ['required', 'string', 'max:50'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:8'],
+        ]);
     }
 
     /**
@@ -59,8 +66,24 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::createPatient($data);
-        
+
+        $user= User::create([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'password' => Hash::make($data['password']),
+        ]);
+
+        Patient::create([
+            'ci'=>null,
+            'middle_name'=>'',
+            'last_name'=>'',
+            'second_last_name'=>'',
+            'phone'=>0,
+            'age'=>'',
+            'user_id'=>$user->id
+        ]);
+        $user->assignRole('paciente');
+        return $user;
 
     }
 }

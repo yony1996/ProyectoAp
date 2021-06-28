@@ -24,7 +24,7 @@
                 <!-- /.card-header -->
                 <div class="card-body table-responsive p-0">
 
-
+                     @if (count($records)>= 1)
                     <table class="table table-hover text-nowrap">
                         <thead>
                             <tr>
@@ -67,6 +67,11 @@
 
                         </tbody>
                     </table>
+                    @else
+                    <div class="col-md-12 text-center">
+                        <h1>Aun no existen examenes registrados</h1>
+                    </div>
+                    @endif
 
 
                 </div>

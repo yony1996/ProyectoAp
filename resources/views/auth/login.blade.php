@@ -13,6 +13,8 @@
             @error('email') <small class="invalid-feedback text-red" role="alert">{{ $message }}</small>@enderror
 
             <label for="password">Contraseña</label>
+            <input type="password" name="password">
+            @error('password') <small class="invalid-feedback text-red" role="alert">{{ $message }}</small>@enderror
             <button type="submit">Ingresar</button>
         </form>
         <span class="text-footer">¿Aún no estas registrado? <a href="{{route('register')}}">Registrate</a></span>

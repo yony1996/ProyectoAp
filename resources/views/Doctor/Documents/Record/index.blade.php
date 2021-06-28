@@ -69,7 +69,7 @@
                     </table>
                     @else
                     <div class="col-md-12 text-center">
-                        <h1>Aun no existen examenes registrados</h1>
+                        <h1>Aun no existen fichas medicas registrados</h1>
                     </div>
                     @endif
 

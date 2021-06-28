@@ -119,11 +119,11 @@
 </head>
 <body>
     <div id="watermark">
-        <img src="{{storage_path('dists/assets/img/logo-removebg-preview.png')}}" height="100%" width="100%" />
+        <img src="{{public_path('dists/assets/img/logo.png')}}" height="100%" width="100%" />
     </div>
     <div class="header">
         <div class="conter">
-            <img class="img" src="{{storage_path('dists/assets/img/logo-removebg-preview.png')}}" alt="">
+            <img class="img" src="{{public_path('dists/assets/img/logo.png')}}" alt="">
         </div>
         <div class="title">
             ORDEN DE EXAMEN

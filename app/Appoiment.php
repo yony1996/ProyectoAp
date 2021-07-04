@@ -31,10 +31,7 @@ class Appoiment extends Model
         'scheduled_time_12'
 
     ];
-    protected $casts = [
-    'created_at' => 'datetime:Y-m-d', // Change your format
-    'updated_at' => 'datetime:Y-m-d',
-    ];
+
 
 
     public function specialty()

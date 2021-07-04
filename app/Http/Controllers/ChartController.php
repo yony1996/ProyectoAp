@@ -15,7 +15,7 @@ class ChartController extends Controller
     {
         $appoiments=Appoiment::all()->count();
 
-        if(count($appoiments)>0){
+        if($Appoiments>0){
             $monthlyCounts = Appoiment::select(
             DB::raw('MONTH(created_at) as month'),
             DB::raw('COUNT(1) as count')

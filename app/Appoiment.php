@@ -15,7 +15,6 @@ class Appoiment extends Model
         'patient_id',
         'scheduled_date',
         'scheduled_time',
-        'created_at',
         'type',
 
 

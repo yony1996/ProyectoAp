@@ -15,7 +15,7 @@ class ChartController extends Controller
     {
         $appoiments=Appoiment::all()->count();
 
-        if($appoiments>0){
+        if(count($appoiments)>0){
             $monthlyCounts = Appoiment::select(
             DB::raw('MONTH(created_at) as month'),
             DB::raw('COUNT(1) as count')
@@ -35,7 +35,7 @@ class ChartController extends Controller
             return back()->with(compact('notification'));
         }
 
-        
+
     }
 
     public function doctors()
@@ -44,8 +44,8 @@ class ChartController extends Controller
         $now=Carbon::now();
         $end=$now->format('Y-m-d');
         $start=$now->subYear()->format('Y-m-d');
-        
-        
+
+
         return view('charts.doctors',compact('start','end'));
     }
 
@@ -70,7 +70,7 @@ class ChartController extends Controller
 
 
         $data = [];
-        $data['categories'] = $doctors->pluck('name');      
+        $data['categories'] = $doctors->pluck('name');
         $series = [];
         //Atendidas
         $series1['name']='Citas atendidas';

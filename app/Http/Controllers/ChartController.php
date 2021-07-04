@@ -21,8 +21,8 @@ class ChartController extends Controller
             DB::raw('COUNT(1) as count')
             )->groupBy('month')->get()->toArray();*/
             $monthlyCounts = Appoiment::select(
-            DB::raw('month', created_at),
-            DB::raw('COUNT(1) as count')
+            DB::raw( DATE_TRUNC('month',created_at) AS month),
+            DB::raw(COUNT(1) AS count)
             )->groupBy('month')->get()->toArray();
 
             $counts = array_fill(0, 12, 0);

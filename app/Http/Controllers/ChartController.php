@@ -22,9 +22,9 @@ class ChartController extends Controller
             DB::raw('COUNT(1) as count')
             )->groupBy('month')->get()->toArray();*/
             //pgsql
-            $monthlyCounts = Appoiment::select(
-             DATE_TRUNC('month',created_at),'MM' as month,
-            COUNT(1) as count
+            $monthlyCounts = Appoiment::select('created_at'
+             DATE_TRUNC('month',created_at) AS month,
+            COUNT(1) AS count
             )->groupBy('month')->get()->toArray();
 
             $counts = array_fill(0, 12, 0);

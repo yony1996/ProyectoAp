@@ -1,11 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
-
     <title>Orden de Examen</title>
-<link rel="icon" type="image/vnd.microsoft.icon" href="{{public_path('dists/assets/img/logo.ico')}}">
+    <link rel="icon" type="image/vnd.microsoft.icon" href="{{asset('dists/assets/img/logo.ico')}}">
     <style type="text/css" media="screen">
         @page {
 
@@ -1350,14 +1348,5 @@
         </table>
     </div>
     {{--pie_final--}}
-
-
-
-
-
-
-
-
-
 </body>
 </html>

@@ -29,7 +29,7 @@ Route::middleware('auth:api')->group(function(){
 	Route::post('/appointments','AppointmentController@store');
     //Exams
 	Route::get('/exams','ExamController@index');
-	Route::get('/exams/{download}/download', 'ExamController@download');
+
 });
 
 

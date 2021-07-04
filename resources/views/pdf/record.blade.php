@@ -1,9 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
-
     <title>Ficha Médica</title>
      <link rel="icon" type="image/vnd.microsoft.icon" href="{{asset('dists/assets/img/logo.ico')}}">
     <style type="text/css" media="screen">
@@ -65,7 +63,6 @@
         .page-break {
             page-break-after: always;
         }
-
     </style>
 </head>
 <body>
@@ -453,6 +450,5 @@
             </td>
         </tr>
     </table>
-
 </body>
 </html>

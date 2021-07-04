@@ -16,11 +16,14 @@ class ChartController extends Controller
         $appoiments=Appoiment::all()->count();
 
         if($appoiments>0){
-            $monthlyCounts = Appoiment::select(
+           /* $monthlyCounts = Appoiment::select(
             DB::raw('MONTH(created_at) as month'),
             DB::raw('COUNT(1) as count')
-            )->groupBy('month')->get();
-
+            )->groupBy('month')->get()->toArray();*/
+            $monthlyCounts = Appoiment::select(
+            DB::raw('month', created_at),
+            DB::raw('COUNT(1) as count')
+            )->groupBy('month')->get()->toArray();
 
             $counts = array_fill(0, 12, 0);
 

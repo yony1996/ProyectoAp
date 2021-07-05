@@ -53,7 +53,7 @@
                     <div class="row">
                         <div class="col-6 collapse-brand">
                             <a href="./index.html">
-                                <img src="{{asset('dists/assets/img/brand/Sin título-1.png')}}">
+                                <img src="{{asset('dists/assets/img/brand/logoApIndex.png')}}">
                             </a>
                         </div>
                         <div class="col-6 collapse-close">

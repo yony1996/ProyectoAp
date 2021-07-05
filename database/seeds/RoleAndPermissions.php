@@ -28,15 +28,15 @@ class RoleAndPermissions extends Seeder
 
         ///crearmos el usario por defecto
         $user_password = Hash::make('admin1234');
-        $medic_password = Hash::make('medic1234');
-        $patie_password = Hash::make('patie1234');
+        //$medic_password = Hash::make('medic1234');
+        //$patie_password = Hash::make('patie1234');
         $admin= User::create([
             'name' => 'admin',
             'email' => 'admin@gmail.com',
             'password' => $user_password]);
         $admin->assignRole($role1);
 
-        $medico = User::create([
+      /*  $medico = User::create([
             'name' => 'medico',
             'email' => 'medico@gmail.com',
             'password' => $medic_password]);
@@ -51,7 +51,7 @@ class RoleAndPermissions extends Seeder
         $paciente->assignRole($role3);
         $pa=Patient::create([
             'user_id'=>$paciente->id,
-        ]);
+        ]);*/
 
         //========================permisos===================
         /*
@@ -61,9 +61,9 @@ class RoleAndPermissions extends Seeder
         |   $role2->medico   |
         |   $role3->paciente |
         |____________________|
-        
-        */
 
+        */
+        /*
         //doctores(solo admin)
         Permission::create(['name' => 'dashboard'])->syncRoles([$role1]);
         Permission::create(['name' => 'doctor.create'])->syncRoles([$role1]);
@@ -110,7 +110,7 @@ class RoleAndPermissions extends Seeder
         Permission::create(['name' => 'chart.appoiment'])->syncRoles([$role1]);
         Permission::create(['name' => 'chart.doctors'])->syncRoles([$role1]);
 
-        
+        */
 
 
 

@@ -23,7 +23,7 @@ class ChartController extends Controller
             )->groupBy('month')->get()->toArray();*/
            //postgrest
             $monthlyCounts = Appoiment::select(
-            DB::raw('EXTRACT(MONTH FROM create_at) AS month'),
+            DB::raw('EXTRACT(MONTH FROM created_at) AS month'),
             DB::raw('COUNT(1) AS count')
             )->groupBy('month')->get()->toArray();
 

@@ -405,7 +405,7 @@
     <div class="page-break"></div>
     <div class="header">
         <div class="conter">
-            <img class="img" src="{{public_path('dists/assets/img/logo-removebg-preview.png')}}" height="10%" width="10%" alt="">
+            <img class="img" src="{{public_path('dists/assets/img/logo.png')}}" height="10%" width="10%" alt="">
         </div>
         <div class="title">
             Ficha Médica

@@ -22,8 +22,12 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', 'AdminController@index')->name('dashboard');
 
+
+    Route::group(['middleware' => ['role:admin']], function () {
+        Route::get('/doctors/create','DoctorController@create')->name('doctor.create');
+    });
     //Doctores
-    Route::get('/doctors/create','DoctorController@create')->name('doctor.create');
+    //Route::get('/doctors/create','DoctorController@create')->name('doctor.create');
     Route::get('/doctors/{doctor}/edit','DoctorController@editar')->name('doctor.edit');
     Route::post('/doctors','DoctorController@store')->name('doctor.store');
     Route::put('/doctors/{doctor}','DoctorController@update')->name('doctor.update');
@@ -77,5 +81,5 @@ Route::middleware('auth')->group(function () {
     Route::get('/charts/doctors/column/data','ChartController@doctorsJson');
 
     //JSON
-    
+
 });

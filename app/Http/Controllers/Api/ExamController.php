@@ -40,17 +40,4 @@ class ExamController extends Controller
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-    }
 }

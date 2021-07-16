@@ -5,8 +5,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="Página para reservar citas medicas">
+    <meta name="keywords" content="Ginecología,Embarazo,Planificación,Citas,Prenatal,Doctor">
+    <meta name="author" content="AP Salud Sexual y Reproductiva">
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -16,8 +17,12 @@
     <link rel="stylesheet" type="text/css" href="{{asset('dists/assets/css/plugin.css')}}" />
 
     <!-- Revolution Slider -->
-    <link rel="stylesheet" type="text/css" href="{{asset('dists/assets/vendor2/revolution-slider/revolution/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('dists/assets/vendor2/font-awesome/css/all.css')}}">
+   {{-- <link rel="stylesheet" type="text/css" href="{{asset('dists/assets/vendor2/revolution-slider/revolution/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css')}}"> --}}
+    <link rel="stylesheet" type="text/css" href="{{asset('https://cdn.jsdelivr.net/npm/pixeden-stroke-7-icon@1.2.3/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css')}}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+    {{-- <link rel="stylesheet" type="text/css" href="{{asset('dists/assets/vendor2/font-awesome/css/all.css')}}"> --}}
+
     <link rel="stylesheet" type="text/css" href="{{asset('dists/assets/vendor2/revolution-slider/revolution/css/settings.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('dists/assets/vendor2/revolution-slider/revolution/css/layers.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('dists/assets/vendor2/revolution-slider/revolution/css/navigation.css')}}">
@@ -67,7 +72,7 @@
         <nav hidden class="nav-white header-fancy">
             <div class="nav-header">
                 <a href="index.html" class="brand">
-                    <img src="{{asset('dists/assets/img/brand/logoApIndex.png')}}" class="img-fluid" alt="" />
+                    <img src="{{asset('dists/assets/img/brand/logoApIndex.png')}}" class="img-fluid" alt="logo" />
                 </a>
                 <button class="toggle-bar">
                     <span class="ti-menu"></span>
@@ -102,19 +107,19 @@
                 <div id="rev_slider_1083_1" class="rev_slider fullwidthabanner" style="display:none;" data-version="5.4.1">
                     <ul>
                         <!-- SLIDE  -->
-                        <li data-index="rs-3070" data-transition="parallaxhorizontal" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="default" data-rotate="0" data-fstransition="fade" data-fsmasterspeed="1500" data-fsslotamount="7" data-saveperformance="off" data-title="Number One" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+                        <li data-index="rs-3070" data-transition="parallaxhorizontal" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="default" data-rotate="0" data-fstransition="fade" data-fsmasterspeed="1500" data-fsslotamount="7" data-saveperformance="off" data-title="Number One" >
                             <!-- MAIN IMAGE -->
-                            <img src="{{asset('dists/assets/img/slide333.jpeg')}}" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+                            <img src="{{asset('dists/assets/img/slide333.jpeg')}}"  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
                             <!-- LAYERS -->
                         </li>
                         <!-- SLIDE  -->
-                        <li data-index="rs-3071" data-transition="parallaxhorizontal" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="default" data-rotate="0" data-saveperformance="off" data-title="Number Two" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+                        <li data-index="rs-3071" data-transition="parallaxhorizontal" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="default" data-rotate="0" data-saveperformance="off" data-title="Number Two"  >
                             <!-- MAIN IMAGE -->
-                            <img src="{{asset('dists/assets/img/slide222.jpeg')}}" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+                            <img src="{{asset('dists/assets/img/slide222.jpeg')}}" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
                             <!-- LAYERS -->
                         </li>
                     </ul>
-                    <div style="" class="tp-static-layers">
+                    <div class="tp-static-layers">
                         <!-- LAYER NR. 1 -->
                         <div class="tp-caption Travel-BigCaption   tp-resizeme tp-static-layer" id="slider-1083-layer-1" data-x="['left','left','left','left']" data-hoffset="['90','90','60','40']" data-y="['center','center','center','center']" data-voffset="['0','0','0','0']" data-fontsize="['50','50','50','35']" data-lineheight="['50','50','50','35']" data-width="none" data-height="none" data-whitespace="nowrap" data-type="text" data-responsive_offset="on" data-startslide="0" data-endslide="3" data-frames='[{"from":"opacity:0;","speed":300,"to":"o:1;","delay":500,"ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"to":"opacity:0;","ease":"nothing"}]' data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" style="z-index: 5; white-space: nowrap;text-transform:left; color:#ff3399; font-weight:bold;">Sientete libre, segura y<br> lista para cada etapa de tu vida.
                         </div>
@@ -153,66 +158,66 @@
                     <div class="col-md-4 col-12">
                         <div class="ser-box feature-txt text-center mb-0">
                             <div class="feature-icon mb-20">
-                                <img src="{{asset('dists/assets/img/icon-1.png')}}" class="" alt="" />
+                                <img src="{{asset('dists/assets/img/icon-1.png')}}" alt="icon1" />
                             </div>
                             <div class="feature-info ">
                                 <h4 class="text-back mb-20">Control<br> Prenatal</h4>
-                                <p>Todo para asegurarse que mamá y bebé estén bien.</p>
+                                <p> <br> Todo para asegurarse que mamá y bebé estén bien.</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-4 col-12">
                         <div class="ser-box bx2 feature-txt text-center mb-0">
                             <div class="feature-icon mb-20">
-                                <img src="{{asset('dists/assets/img/icon-2.png')}}" class="" alt="" />
+                                <img src="{{asset('dists/assets/img/icon-2.png')}}" alt="icon2"/>
                             </div>
                             <div class="feature-info ">
                                 <h4 class="text-back mb-20">Pruebas de laboratorio</h4>
-                                <p>while the lovely valley teems with vapour around me, and the...</p>
+                                <p>Nosotros apoyados en la ciencia daremos solución a tus problemas.</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-4 col-12">
                         <div class="ser-box feature-txt text-center mb-0">
                             <div class="feature-icon mb-20">
-                                <img src="{{asset('dists/assets/img/icon-3.png')}}" class="" alt="" />
+                                <img src="{{asset('dists/assets/img/icon-3.png')}}" alt="icon3"/>
                             </div>
                             <div class="feature-info ">
                                 <h4 class="text-back mb-20">Planificación familiar</h4>
-                                <p>while the lovely valley teems with vapour around me, and the...</p>
+                                <p><br>Planifica tu vida no la dejes al azar confía en nosotros.</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-4 col-12">
                         <div class="ser-box bx2 feature-txt text-center mb-0">
                             <div class="feature-icon mb-20">
-                                <img src="{{asset('dists/assets/img/icon-4.png')}}" class="" alt="" />
+                                <img src="{{asset('dists/assets/img/icon-4.png')}}" alt="icon4"/>
                             </div>
                             <div class="feature-info ">
                                 <h4 class="text-back mb-20">Ginecología</h4><br>
-                                <p>while the lovely valley teems with vapour around me, and the...</p>
+                                <p><br>Cuidamos tu integridad y tu salud,tu felicidad es nuestra felicidad.</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-4 col-12">
                         <div class="ser-box feature-txt text-center mb-0">
                             <div class="feature-icon mb-20">
-                                <img src="{{asset('dists/assets/img/icon-6.png')}}" class="" alt="" />
+                                <img src="{{asset('dists/assets/img/icon-6.png')}}" alt="icon6"/>
                             </div>
                             <div class="feature-info ">
                                 <h4 class="text-back mb-20">Tratamiento de fertilidad</h4>
-                                <p>while the lovely valley teems with vapour around me, and the...</p>
+                                <p>Con nuestra asesoría tu cuerpo estará preparado para traer a un nuevo ser.</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-4 col-12">
                         <div class="ser-box bx2 feature-txt text-center mb-0">
                             <div class="feature-icon mb-20">
-                                <img src="{{asset('dists/assets/img/icon-5.png')}}" class="" alt="" />
+                                <img src="{{asset('dists/assets/img/icon-5.png')}}"alt="icon5"/>
                             </div>
                             <div class="feature-info">
                                 <h4 class="text-back mb-20">Servicios medicos</h4>
-                                <p>while the lovely valley teems with vapour around me, and the...</p>
+                                <p>Nos enfocamos en ti como prioridad para darte la mejor de las atenciones.</p>
                             </div>
                         </div>
                     </div>
@@ -288,7 +293,7 @@
 
             <div class="content1">
                 <div class="img-container">
-                    <img src="{{asset('dists/assets/img/team/medico.png')}}" alt="">
+                    <img src="{{asset('dists/assets/img/team/medico.png')}}" alt="medico">
                 </div>
                 <div class="content2">
                     <div class="head2">
@@ -305,7 +310,7 @@
 
         <div class="row">
             <div class="col">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d510694.056744402!2d-78.71074516936699!3d-0.18590534316641!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d59a4002427c9f%3A0x44b991e158ef5572!2sQuito!5e0!3m2!1sen!2sec!4v1616954922629!5m2!1sen!2sec" width="100%" height="460" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                <iframe title="Ubicación" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d510694.056744402!2d-78.71074516936699!3d-0.18590534316641!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d59a4002427c9f%3A0x44b991e158ef5572!2sQuito!5e0!3m2!1sen!2sec!4v1616954922629!5m2!1sen!2sec" width="100%" height="460" style="border:0;" loading="lazy"></iframe>
             </div>
         </div>
 
@@ -363,10 +368,10 @@
                     <div class="col-lg-6 col-md-6 text-left text-md-right">
                         <div class="social-icons color-hover mt-10">
                             <ul>
-                                <li class="social-facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li class="social-twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li class="social-instagram"><a href="#"><i class="fa fa-instagram"></i> </a></li>
-                                <li class="social-linkedin"><a href="#"><i class="fa fa-linkedin"></i> </a></li>
+                                <li class="social-facebook"><a><i class="fa fa-facebook"></i></a></li>
+                                <li class="social-twitter"><a><i class="fa fa-twitter"></i></a></li>
+                                <li class="social-instagram"><a><i class="fa fa-instagram"></i> </a></li>
+                                <li class="social-linkedin"><a><i class="fa fa-linkedin"></i> </a></li>
                             </ul>
                         </div>
                     </div>
@@ -414,7 +419,7 @@
 <script type="text/javascript" src="{{asset('dists/assets/vendor2/revolution-slider/revolution/js/jquery.themepunch.tools.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('dists/assets/vendor2/revolution-slider/revolution/js/jquery.themepunch.revolution.min.js')}}"></script>
 
-<!-- SLIDER REVOLUTION 5.0 EXTENSIONS  (Load Extensions only on Local File Systems !  The following part can be removed on Server for On Demand Loading) -->
+    <!-- SLIDER REVOLUTION 5.0 EXTENSIONS  (Load Extensions only on Local File Systems !  The following part can be removed on Server for On Demand Loading) -->
 <script type="text/javascript" src="{{asset('dists/assets/vendor2/revolution-slider/revolution/js/extensions/revolution.extension.actions.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('dists/assets/vendor2/revolution-slider/revolution/js/extensions/revolution.extension.carousel.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('dists/assets/vendor2/revolution-slider/revolution/js/extensions/revolution.extension.kenburn.min.js')}}"></script>
@@ -424,12 +429,16 @@
 <script type="text/javascript" src="{{asset('dists/assets/vendor2/revolution-slider/revolution/js/extensions/revolution.extension.parallax.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('dists/assets/vendor2/revolution-slider/revolution/js/extensions/revolution.extension.slideanims.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('dists/assets/vendor2/revolution-slider/revolution/js/extensions/revolution.extension.video.min.js')}}"></script>
+
 <script src="{{asset('dists/assets/js/revolution-slider.js')}}" type="text/javascript"></script>
+
+
+
 
 <!--jarallax javascript -->
 <script src="{{asset('dists/assets/js/jarallax.js')}}"></script>
 
-<script src="{{asset('js/addons/addons.js')}}" type="text/javascript"></script>
+{{--<script src="{{asset('js/addons/addons.js')}}" type="text/javascript"></script>--}}
 
 
 

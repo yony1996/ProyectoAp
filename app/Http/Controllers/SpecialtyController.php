@@ -59,8 +59,8 @@ class SpecialtyController extends Controller
         $specialty = Specialty::find($id);
         $specialty->delete();
 
-        $notification = 'La especialidad se elimino satifactoriamente';
+        //$notification = 'La especialidad se elimino satifactoriamente';
 
-        return redirect()->route('specialty')->with(compact('notification'));
+        return redirect()->route('specialty')->with('eliminar','ok-esp');
     }
 }

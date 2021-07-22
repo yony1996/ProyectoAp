@@ -117,7 +117,9 @@ return [
     'uploaded' => 'The :attribute failed to upload.',
     'url' => 'The :attribute format is invalid.',
     'uuid' => 'The :attribute must be a valid UUID.',
-
+    'ecuador' => [
+        'ci'=>'La cedula ingresada es invalida.',
+    ],
     /*
     |--------------------------------------------------------------------------
     | Custom Validation Language Lines
@@ -129,11 +131,7 @@ return [
     |
     */
 
-    'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
-        ],
-    ],
+    'custom' => [],
 
     /*
     |--------------------------------------------------------------------------
@@ -146,6 +144,9 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'ci' => 'cedula',
+
+    ],
 
 ];

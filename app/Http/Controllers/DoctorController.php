@@ -28,16 +28,19 @@ class DoctorController extends Controller
     public function store(Request $request)
     {
         //dd($request->all());
+        $customMessages = [
+            'ci.ecuador' => 'Esta cédula no existe'
+        ];
         $rules = [
             'name' => 'required|regex:/^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+$/u',
             'middle_name' => 'required|regex:/^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+$/u',
             'last_name' => 'required|regex:/^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+$/u',
             'second_last_name' => 'required|regex:/^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+$/u',
             'email' => 'required|string|email|max:255|unique:users',
-            'ci' => 'required|digits:10|unique:doctors',
+            'ci' => 'required|ecuador:ci|digits:10|unique:doctors',
             'phone' => 'required|nullable|min:10'
         ];
-        $this->validate($request, $rules);
+        $this->validate($request, $rules,$customMessages);
 
         $user = new User();
         $user->name = $request->input('name');
@@ -57,6 +60,8 @@ class DoctorController extends Controller
 
         $doctor->specialties()->attach($request->input('specialties'));
 
+        $user->sendEmailVerificationNotification(); 
+
         $notification = 'El Medico se ha creado correctamente';
         return redirect()->route('doctor.create')->with(compact('notification'));
     }
@@ -66,6 +71,9 @@ class DoctorController extends Controller
         $userId = $request->input('user_id');
         $user = User::find($userId);
         $doctor = Doctor::find($id);
+        $customMessages = [
+            'ci.ecuador' => 'Esta cédula no existe'
+        ];
         $rules = [
             'name' => 'required|regex:/^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+$/u',
             'middle_name' => 'required|regex:/^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+$/u',
@@ -75,7 +83,7 @@ class DoctorController extends Controller
             'ci' => 'required|digits:10', Rule::unique('doctors')->ignore($doctor->id),
             'phone' => 'required|nullable|min:10'
         ];
-        $this->validate($request, $rules);
+        $this->validate($request, $rules,$customMessages);
 
 
         $user->name = $request->input('name');
@@ -103,7 +111,7 @@ class DoctorController extends Controller
         $doctor = Doctor::find($id);
         $doctor->user->status = $status;
         $doctor->user->save();
-        $notificationM = 'El Medico se ha eliminado correctamente';
-        return redirect()->route('dashboard')->with(compact('notificationM'));
+        //$notificationM = 'El Medico se ha eliminado correctamente';
+        return redirect()->route('dashboard')->with('eliminar','ok-med');
     }
 }

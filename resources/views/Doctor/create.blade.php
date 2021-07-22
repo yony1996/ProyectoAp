@@ -32,7 +32,7 @@
                             <div class="col">
                                 <label for="ci">Cedula</label>
                                 <input type="text" value="{{old('ci')}}" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*?)\..*/g, '$1');" maxlength="10" minlength="10" name="ci" id="ci" class="form-control" placeholder="Cedula" required autocomplete="off">
-                                @error('ci') <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>@enderror
+                                @error('ci') <span class="invalid-feedback">{{$message}}</span>@enderror
                             </div>
 
                             <div class="col">

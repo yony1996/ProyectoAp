@@ -51,4 +51,10 @@
 
 <script src="{{asset('js/charts/doctors.js')}}"></script>
 <script src="{{asset('dists/assets/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js')}}"></script>
+<script src="{{ asset('dists/assets/vendor/bootstrap-datepicker/dist/locales/bootstrap-datepicker.es.min.js') }}"></script>
+<script>
+    $('.datepicker').datepicker({
+    'language' : 'es'});
+</script>
+
 @endsection

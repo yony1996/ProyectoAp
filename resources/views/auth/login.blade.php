@@ -9,7 +9,7 @@
         <form method="POST" action="{{route('login')}}">
             @csrf
             <label for="Email">Email</label>
-            <input type="email" name="email">
+            <input type="email" name="email" value="{{old('email')}}">
             @error('email') <small class="invalid-feedback text-red" role="alert">{{ $message }}</small>@enderror
 
             <label for="password">Contraseña</label>

@@ -2,7 +2,7 @@
 <ul class="navbar-nav">
     <li class="nav-item {{ Route::is('dashboard') ? 'active' : '' }}">
         <a class="nav-link" href="{{route('dashboard')}}">
-            <i class="ni ni-tv-2 text-primary"></i> Dashboard
+            <i class="ni ni-tv-2 text-primary"></i> Inicio
         </a>
     </li>
     @hasrole('admin')

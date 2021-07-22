@@ -9,25 +9,25 @@
             <div class="row">
                 <div class="col">
                     <label for="name">Nombre</label>
-                    <input type="text" style="text-transform: uppercase;" oninput="this.value = this.value.replace(/[^A-Za-z ]/g, '').replace(/(\..*?)\..*/g, '$1');" name="name" id="name" class="form-control" placeholder="Nombre" value="{{$patient->user->name}}" required autocomplete="off">
+                    <input type="text" style="text-transform: uppercase;" oninput="this.value = this.value.replace(/[^A-Za-z ]/g, '').replace(/(\..*?)\..*/g, '$1');" name="name" id="name" class="form-control" placeholder="Nombre" value="{{$patient->user->name}}" disabled required autocomplete="off">
 
 
                 </div>
                 <div class="col">
                     <label for="last_name">Apellido</label>
-                    <input type="text" style="text-transform: uppercase;" oninput="this.value = this.value.replace(/[^A-Za-z ]/g, '').replace(/(\..*?)\..*/g, '$1');" name="last_name" id="last_name" class="form-control" value="{{$patient->last_name}}" placeholder="Apellido" required autocomplete="off">
+                    <input type="text" style="text-transform: uppercase;" oninput="this.value = this.value.replace(/[^A-Za-z ]/g, '').replace(/(\..*?)\..*/g, '$1');" name="last_name" id="last_name" class="form-control" value="{{$patient->last_name}}" disabled placeholder="Apellido" required autocomplete="off">
 
 
                 </div>
                 <div class="col">
-                    <label for="ci">Cedula</label>
-                    <input type="text" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*?)\..*/g, '$1');" maxlength="10" minlength="10" name="ci" id="ci" class="form-control" value="{{$patient->ci}}" placeholder="Cedula" required autocomplete="off">
-
+                    <label for="ci">Cédula</label>
+                    <input type="text" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*?)\..*/g, '$1');" maxlength="10" minlength="10" name="ci" id="ci" class="form-control" value="{{$patient->ci}}" placeholder="Cedula" disabled required autocomplete="off">
+                    @error('ci')<small class="alert text-danger">{{ $message }}</small> @enderror
                 </div>
                 <div class="col">
                     <label for="age">Edad</label>
-                    <input type="text" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*?)\..*/g, '$1');" maxlength="2" name="age" id="age" value="{{$patient->age}}" class="form-control" placeholder="Edad" required autocomplete="off">
-
+                    <input type="text" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*?)\..*/g, '$1');" maxlength="2" name="age" id="age" value="{{$patient->age}}" class="form-control" placeholder="Edad" disabled required autocomplete="off">
+                    @error('age')<small class="alert text-danger">{{ $message }}</small> @enderror
                 </div>
 
             </div>
@@ -50,6 +50,7 @@
                         <option value="Blanco">Blanco</option>
                         <option value="Mestizo">Mestizo</option>
                         <option value="Indigena">Indigena</option>
+                        <option value="Afroecuatoriano">Afroecuatoriano</option>
                     </select>
                 </div>
                 <div class="form-group col-md-4">
@@ -101,6 +102,7 @@
                         <option value="Orellana">Orellana</option>
                         <option value="Morona Santiago">Morona Santiago</option>
                         <option value="Zamora Chinchipe">Zamora Chinchipe</option>
+                        <option value="Galapagos">Galapagos</option>
                     </select>
                 </div>
                 <div class="col">
@@ -130,6 +132,7 @@
                         <option value="Orellana">Orellana</option>
                         <option value="Morona Santiago">Morona Santiago</option>
                         <option value="Zamora Chinchipe">Zamora Chinchipe</option>
+                        <option value="Galapagos">Galapagos</option>
                     </select>
                 </div>
             </div>
@@ -177,7 +180,7 @@
 
                 </div>
                 <div class="col">
-                    <label for="phone">Telefono</label>
+                    <label for="phone">Teléfono</label>
                     <input type="text" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*?)\..*/g, '$1');" maxlength="10" minlength="9" name="phone" id="phone" value="{{$patient->phone}}" class="form-control" placeholder="Telefono" autocomplete="off">
 
                 </div>
@@ -235,7 +238,7 @@
             <div class="row">
                 <div class="col">
                     <label for="sa">SA?:Que otra molestia ha presentado?</label>
-                    <input type="text" name="sa" id="sa" class="form-control" placeholder="Que otra molestia ha presentado?" autocomplete="off">
+                    <input type="text" style="text-transform: uppercase;" oninput="this.value = this.value.replace(/[^A-Za-z ]/g, '').replace(/(\..*?)\..*/g, '$1');" name="sa" id="sa" class="form-control" placeholder="Que otra molestia ha presentado?" autocomplete="off">
 
                 </div>
                 <div class="col">

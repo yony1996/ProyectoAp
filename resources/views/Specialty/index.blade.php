@@ -43,7 +43,7 @@
                         {{ $specialty->description }}
                     </td>
                     <td>
-                        <form action="{{ route('specialty.destroy',$specialty->id) }}" method="POST">
+                        <form action="{{ route('specialty.destroy',$specialty->id) }}" class="deleted-specialty" method="POST">
                             @csrf
                             @method('DELETE')
 
@@ -57,4 +57,50 @@
         </table>
     </div>
 </div>
+@endsection
+
+@section('js')
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+@if (session('eliminar')=='ok-esp')
+    <script>
+        Swal.fire(
+                'Eliminado!',
+                'La especialidad se ha eliminado correctamente',
+                'success'
+        )
+
+    </script>
+@endif
+
+
+
+
+<script>
+    $('.deleted-specialty').submit(function(e){
+        e.preventDefault();
+        Swal.fire({
+            title: '¿Está seguro?',
+            text: "¡No podrás revertir esto!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: '¡Sí, bórralo!',
+            cancelButtonText: 'Cancelar'
+        }).then((result) => {
+            if (result.isConfirmed) {
+
+                this.submit();
+
+            }
+        })
+    });
+
+
+
+</script>
+
 @endsection

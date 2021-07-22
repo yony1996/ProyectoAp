@@ -140,7 +140,7 @@
                                             <i class="ni ni-check-bold"></i>
                                         </button>
                                     </form>
-                                    <a href="{{route('appoiment.cancelform',$appoiment->id)}}" class="btn btn-sm btn-outline-danger" data-toggle="tooltip" title="Cancelar Cita"> <i class="far fa-calendar-times"></i> </a>
+                                    {{--<a href="{{route('appoiment.cancelform',$appoiment->id)}}" class="btn btn-sm btn-outline-danger" data-toggle="tooltip" title="Cancelar Cita"> <i class="far fa-calendar-times"></i> </a>--}}
 
 
                                 </td>
@@ -155,7 +155,7 @@
                     </table>
                     @else
                     <div class="col-md-12 text-center">
-                        <h1>Aun no existen pacientes registrados</h1>
+                        <h1>Aun no existen Citas registradas</h1>
                     </div>
 
                     @endif

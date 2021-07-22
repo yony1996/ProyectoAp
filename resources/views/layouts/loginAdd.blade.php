@@ -13,6 +13,7 @@
     <title>{{ config('app.name', 'Login') }}</title>
 
     <link rel="stylesheet" href="{{asset('dists/assets/css/stiles.css')}}">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
 </head>
 
@@ -21,5 +22,6 @@
     @yield('content')
 
 </body>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="{{asset('js/addons/addons.js')}}" type="text/javascript"></script>
 </html>

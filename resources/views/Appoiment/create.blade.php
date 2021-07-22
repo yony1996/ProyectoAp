@@ -37,6 +37,7 @@
                 @endif
 
         </div>
+          
 
         <form action="{{ route('appoiment.store') }}" method="post">
             @csrf
@@ -120,5 +121,24 @@
 @endsection
 @section('js')
 <script src="{{ asset('dists/assets/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js') }}"></script>
+<script src="{{ asset('dists/assets/vendor/bootstrap-datepicker/dist/locales/bootstrap-datepicker.es.min.js') }}"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+$('.datepicker').datepicker({
+    'language' : 'es'});
+</script>
+
+@if (session('error')=='ok-Dap')
+    <script>
+        Swal.fire({
+            icon: 'error',
+            title: 'Lo sentimos',
+            text: 'Solo puede agendar una cita por día. Por favor intente con otra fecha',
+            
+        })
+    </script>
+@endif
 <script src="{{asset('js/appoiments/create.js')}}"></script>
+
+
 @endsection

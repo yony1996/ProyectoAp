@@ -65,7 +65,7 @@
 
                                 <td>
 
-                                    <form action="{{route('patient.destroy',$patient->id)}}" method="POST">
+                                    <form action="{{route('patient.destroy',$patient->id)}}" class="deleted-patient" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <a class="btn btn-sm btn-info" data-toggle="tooltip" title="Editar paciente" href="{{route('patient.edit',$patient->id)}}"> <i class="fas fa-pen"></i></a>
@@ -146,7 +146,7 @@
 
                                 <td>
 
-                                    <form action="{{route('doctor.destroy', $doctor->id)}}" method="POST">
+                                    <form action="{{route('doctor.destroy', $doctor->id)}}" class="deleted-doctor" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <a class="btn btn-sm btn-info" data-toggle="tooltip" title="Editar doctor" href="{{route('doctor.edit',$doctor->id)}}"> <i class="fas fa-pen"></i></a>
@@ -180,4 +180,80 @@
 
     </div>
 </div>
+@endsection
+
+@section('js')
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+@if (session('eliminar')=='ok-med')
+    <script>
+        Swal.fire(
+                'Eliminado!',
+                'El medico se ha eliminado correctamente',
+                'success'
+        )
+
+    </script>
+@endif
+
+@if (session('eliminar')=='ok-pat')
+    <script>
+        Swal.fire(
+                'Eliminado!',
+                'El paciente se ha eliminado correctamente',
+                'success'
+        )
+
+    </script>
+@endif
+
+
+<script>
+    $('.deleted-doctor').submit(function(e){
+        e.preventDefault();
+        Swal.fire({
+            title: '¿Está seguro?',
+            text: "¡No podrás revertir esto!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: '¡Sí, bórralo!',
+            cancelButtonText: 'Cancelar'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                /*Swal.fire(
+                'Deleted!',
+                'Your file has been deleted.',
+                'success'
+                )*/
+
+                this.submit();
+
+            }
+        })
+    });
+
+    $('.deleted-patient').submit(function(e){
+        e.preventDefault();
+        Swal.fire({
+            title: '¿Está seguro?',
+            text: "¡No podrás revertir esto!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: '¡Sí, bórralo!',
+            cancelButtonText: 'Cancelar'
+        }).then((result) => {
+            if (result.isConfirmed) {
+
+                this.submit();
+
+            }
+        })
+    });
+
+</script>
 @endsection

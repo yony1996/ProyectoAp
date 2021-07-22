@@ -163,9 +163,11 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
         Laravel\Passport\PassportServiceProvider::class,
-        
-        
-        
+
+
+
+
+
 
         /*
          * Package Service Providers...
@@ -181,9 +183,12 @@ return [
         App\Providers\RouteServiceProvider::class,
         Spatie\Permission\PermissionServiceProvider::class,
         App\Providers\ScheduleServiceProvider::class,
-        
-        
-        
+        Tavo\EcLaravelValidator\EcValidatorServiceProvider::class,
+
+
+
+
+
 
     ],
 
@@ -237,9 +242,9 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'PDF' => Barryvdh\DomPDF\Facade::class,
-        
-        
-       
+
+
+
 
     ],
 

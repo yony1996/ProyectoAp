@@ -9,25 +9,25 @@
             <div class="row">
                 <div class="col">
                     <label for="name">Nombre</label>
-                    <input type="text" name="name" style="text-transform: uppercase;" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '').replace(/(\..*?)\..*/g, '$1');" id="name" class="form-control" placeholder="Nombre" value="{{$patient->user->name}}" required autocomplete="off">
+                    <input type="text" name="name" style="text-transform: uppercase;" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '').replace(/(\..*?)\..*/g, '$1');" id="name" class="form-control" placeholder="Nombre" value="{{$patient->user->name}}" required disabled autocomplete="off">
 
 
                 </div>
                 <div class="col">
                     <label for="last_name">Apellido</label>
-                    <input type="text" style="text-transform: uppercase;" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '').replace(/(\..*?)\..*/g, '$1');" name="last_name" id="last_name" class="form-control" value="{{$patient->last_name}}" placeholder="Apellido" required autocomplete="off">
+                    <input type="text" style="text-transform: uppercase;" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '').replace(/(\..*?)\..*/g, '$1');" name="last_name" id="last_name" class="form-control" value="{{$patient->last_name}}" placeholder="Apellido" required disabled autocomplete="off">
 
 
                 </div>
                 <div class="col">
                     <label for="ci">Cedula</label>
-                    <input type="text" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*?)\..*/g, '$1');" maxlength="10" minlength="10" name="ci" id="ci" class="form-control" value="{{$patient->ci}}" placeholder="Cedula" required autocomplete="off">
-
+                    <input type="text" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*?)\..*/g, '$1');" maxlength="10" minlength="10" name="ci" id="ci" class="form-control" value="{{$patient->ci}}" disabled placeholder="Cedula" required autocomplete="off">
+                    @error('ci')<small class="alert text-danger">{{ $message }}</small> @enderror
                 </div>
                 <div class="col">
                     <label for="age">Edad</label>
-                    <input type="text" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*?)\..*/g, '$1');" maxlength="2" name="age" id="age" value="{{$patient->age}}" class="form-control" placeholder="Edad" required autocomplete="off">
-
+                    <input type="text" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*?)\..*/g, '$1');" maxlength="2" name="age" id="age" value="{{$patient->age}}" disabled class="form-control" placeholder="Edad" required autocomplete="off">
+                    @error('age')<small class="alert text-danger">{{ $message }}</small> @enderror
                 </div>
 
             </div>
@@ -62,6 +62,9 @@
                         <option value="Indigena" @if($records->ethnicity=="Indigena")
                             selected
                             @endif>Indigena</option>
+                        <option value="Afroecuatoriano" @if($records->ethnicity=="Afroecuatoriano")
+                                selected
+                            @endif>Afroecuatoriano</option>
                     </select>
                 </div>
                 <div class="form-group col-md-4">
@@ -171,6 +174,9 @@
                         <option value="Zamora Chinchipe" @if($records->seaside=="Zamora Chinchipe")
                             selected
                             @endif>Zamora Chinchipe</option>
+                        <option value="Galapagos" @if($records->seaside=="Galapagos")
+                            selected
+                            @endif>Galapagos</option>
                     </select>
                 </div>
                 <div class="col">
@@ -246,6 +252,9 @@
                         <option value="Zamora Chinchipe" @if($records->seaside=="Zamora Chinchipe")
                             selected
                             @endif>Zamora Chinchipe</option>
+                        <option value="Galapagos" @if($records->seaside=="Galapagos")
+                            selected
+                            @endif>Galapagos</option>
                     </select>
                 </div>
             </div>

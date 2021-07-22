@@ -5,6 +5,8 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 use App\Interfaces\ScheduleServiceInterface;
 use Carbon\Carbon;
+use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Auth;
 
 class StoreAppointment extends FormRequest
 {
@@ -17,7 +19,7 @@ class StoreAppointment extends FormRequest
 
         $this->scheduleService=$scheduleService;
     }
-   
+
     public function rules()
     {
         return  [
@@ -25,6 +27,7 @@ class StoreAppointment extends FormRequest
             'specialty_id' => 'exists:specialties,id',
             'doctor_id' => 'exists:doctors,id',
             'scheduled_time' => 'required',
+            
 
         ];
     }
@@ -32,7 +35,9 @@ class StoreAppointment extends FormRequest
     public function messages()
     {
         return [
-            'scheduled_time.required' => 'Por favor seleccione una hora valida para la cita.'
+            'scheduled_time.required' => 'Por favor seleccione una hora valida para la cita.',
+            
+
         ];
     }
 
@@ -42,9 +47,10 @@ class StoreAppointment extends FormRequest
             $date = $this->input('scheduled_date');
             $doctorId = $this->input('doctor_id');
             $scheduled_time = $this->input('scheduled_time');
+
             if (!$date || !$doctorId || !$scheduled_time) {
-                return;    
-            
+                return;
+
             }
 
             $start = new Carbon($scheduled_time);

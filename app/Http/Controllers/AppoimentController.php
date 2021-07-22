@@ -11,6 +11,8 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Validator;
+use DB;
+use Illuminate\Support\Facades\DB as FacadesDB;
 
 class AppoimentController extends Controller
 {
@@ -64,7 +66,16 @@ class AppoimentController extends Controller
 
     public function store(StoreAppointment $request)
     {
-            
+
+
+        $date=$request->input('scheduled_date');
+        $appoiment=Appoiment::where('patient_id',Auth::user()->patient->id)->whereDate('scheduled_date','=',$date)->count();
+        if($appoiment>0){
+            $error='ok-Dap';
+            return back()->with(compact('error'));
+        }
+        
+        
         $created= Appoiment::createForPatient($request,Auth::user()->patient->id);
 
         if($created){
@@ -72,7 +83,7 @@ class AppoimentController extends Controller
         }else{
             $notification = 'Ocurrio un problema al registrar la cita medica.';
         }
-        
+
         return back()->with(compact('notification'));
     }
 
@@ -97,7 +108,10 @@ class AppoimentController extends Controller
         if ($appoiment->status == 'Confirmada') {
             return view('Appoiment.cancel', compact('appoiment'));
         }
-        return redirect()->route('appoiment');
+        /*$appoiment->status = 'Cancelada';
+        $appoiment->save();
+
+        return redirect()->route('appoiment')->with('eliminar','ok-apo');*/
     }
 
     public function PostConfirm(Appoiment $appoiment)
@@ -116,6 +130,6 @@ class AppoimentController extends Controller
 
         $notification = 'La cita fue se ha marcado como atendida.';
         return redirect()->route('appoiment')->with(compact('notification'));
-        
+
     }
 }

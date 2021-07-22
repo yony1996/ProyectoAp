@@ -134,6 +134,7 @@
 
 
 </body>
-<script src="{{asset('js/addons/addons.js')}}" type="text/javascript"></script>
+{{-- <script src="{{asset('js/addons/addons.js')}}" type="text/javascript"></script> --}}
+
 
 </html>

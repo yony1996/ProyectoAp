@@ -117,6 +117,10 @@ return [
     'uploaded'             => 'El campo :attribute no se pudo subir.',
     'url'                  => 'El formato del campo :attribute es inválido.',
     'uuid'                 => 'El campo :attribute debe ser un UUID válido.',
+    'ecuador' => [
+        'ci'=>'La cedula ingresada es invalida.',
+    ],
+
 
     /*
     |--------------------------------------------------------------------------
@@ -129,11 +133,7 @@ return [
     |
     */
 
-    'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
-        ],
-    ],
+    'custom' => [],
 
     /*
     |--------------------------------------------------------------------------
@@ -146,6 +146,10 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'ci' => 'cédula',
+        'age'=>'edad',
+        'phone'=>'teléfono'
+    ],
 
 ];

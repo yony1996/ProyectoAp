@@ -33,8 +33,8 @@ class Appoiment extends Model
 
     ];
     protected $casts = [
-    'created_at' => 'datetime:Y-m-d', // Change your format
-    'updated_at' => 'datetime:Y-m-d',
+        'created_at' => 'datetime:Y-m-d', // Change your format
+        'updated_at' => 'datetime:Y-m-d',
     ];
 
 

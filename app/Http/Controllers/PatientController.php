@@ -2,11 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Patient\StorePatient;
 use App\Patient;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Mail;
+
+
+
+
 
 class PatientController extends Controller
 {
@@ -27,17 +33,24 @@ class PatientController extends Controller
 
     public function store(Request $request)
     {
-        $rules = [
+        $customMessages = [
+            'ci.ecuador' => 'Esta cédula no existe'
+        ];
+       $rules = [
             'name' => 'required|regex:/^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+$/u',
             'middle_name' => 'required|regex:/^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+$/u',
             'last_name' => 'required|regex:/^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+$/u',
             'second_last_name' => 'required|regex:/^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+$/u',
-            'email' => 'required|string|email|max:255|unique:users',
-            'ci' => 'required|digits:10|unique:doctors',
+            'email' => 'required|string|email:rfc,dns|max:255|unique:users',
             'phone' => 'required|nullable|min:10',
-            'age' => 'required'
+            'ci' => 'required|digits:10|ecuador:ci|unique:patients',
+            'age' => 'required',
+
         ];
-        $this->validate($request, $rules);
+
+        $this->validate($request,$rules,$customMessages);
+
+
 
         $user = new User();
         $user->name = $request->input('name');
@@ -54,8 +67,12 @@ class PatientController extends Controller
         $patient->second_last_name = $request->input('second_last_name');
         $patient->phone = $request->input('phone');
         $patient->age = $request->input('age');
+
+
         $patient->save();
 
+        $user->sendEmailVerificationNotification(); 
+       
 
         $notification = 'El Paciente se ha creado correctamente';
         return redirect()->route('patient.create')->with(compact('notification'));
@@ -65,16 +82,19 @@ class PatientController extends Controller
         $userId = $request->input('user_id');
         $user = User::find($userId);
         $patient = Patient::find($id);
+        $customMessages = [
+            'ci.ecuador' => 'Esta cédula no existe'
+        ];
         $rules = [
             'name' => 'required|regex:/^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+$/u',
             'middle_name' => 'required|regex:/^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+$/u',
             'last_name' => 'required|regex:/^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+$/u',
             'second_last_name' => 'required|regex:/^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+$/u',
             'email' => 'required|string|email|max:255', Rule::unique('users')->ignore($userId),
-            'ci' => 'required|digits:10', Rule::unique('doctors')->ignore($patient->id),
+            'ci' => 'required|ecuador:ci|digits:10', Rule::unique('patients')->ignore($patient->id),
             'phone' => 'required|nullable|min:10'
         ];
-        $this->validate($request, $rules);
+        $this->validate($request, $rules,$customMessages);
 
 
         $user->name = $request->input('name');
@@ -103,7 +123,7 @@ class PatientController extends Controller
         $patient = Patient::find($id);
         $patient->user->status = $status;
         $patient->user->save();
-        $notificationP = 'El Paciente se ha eliminado correctamente';
-        return redirect()->route('dashboard')->with(compact('notificationP'));
+        //$notificationP = 'El Paciente se ha eliminado correctamente';
+        return redirect()->route('dashboard')->with('eliminar','ok-pat');
     }
 }

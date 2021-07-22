@@ -16,7 +16,7 @@
                 <th>Fecha</th>
                 <th>Hora</th>
                 <th>Tipo</th>
-                <th>Accion</th>
+               {{-- <th>Accion</th> --}} 
 
             </tr>
         </thead>
@@ -47,9 +47,10 @@
                             <i class="ni ni-check-bold"></i>
                         </button>
                     </form>
-                    <a href="{{route('appoiment.cancelform',$appoiment->id)}}" class="btn btn-sm btn-outline-danger" data-toggle="tooltip" title="Cancelar Cita"> <i class="far fa-calendar-times"></i> </a>
+
+
                     @endhasanyrole
-                    @hasrole('paciente')
+                   {{-- @hasrole('paciente')
                     <form action="{{route('appoiment.postcancel',$appoiment->id)}}" method="POST" class="d-inline-block">
                         @csrf
 
@@ -57,7 +58,7 @@
                             <i class="ni ni-check-bold"></i>
                         </button>
                     </form>
-                    @endhasrole
+                    @endhasrole --}} 
                     @hasrole('admin')
                     <a href="{{route('appoiment.show',$appoiment->id)}}" class="btn btn-sm btn-outline-primary" data-toggle="tooltip" title="Ver Detalles "> <i class="fa fa-eye"></i> </a>
                     @endhasrole

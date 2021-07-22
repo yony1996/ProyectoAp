@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
 use App\Patient;
 
+
 class RegisterController extends Controller
 {
     /*
@@ -50,12 +51,20 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+        $customMessages = [
+            'ci.ecuador' => 'Esta cédula no existe'
+        ];
         return Validator::make($data,[
-
+            'middle_name' => ['required','regex:/^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+$/u'],
+            'last_name' => ['required','regex:/^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+$/u'],
+            'second_last_name' => ['required','regex:/^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+$/u'],
+            'phone' => ['required','nullable','min:10'],
+            'ci' => ['required','digits:10','ecuador:ci','unique:patients'],
+            'age' => ['required','numeric','gt:0'],
             'name' => ['required', 'string', 'max:50'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8'],
-        ]);
+        ],$customMessages);
     }
 
     /**
@@ -74,12 +83,12 @@ class RegisterController extends Controller
         ]);
 
         Patient::create([
-            'ci'=>null,
-            'middle_name'=>'',
-            'last_name'=>'',
-            'second_last_name'=>'',
-            'phone'=>0,
-            'age'=>'',
+            'ci'=>$data['ci'],
+            'middle_name'=>$data['middle_name'],
+            'last_name'=>$data['last_name'],
+            'second_last_name'=>$data['second_last_name'],
+            'phone'=>$data['phone'],
+            'age'=>$data['age'],
             'user_id'=>$user->id
         ]);
         $user->assignRole('paciente');

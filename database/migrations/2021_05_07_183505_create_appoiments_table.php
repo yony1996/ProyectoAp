@@ -33,7 +33,7 @@ class CreateAppoimentsTable extends Migration
             $table->time('scheduled_time');
 
             $table->string('type');
-
+            $table->string('status')->default('Reservada');
 
 
             $table->timestamps();

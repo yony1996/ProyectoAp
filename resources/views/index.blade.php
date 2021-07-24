@@ -438,7 +438,7 @@
 <!--jarallax javascript -->
 <script src="{{asset('dists/assets/js/jarallax.js')}}"></script>
 
-{{--<script src="{{asset('js/addons/addons.js')}}" type="text/javascript"></script>--}}
+<script src="{{asset('js/addons/addons.js')}}" type="text/javascript"></script>
 
 
 

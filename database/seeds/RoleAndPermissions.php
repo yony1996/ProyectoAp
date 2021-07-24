@@ -7,6 +7,7 @@ use App\User;
 use App\Patient;
 use App\Doctor;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Hash;
 class RoleAndPermissions extends Seeder
 {
     /**
@@ -37,7 +38,7 @@ class RoleAndPermissions extends Seeder
             'password' => $user_password,
             'email_verified_at'=>Carbon::now()->toDateTimeString()
             ]);
-           
+
         $admin->assignRole($role1);
 
       /*  $medico = User::create([

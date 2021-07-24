@@ -7087,6 +7087,16 @@ button.bg-dark:focus {
   background-color: #fff !important;
 }
 
+.bg-apsalud{
+    background-color: #f37fc3 !important;
+}
+.bg-apsalud-body{
+    background-color: #f3cbe2 !important;
+}
+.bg-apsalud-body-card{
+    background-color: #f7dfec !important;
+}
+
 .bg-transparent {
   background-color: transparent !important;
 }

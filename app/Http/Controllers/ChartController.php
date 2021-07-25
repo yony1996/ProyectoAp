@@ -17,15 +17,15 @@ class ChartController extends Controller
 
         if($appoiments>0){
             //mysql
-          /* $monthlyCounts = Appoiment::select(
+           $monthlyCounts = Appoiment::select(
             DB::raw('MONTH(created_at) as month'),
             DB::raw('COUNT(1) as count')
-            )->groupBy('month')->get()->toArray();*/
+            )->groupBy('month')->get()->toArray();
            //postgrest
-            $monthlyCounts = Appoiment::select(
+           /* $monthlyCounts = Appoiment::select(
             DB::raw('EXTRACT(MONTH FROM created_at) AS month'),
             DB::raw('COUNT(1) AS count')
-            )->groupBy('month')->get()->toArray();
+            )->groupBy('month')->get()->toArray();*/
 
 
 

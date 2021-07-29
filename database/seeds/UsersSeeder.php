@@ -20,7 +20,7 @@ class UsersSeeder extends Seeder
     {
         app()['cache']->forget('spatie.permission.cache');
 
-            $role3 = Role::create(['name' => 'paciente']);
+
 
             $password = Hash::make('salud1234');
 
@@ -42,7 +42,7 @@ class UsersSeeder extends Seeder
                 'age'=>'36',
                 'user_id'=>$user2->id
             ]);
-            $user2->assignRole($role3);
+            $user2->assignRole('paciente');
 
             //======
             $user3= User::create([
@@ -60,7 +60,7 @@ class UsersSeeder extends Seeder
                 'age'=>'40',
                 'user_id'=>$user3->id
             ]);
-            $user3->assignRole($role3);
+            $user3->assignRole('paciente');
 
             //==
             $user4= User::create([
@@ -78,7 +78,7 @@ class UsersSeeder extends Seeder
                 'age'=>'35',
                 'user_id'=>$user4->id
             ]);
-            $user4->assignRole($role3);
+            $user4->assignRole('paciente');
 
             //===
             $user5= User::create([
@@ -96,7 +96,7 @@ class UsersSeeder extends Seeder
                 'age'=>'45',
                 'user_id'=>$user5->id
             ]);
-            $user5->assignRole($role3);
+            $user5->assignRole('paciente');
 
             //==
             $user6= User::create([
@@ -114,7 +114,7 @@ class UsersSeeder extends Seeder
                 'age'=>'47',
                 'user_id'=>$user6->id
             ]);
-            $user6->assignRole($role3);
+            $user6->assignRole('paciente');
 
 
     }

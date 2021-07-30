@@ -74,8 +74,8 @@ class AppoimentController extends Controller
             $error='ok-Dap';
             return back()->with(compact('error'));
         }
-        
-        
+
+
         $created= Appoiment::createForPatient($request,Auth::user()->patient->id);
 
         if($created){
@@ -92,7 +92,7 @@ class AppoimentController extends Controller
         if ($request->has('justification')) {
             $cancellation = new CancelledAppoiment();
             $cancellation->justification = $request->input('justification');
-            $cancellation->cancelled_by = Auth::user()->id;
+            $cancellation->cancelled_by_id = Auth::user()->id;
 
             $appoiment->cancellation()->save($cancellation);
         }
@@ -105,13 +105,9 @@ class AppoimentController extends Controller
 
     public function ShowCancelForm(Appoiment $appoiment)
     {
-        if ($appoiment->status == 'Confirmada') {
-            return view('Appoiment.cancel', compact('appoiment'));
-        }
-        /*$appoiment->status = 'Cancelada';
-        $appoiment->save();
 
-        return redirect()->route('appoiment')->with('eliminar','ok-apo');*/
+            return view('Appoiment.cancel', compact('appoiment'));
+
     }
 
     public function PostConfirm(Appoiment $appoiment)

@@ -60,7 +60,7 @@ class DoctorController extends Controller
 
         $doctor->specialties()->attach($request->input('specialties'));
 
-        $user->sendEmailVerificationNotification(); 
+        $user->sendEmailVerificationNotification();
 
         $notification = 'El Medico se ha creado correctamente';
         return redirect()->route('doctor.create')->with(compact('notification'));

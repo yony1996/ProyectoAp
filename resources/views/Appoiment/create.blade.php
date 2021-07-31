@@ -25,7 +25,7 @@
             </ul>
         </div>
         @endif
-        
+
         <div class="card-body">
                 @if (session('notification'))
                 <div class="alert alert-success" role="alert">
@@ -37,7 +37,7 @@
                 @endif
 
         </div>
-          
+
 
         <form action="{{ route('appoiment.store') }}" method="post">
             @csrf
@@ -73,7 +73,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
                     </div>
-                    <input class="form-control datepicker" placeholder="Seleccionar fecha" id="date" name="scheduled_date" type="text" value="{{ old('scheduled_date', date('Y-m-d')) }}" data-date-format="yyyy-mm-dd" data-date-start-date="{{ date('Y-m-d') }}" data-date-end-date="+30d">
+                    <input class="form-control datepicker" placeholder="Seleccionar fecha" id="date" name="scheduled_date" type="text" value="{{ old('scheduled_date', date('Y-m-d',strtotime(date('Y-m-d')." +1 day"))) }}" data-date-format="yyyy-mm-dd" data-date-start-date="{{ date('Y-m-d',strtotime(date('Y-m-d')." +1 day")) }}" data-date-end-date="+30d" autocomplete="false">
                 </div>
             </div>
             <div class="form-group">
@@ -134,7 +134,7 @@ $('.datepicker').datepicker({
             icon: 'error',
             title: 'Lo sentimos',
             text: 'Solo puede agendar una cita por día. Por favor intente con otra fecha',
-            
+
         })
     </script>
 @endif

@@ -39,13 +39,16 @@
 
 
                 <td>
-                   {{-- <form action="{{route('appoiment.attended',$appoiment->id)}}" method="POST" class="d-inline-block">
+                    @hasrole('medico')
+                   <form action="{{route('appoiment.attended',$appoiment->id)}}" method="POST" class="d-inline-block">
                         @csrf
 
-                        <button class="btn btn-sm btn-outline-success" type="submit" data-toggle="tooltip" title="Confirmar Cita">
+                        <button class="btn btn-sm btn-outline-success" type="submit" data-toggle="tooltip" title="Marcar como atendida">
                             <i class="ni ni-check-bold"></i>
                         </button>
-                    </form> --}} 
+                    </form>
+                    @endhasrole
+
                     <a href="{{route('appoiment.cancelform',$appoiment->id)}}" class="btn btn-sm btn-outline-danger cancel-app" data-toggle="tooltip" title="Cancelar Cita"> <i class="far fa-calendar-times"></i> </a>
                     @hasrole('admin')
                     <a href="{{route('appoiment.show',$appoiment->id)}}" class="btn btn-sm btn-outline-primary" data-toggle="tooltip" title="Ver Detalles "> <i class="fa fa-eye"></i> </a>

@@ -13,8 +13,8 @@
                 <div class="form-group col-md-6">
                     <label for="ci">Cédula</label>
                     <input type="text" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*?)\..*/g, '$1');" maxlength="10" minlength="10" value="{{old('ci')}}" name="ci" id="ci" required autocomplete="off">
-                    @error('ci') <small class="alert text-danger">{{ $message }}</small>@enderror
-                    
+                    @error('ci') <small class="text-danger">{{ $message }}</small>@enderror
+
                 </div>
                 <div class="form-group col-md-6">
                     <label for="age">Edad</label>
@@ -24,43 +24,43 @@
                     @enderror
                 </div>
 
-                
+
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="name">Nombre</label>
-                    <input type="text" style="text-transform: uppercase;" oninput="this.value = this.value.replace(/[^A-Za-z&ntilde; ]/g, '').replace(/(\..*?)\..*/g, '$1');"value="{{old('name')}}" name="name" id="name" required autocomplete="off">
+                    <input type="text" style="text-transform: uppercase;" oninput="this.value = this.value.replace(/[^A-Za-z&ntilde;]/g,'').replace(/(\..*?)\..*/g, '$1');"value="{{old('name')}}" name="name" id="name" required autocomplete="off">
                     @error('name')
                     <small class="alert text-danger">{{ $message }}</small>
                     @enderror
                 </div>
                 <div class="form-group col-md-6">
                     <label for="middle_name">Segundo Nombre</label>
-                    <input type="text" style="text-transform: uppercase;" oninput="this.value = this.value.replace(/[^A-Za-z&ntilde; ]/g, '').replace(/(\..*?)\..*/g, '$1');"value="{{old('middle_name')}}" name="middle_name" id="middle_name" required autocomplete="off">
+                    <input type="text" style="text-transform: uppercase;" oninput="this.value = this.value.replace(/[^A-Za-z&ntilde;]/g,'').replace(/(\..*?)\..*/g, '$1');"value="{{old('middle_name')}}" name="middle_name" id="middle_name" required autocomplete="off">
                     @error('middle_name')
                     <small class="alert text-danger">{{ $message }}</small>
                     @enderror
                 </div>
 
-                
+
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="last_name">Apellido</label>
-                     <input type="text" style="text-transform: uppercase;" oninput="this.value = this.value.replace(/[^A-Za-z&ntilde; ]/g, '').replace(/(\..*?)\..*/g, '$1');" value="{{old('last_name')}}"name="last_name" id="last_name" required autocomplete="off">
+                     <input type="text" style="text-transform: uppercase;" oninput="this.value = this.value.replace(/[^A-Za-z&ntilde;]/g,'').replace(/(\..*?)\..*/g, '$1');" value="{{old('last_name')}}"name="last_name" id="last_name" required autocomplete="off">
                     @error('last_name')
                     <small class="alert text-danger">{{ $message }}</small>
                     @enderror
                 </div>
                 <div class="form-group col-md-6">
                     <label for="User">Segundo Apellido</label>
-                    <input type="text" style="text-transform: uppercase;" oninput="this.value = this.value.replace(/[^A-Za-z&ntilde; ]/g, '').replace(/(\..*?)\..*/g, '$1');" value="{{old('second_last_name')}}" name="second_last_name" id="second_last_name" required autocomplete="off">
+                    <input type="text" style="text-transform: uppercase;" oninput="this.value = this.value.replace(/[^A-Za-z&ntilde;]/g,'').replace(/(\..*?)\..*/g, '$1');" value="{{old('second_last_name')}}" name="second_last_name" id="second_last_name" required autocomplete="off">
                     @error('second_last_name')
                     <small class="alert text-danger">{{ $message }}</small>
                     @enderror
                 </div>
 
-                
+
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
@@ -72,13 +72,13 @@
                 </div>
                 <div class="form-group col-md-6">
                     <label for="phone">Teléfono</label>
-                    <input type="text" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*?)\..*/g, '$1');" maxlength="10" value="{{old('phone')}}"name="phone" id="phone"  required autocomplete="off">
+                    <input type="text" oninput="this.value = this.value.replace(/[^0-9]/g,'').replace(/(\..*?)\..*/g, '$1');" maxlength="10" value="{{old('phone')}}"name="phone" id="phone"  required autocomplete="off">
                     @error('phone')
                     <small class="alert text-danger">{{ $message }}</small>
                     @enderror
                 </div>
 
-                
+
             </div>
             <label for="password">Contraseña</label>
             <input type="password" name="password" value="{{ old('password') }}" autocomplete="off">

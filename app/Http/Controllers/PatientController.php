@@ -36,19 +36,19 @@ class PatientController extends Controller
         $customMessages = [
             'ci.ecuador' => 'Esta cédula no existe'
         ];
-       $rules = [
+
+        $this->validate($request,[
             'name' => 'required|regex:/^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+$/u',
             'middle_name' => 'required|regex:/^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+$/u',
             'last_name' => 'required|regex:/^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+$/u',
             'second_last_name' => 'required|regex:/^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+$/u',
             'email' => 'required|string|email:rfc,dns|max:255|unique:users',
             'phone' => 'required|nullable|min:10',
-            'ci' => 'required|digits:10|ecuador:ci|unique:patients',
+            'ci' => 'required|digits:10|unique:patients',
             'age' => 'required',
+            'ci'=> 'ecuador:ci'
 
-        ];
-
-        $this->validate($request,$rules,$customMessages);
+        ],$customMessages);
 
 
 
@@ -71,8 +71,8 @@ class PatientController extends Controller
 
         $patient->save();
 
-        $user->sendEmailVerificationNotification(); 
-       
+        $user->sendEmailVerificationNotification();
+
 
         $notification = 'El Paciente se ha creado correctamente';
         return redirect()->route('patient.create')->with(compact('notification'));

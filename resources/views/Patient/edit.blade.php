@@ -18,7 +18,7 @@
                             <div class="col">
                                 <label for="ci">Cedula</label>
                                 <input type="text" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*?)\..*/g, '$1');" maxlength="10" minlength="10" name="ci" id="ci" value="{{old('ci',$patient->ci)}}" class="form-control" placeholder="Cedula" required autocomplete="off">
-                                @error('ci') <small class="text-danger">{{$message}}</small>@enderror
+                                @error('ci') <small class="text-danger">{{ $message }}</small>@enderror
                             </div>
                             <div class="col">
                                 <label for="age">Edad</label>

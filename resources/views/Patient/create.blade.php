@@ -26,7 +26,7 @@
                             <div class="col" >
                                 <label for="ci">Cédula</label>
                                 <input type="text" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*?)\..*/g, '$1');" maxlength="10" minlength="10" value="{{old('ci')}}" name="ci" id="ci" class="form-control" placeholder="Cedula" required autocomplete="off">
-                                @error('ci') <span class="invalid-feedback">{{$message}}</span>@enderror
+                                @error('ci') <small class="text-danger">{{ $message }}</small>@enderror
                             </div>
                             <div class="col">
                                 <label for="age">Edad</label>

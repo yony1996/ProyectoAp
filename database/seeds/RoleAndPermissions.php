@@ -21,8 +21,8 @@ class RoleAndPermissions extends Seeder
         app()['cache']->forget('spatie.permission.cache');
             //creamos los roles de Administrador,Medico y Paciente
           $role1 = Role::create(['name' => 'admin']);
-          $role2 = Role::create(['name' => 'medico']);
-          $role3 = Role::create(['name' => 'paciente']);
+          //$role2 = Role::create(['name' => 'medico']);
+          //$role3 = Role::create(['name' => 'paciente']);
 
           //creamos los permisos Administrador
         /*Permission::create(['name'=>'doctores'])->syncRoles([$role1]);

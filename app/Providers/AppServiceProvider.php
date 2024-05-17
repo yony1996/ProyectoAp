@@ -5,6 +5,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\URL;
+use Laravel\Passport\Passport;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -23,11 +24,10 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot(): void
     {
 
-        if(env('APP_ENV')==='production')
-        {
+        if (env('APP_ENV') === 'production') {
             URL::forceScheme('https');
         }
     }

@@ -8,6 +8,7 @@ use App\Patient;
 use App\Doctor;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Hash;
+
 class RoleAndPermissions extends Seeder
 {
     /**
@@ -19,44 +20,46 @@ class RoleAndPermissions extends Seeder
     {
         //
         app()['cache']->forget('spatie.permission.cache');
-            //creamos los roles de Administrador,Medico y Paciente
-          $role1 = Role::create(['name' => 'admin']);
-          $role2 = Role::create(['name' => 'medico']);
-          $role3 = Role::create(['name' => 'paciente']);
+        //creamos los roles de Administrador,Medico y Paciente
+        $role1 = Role::create(['name' => 'admin']);
+        $role2 = Role::create(['name' => 'medico']);
+        $role3 = Role::create(['name' => 'paciente']);
 
-          //creamos los permisos Administrador
-        /*Permission::create(['name'=>'doctores'])->syncRoles([$role1]);
-        Permission::create(['name'=>'pacientes'])->syncRoles([$role1,$role2]);*/
+        //creamos los permisos Administrador
+        Permission::create(['name' => 'doctores'])->syncRoles([$role1]);
+        Permission::create(['name' => 'pacientes'])->syncRoles([$role1, $role2]);
 
         ///crearmos el usario por defecto
         $user_password = Hash::make('admin1234');
-        //$medic_password = Hash::make('medic1234');
-        //$patie_password = Hash::make('patie1234');
-        $admin= User::create([
+        $medic_password = Hash::make('medic1234');
+        $patie_password = Hash::make('patie1234');
+        $admin = User::create([
             'name' => 'admin',
             'email' => 'admin@gmail.com',
             'password' => $user_password,
-            'email_verified_at'=>Carbon::now()->toDateTimeString()
-            ]);
+            'email_verified_at' => Carbon::now()->toDateTimeString()
+        ]);
 
         $admin->assignRole($role1);
 
-      /*  $medico = User::create([
+        $medico = User::create([
             'name' => 'medico',
             'email' => 'medico@gmail.com',
-            'password' => $medic_password]);
+            'password' => $medic_password
+        ]);
         $medico->assignRole($role2);
-        $me=Doctor::create([
-            'user_id'=>$medico->id,
+        $me = Doctor::create([
+            'user_id' => $medico->id,
         ]);
         $paciente = User::create([
             'name' => 'paciente',
             'email' => 'paciente@gmail.com',
-            'password' => $patie_password]);
+            'password' => $patie_password
+        ]);
         $paciente->assignRole($role3);
-        $pa=Patient::create([
-            'user_id'=>$paciente->id,
-        ]);*/
+        $pa = Patient::create([
+            'user_id' => $paciente->id,
+        ]);
 
         //========================permisos===================
         /*
@@ -68,7 +71,7 @@ class RoleAndPermissions extends Seeder
         |____________________|
 
         */
-        /*
+
         //doctores(solo admin)
         Permission::create(['name' => 'dashboard'])->syncRoles([$role1]);
         Permission::create(['name' => 'doctor.create'])->syncRoles([$role1]);
@@ -77,11 +80,11 @@ class RoleAndPermissions extends Seeder
         Permission::create(['name' => 'doctor.update'])->syncRoles([$role1]);
         Permission::create(['name' => 'doctor.destroy'])->syncRoles([$role1]);
         //pacientes
-        Permission::create(['name' => 'patient.create'])->syncRoles([$role1,$role2]);
-        Permission::create(['name' => 'patient.edit'])->syncRoles([$role1,$role2]);
-        Permission::create(['name' => 'patient.store'])->syncRoles([$role1,$role2]);
-        Permission::create(['name' => 'patient.update'])->syncRoles([$role1,$role2]);
-        Permission::create(['name' => 'patient.destroy'])->syncRoles([$role1,$role2]);
+        Permission::create(['name' => 'patient.create'])->syncRoles([$role1, $role2]);
+        Permission::create(['name' => 'patient.edit'])->syncRoles([$role1, $role2]);
+        Permission::create(['name' => 'patient.store'])->syncRoles([$role1, $role2]);
+        Permission::create(['name' => 'patient.update'])->syncRoles([$role1, $role2]);
+        Permission::create(['name' => 'patient.destroy'])->syncRoles([$role1, $role2]);
         //especialidades(solo admin)
         Permission::create(['name' => 'specialty'])->syncRoles([$role1]);
         Permission::create(['name' => 'specialty.create'])->syncRoles([$role1]);
@@ -99,25 +102,20 @@ class RoleAndPermissions extends Seeder
         Permission::create(['name' => 'appoiment.postconfirm'])->syncRoles([$role1]);
         Permission::create(['name' => 'appoiment.attended'])->syncRoles([$role1]);
         //Exams
-        Permission::create(['name' => 'exam'])->syncRoles([$role]);
-        Permission::create(['name' => 'exam.create'])->syncRoles([$role]);
-        Permission::create(['name' => 'exam.store'])->syncRoles([$role]);
-        Permission::create(['name' => 'exam.print'])->syncRoles([$role]);
-        Permission::create(['name' => 'exam.preview'])->syncRoles([$role]);
+        Permission::create(['name' => 'exam'])->syncRoles([$role1]);
+        Permission::create(['name' => 'exam.create'])->syncRoles([$role1]);
+        Permission::create(['name' => 'exam.store'])->syncRoles([$role1]);
+        Permission::create(['name' => 'exam.print'])->syncRoles([$role1]);
+        Permission::create(['name' => 'exam.preview'])->syncRoles([$role1]);
         //Records
-        Permission::create(['name' => 'record'])->syncRoles([$role]);
-        Permission::create(['name' => 'record.create'])->syncRoles([$role]);
-        Permission::create(['name' => 'record.edit'])->syncRoles([$role]);
-        Permission::create(['name' => 'record.store'])->syncRoles([$role]);
-        Permission::create(['name' => 'record.print'])->syncRoles([$role]);
-        Permission::create(['name' => 'record.preview'])->syncRoles([$role]);
+        Permission::create(['name' => 'record'])->syncRoles([$role1]);
+        Permission::create(['name' => 'record.create'])->syncRoles([$role1]);
+        Permission::create(['name' => 'record.edit'])->syncRoles([$role1]);
+        Permission::create(['name' => 'record.store'])->syncRoles([$role1]);
+        Permission::create(['name' => 'record.print'])->syncRoles([$role1]);
+        Permission::create(['name' => 'record.preview'])->syncRoles([$role1]);
         //charts
         Permission::create(['name' => 'chart.appoiment'])->syncRoles([$role1]);
         Permission::create(['name' => 'chart.doctors'])->syncRoles([$role1]);
-
-        */
-
-
-
     }
 }

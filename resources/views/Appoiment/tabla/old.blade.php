@@ -1,6 +1,6 @@
 <div class="card-body table-responsive p-0">
 
-    @if (count($OldAppoiments)>= 1)
+    @if ($stats['total_old']>= 1)
     <table class="table table-hover text-nowrap">
         <thead>
             <tr>
@@ -16,7 +16,7 @@
         </thead>
         <tbody>
 
-            @foreach ($OldAppoiments as $appoiment)
+            @foreach ($appointments['old'] as $appoiment)
             <tr>
                 <td>{{$appoiment->specialty->name}}</td>
                 <td>{{$appoiment->scheduled_date}}</td>
@@ -38,5 +38,5 @@
 
 </div>
 <div class="card-body">
-    {{$OldAppoiments->links()}}
+    {{$appointments['old']->links()}}
 </div>

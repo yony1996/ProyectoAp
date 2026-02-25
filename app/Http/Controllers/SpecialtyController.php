@@ -12,15 +12,18 @@ class SpecialtyController extends Controller
         $specialties = Specialty::all();
         return view('Specialty.index', compact('specialties'));
     }
+
     public function create()
     {
         return view('Specialty.create');
     }
+
     public function edit($id)
     {
         $specialty = Specialty::find($id);
         return view('Specialty.edit', compact('specialty'));
     }
+
     public function store(Request $request)
     {
         $rules = [
@@ -38,6 +41,7 @@ class SpecialtyController extends Controller
 
         return redirect()->route('specialty')->with(compact('notification'));
     }
+
     public function update(Request $request, $id)
     {
         $rules = [
@@ -54,6 +58,7 @@ class SpecialtyController extends Controller
 
         return redirect()->route('specialty')->with(compact('notification'));
     }
+
     public function destroy($id)
     {
         $specialty = Specialty::find($id);
@@ -61,6 +66,6 @@ class SpecialtyController extends Controller
 
         //$notification = 'La especialidad se elimino satifactoriamente';
 
-        return redirect()->route('specialty')->with('eliminar','ok-esp');
+        return redirect()->route('specialty')->with('eliminar', 'ok-esp');
     }
 }

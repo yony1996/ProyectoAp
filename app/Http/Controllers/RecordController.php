@@ -19,6 +19,7 @@ class RecordController extends Controller
 
         return view('Doctor.Documents.Record.index', compact('records'));
     }
+
     public function print($id)
     {
 
@@ -31,6 +32,7 @@ class RecordController extends Controller
         $FechaHoy = Carbon::now()->format('Y-m-d_H:i:s');
         return $pdf->download('Ficha_Medica_' . $FechaHoy . '.pdf');
     }
+
     public function preview($id)
     {
 
@@ -41,8 +43,6 @@ class RecordController extends Controller
         $pdf->setPaper('A4');
         return $pdf->stream();
     }
-
-
 
 
     public function create($id)

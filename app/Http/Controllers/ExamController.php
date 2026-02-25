@@ -22,6 +22,7 @@ class ExamController extends Controller
         //dd($exams);
         return view('Doctor.Documents.Exams.index', compact('exams'));
     }
+
     public function print($id)
     {
         $exams = Exam::where('id', $id)->first();
@@ -47,6 +48,7 @@ class ExamController extends Controller
         $FechaHoy = Carbon::now()->format('Y-m-d_H:i:s');
         return $pdf->download('Orden_de_Examen_' . $FechaHoy . '.pdf');
     }
+
     public function preview($id)
     {
 
@@ -72,6 +74,7 @@ class ExamController extends Controller
         $pdf->setPaper('A4', 'landscape');
         return $pdf->stream();
     }
+
     public function create($id)
     {
         $patient = Patient::find($id);
@@ -98,8 +101,6 @@ class ExamController extends Controller
         $exam->doctor_id = Auth::user()->doctor->id;
 
         $exam->save();
-
-
 
 
         //dd($input);

@@ -17,25 +17,24 @@ class ExamController extends Controller
 
     public function index()
     {
-    	$user= Auth::guard('api')->user()->patient;
+        $user = Auth::guard('api')->user()->patient;
 
 
-    	$exams =$user->asPatientExams()->with([
+        $exams = $user->asPatientExams()->with([
 
-    		'doctor'=>function($query){
-    			$query->select('id','last_name');
-    		}
+            'doctor' => function ($query) {
+                $query->select('id', 'last_name');
+            }
 
-    	])
-    	->get([
-    		"id",
-           "doctor_id",
-           "created_at",
-       ]);
+        ])
+            ->get([
+                "id",
+                "doctor_id",
+                "created_at",
+            ]);
 
 
-
-    	return $exams;
+        return $exams;
 
     }
 

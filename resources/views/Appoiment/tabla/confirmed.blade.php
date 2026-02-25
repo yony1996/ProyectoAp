@@ -1,6 +1,6 @@
 <div class="card-body table-responsive p-0">
 
-    @if (count($ConfirmedAppoiments)>= 1)
+    @if ($stats['total_confirmed']>= 1)
     <table class="table table-hover text-nowrap">
         <thead>
             <tr>
@@ -22,7 +22,7 @@
         </thead>
         <tbody>
 
-            @foreach ($ConfirmedAppoiments as $appoiment)
+            @foreach ($appointments['confirmed'] as $appoiment)
             <tr>
 
                 <td>{{$appoiment->description}}</td>
@@ -74,5 +74,5 @@
 </div>
 
 <div class="card-body">
-    {{$ConfirmedAppoiments->links()}}
+    {{$appointments['confirmed']->links()}}
 </div>

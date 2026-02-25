@@ -6,6 +6,7 @@ use App\Appoiment;
 use App\CancelledAppoiment;
 use App\Interfaces\ScheduleServiceInterface;
 use App\Http\Requests\StoreAppointment;
+use App\Services\AppoimentService;
 use App\Specialty;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -16,9 +17,30 @@ use Illuminate\Support\Facades\DB as FacadesDB;
 
 class AppoimentController extends Controller
 {
+    private AppoimentService $appoimentService;
+    public function __construct(AppoimentService $appoimentService)
+    {
+        $this->appoimentService = $appoimentService;
+        $this->middleware('auth');
+    }
     public function index()
     {
-        $role = Auth::user()->getRoleNames()->first();
+        // Cargar relaciones necesarias una sola vez
+        auth()->user()->loadMissing(['doctor', 'patient']);
+
+        $appointments = $this->appoimentService->getAllGrouped();
+
+        // Si necesitas estadísticas adicionales
+        $stats = [
+            'total_pending' => $appointments['pending']->total(),
+            'total_confirmed' => $appointments['confirmed']->total(),
+            'total_old' => $appointments['old']->total(),
+        ];
+
+        return view('Appoiment.index',
+            $appointments + ['stats' => $stats]
+        );
+        /*$role = Auth::user()->getRoleNames()->first();
 
         if ($role == 'admin') {
             $PendingAppoiments = Appoiment::where('status', 'Reservada')->paginate(5);
@@ -34,8 +56,9 @@ class AppoimentController extends Controller
             $OldAppoiments = Appoiment::whereIn('status', ['Atendida', 'Cancelada'])->where('patient_id', Auth::user()->patient->id)->paginate(5); //where('patiente', Auth::user()->patient->id)->get();
 
         }
-        return view('Appoiment.index', compact('PendingAppoiments', 'ConfirmedAppoiments', 'OldAppoiments'));
+        return view('Appoiment.index', compact('PendingAppoiments', 'ConfirmedAppoiments', 'OldAppoiments'));*/
     }
+
     public function show(Appoiment $appoiment)
     {
 
@@ -68,19 +91,19 @@ class AppoimentController extends Controller
     {
 
 
-        $date=$request->input('scheduled_date');
-        $appoiment=Appoiment::where('patient_id',Auth::user()->patient->id)->whereDate('scheduled_date','=',$date)->count();
-        if($appoiment>0){
-            $error='ok-Dap';
+        $date = $request->input('scheduled_date');
+        $appoiment = Appoiment::where('patient_id', Auth::user()->patient->id)->whereDate('scheduled_date', '=', $date)->count();
+        if ($appoiment > 0) {
+            $error = 'ok-Dap';
             return back()->with(compact('error'));
         }
 
 
-        $created= Appoiment::createForPatient($request,Auth::user()->patient->id);
+        $created = Appoiment::createForPatient($request, Auth::user()->patient->id);
 
-        if($created){
+        if ($created) {
             $notification = 'La cita se ha registrado correctarmente.';
-        }else{
+        } else {
             $notification = 'Ocurrio un problema al registrar la cita medica.';
         }
 
@@ -106,7 +129,7 @@ class AppoimentController extends Controller
     public function ShowCancelForm(Appoiment $appoiment)
     {
 
-            return view('Appoiment.cancel', compact('appoiment'));
+        return view('Appoiment.cancel', compact('appoiment'));
 
     }
 

@@ -45,18 +45,17 @@ class StorePatient extends FormRequest
             'last_name.required' => 'Este campo es requerido.',
             'second_last_name.required' => 'Este campo es requerido.',
             'email.required' => 'Este campo es requerido.',
-            'email.string'=>'Este campo debe contener solo letras.',
-            'email.email'=>'Este campo debe ser un email valido.',
-            'email.max'=>'Este campo debe contener maximo 255 caracteres.',
-            'email.unique'=>'Este campo ya esta registrado',
+            'email.string' => 'Este campo debe contener solo letras.',
+            'email.email' => 'Este campo debe ser un email valido.',
+            'email.max' => 'Este campo debe contener maximo 255 caracteres.',
+            'email.unique' => 'Este campo ya esta registrado',
 
 
-            'ci.ecuador'=>'La cedula proporcionada no es valida.',
+            'ci.ecuador' => 'La cedula proporcionada no es valida.',
 
-            'phone.required'=>'Este campo es requerido.',
-            'phone.min'=>'Este campo debe contener manimo 10 caracteres.',
+            'phone.required' => 'Este campo es requerido.',
+            'phone.min' => 'Este campo debe contener manimo 10 caracteres.',
             'age.required' => 'Este campo es requerido.',
-
 
 
         ];

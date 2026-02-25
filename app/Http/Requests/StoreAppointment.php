@@ -12,22 +12,23 @@ class StoreAppointment extends FormRequest
 {
 
 
-    private  $scheduleService;
+    private $scheduleService;
 
 
-    public function __construct(ScheduleServiceInterface $scheduleService){
+    public function __construct(ScheduleServiceInterface $scheduleService)
+    {
 
-        $this->scheduleService=$scheduleService;
+        $this->scheduleService = $scheduleService;
     }
 
     public function rules()
     {
-        return  [
+        return [
             'description' => 'required',
             'specialty_id' => 'exists:specialties,id',
             'doctor_id' => 'exists:doctors,id',
             'scheduled_time' => 'required',
-            
+
 
         ];
     }
@@ -36,7 +37,7 @@ class StoreAppointment extends FormRequest
     {
         return [
             'scheduled_time.required' => 'Por favor seleccione una hora valida para la cita.',
-            
+
 
         ];
     }

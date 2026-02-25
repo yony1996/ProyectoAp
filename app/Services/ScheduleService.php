@@ -17,14 +17,15 @@ class ScheduleService implements ScheduleServiceInterface
 
         return !$exists;
     }
+
     private function getDayFromDate($date)
     {
-
         $dateCarbon = new Carbon($date);
         $i = $dateCarbon->dayOfWeek;
         $day = ($i == 0 ? 6 : $i - 1);
         return $day;
     }
+
     public function getAvailableIntervals($date, $doctorId)
     {
         $workDays = WorkDay::where('active', true)
@@ -44,19 +45,18 @@ class ScheduleService implements ScheduleServiceInterface
                 $workDays->morning_start, $workDays->morning_end, $date, $doctorId);
             $afternoonIntervals = $this->getIntervals(
                 $workDays->afternoon_start, $workDays->afternoon_end, $date, $doctorId);
-        }else{
-            $morningIntervals =[];
-            $afternoonIntervals =[];
+        } else {
+            $morningIntervals = [];
+            $afternoonIntervals = [];
         }
 
-
-        
 
         $data = [];
         $data['morning'] = $morningIntervals;
         $data['afternoon'] = $afternoonIntervals;
         return $data;
     }
+
     private function getIntervals($start, $end, $date, $doctorId)
     {
         $start = new Carbon($start);

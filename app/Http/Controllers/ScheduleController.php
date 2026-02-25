@@ -39,6 +39,7 @@ class ScheduleController extends Controller
         $days = $this->days;
         return view('Schedule.schedule', compact('days', 'workDays'));
     }
+
     public function store(Request $request)
     {
         //dd($request->all());

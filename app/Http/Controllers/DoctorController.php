@@ -18,6 +18,7 @@ class DoctorController extends Controller
 
         return view('Doctor.create', compact('specialties'));
     }
+
     public function editar($id)
     {
         $doctor = Doctor::find($id);
@@ -25,6 +26,7 @@ class DoctorController extends Controller
         $specialty_ids = $doctor->specialties()->pluck('specialties.id');
         return view('Doctor.edit', compact('doctor', 'specialties', 'specialty_ids'));
     }
+
     public function store(Request $request)
     {
         //dd($request->all());
@@ -40,7 +42,7 @@ class DoctorController extends Controller
             'ci' => 'required|ecuador:ci|digits:10|unique:doctors',
             'phone' => 'required|nullable|min:10'
         ];
-        $this->validate($request, $rules,$customMessages);
+        $this->validate($request, $rules, $customMessages);
 
         $user = new User();
         $user->name = $request->input('name');
@@ -83,7 +85,7 @@ class DoctorController extends Controller
             'ci' => 'required|digits:10', Rule::unique('doctors')->ignore($doctor->id),
             'phone' => 'required|nullable|min:10'
         ];
-        $this->validate($request, $rules,$customMessages);
+        $this->validate($request, $rules, $customMessages);
 
 
         $user->name = $request->input('name');
@@ -112,6 +114,6 @@ class DoctorController extends Controller
         $doctor->user->status = $status;
         $doctor->user->save();
         //$notificationM = 'El Medico se ha eliminado correctamente';
-        return redirect()->route('dashboard')->with('eliminar','ok-med');
+        return redirect()->route('dashboard')->with('eliminar', 'ok-med');
     }
 }

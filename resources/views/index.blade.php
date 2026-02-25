@@ -3,445 +3,629 @@
 
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Página para reservar citas medicas">
-    <meta name="keywords" content="Ginecología,Embarazo,Planificación,Citas,Prenatal,Doctor">
-    <meta name="author" content="AP Salud Sexual y Reproductiva">
 
+    <title>AP Salud Sexual y Reproductiva</title>
+    <meta name="description" content="Reserva tu cita de ginecología, control prenatal y planificación familiar en Quito.">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>AP Salud</title>
-    <link rel="icon" type="image/vnd.microsoft.icon" href="{{asset('dists/assets/img/logo.ico')}}">
-    <!-- plugins -->
-    <link rel="stylesheet" type="text/css" href="{{asset('dists/assets/css/plugin.css')}}" />
+    <link rel="icon" href="{{ asset('dists/assets/img/logo.ico') }}">
 
-    <!-- Revolution Slider -->
-   {{-- <link rel="stylesheet" type="text/css" href="{{asset('dists/assets/vendor2/revolution-slider/revolution/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css')}}"> --}}
-    <link rel="stylesheet" type="text/css" href="{{asset('https://cdn.jsdelivr.net/npm/pixeden-stroke-7-icon@1.2.3/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css')}}">
+    {{-- Bootstrap --}}
+    <link rel="stylesheet" href="{{ asset('dists/assets/vendor2/bootstrap/css/bootstrap.min.css') }}">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
-    {{-- <link rel="stylesheet" type="text/css" href="{{asset('dists/assets/vendor2/font-awesome/css/all.css')}}"> --}}
+    {{-- Font Awesome --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 
-    <link rel="stylesheet" type="text/css" href="{{asset('dists/assets/vendor2/revolution-slider/revolution/css/settings.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('dists/assets/vendor2/revolution-slider/revolution/css/layers.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('dists/assets/vendor2/revolution-slider/revolution/css/navigation.css')}}">
+    {{-- Google Fonts --}}
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- typography -->
-    <link rel="stylesheet" type="text/css" href="{{asset('dists/assets/css/typographies.css')}}" />
+    {{-- AOS Animation --}}
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-    <!-- templete element -->
-    <link rel="stylesheet" type="text/css" href="{{asset('dists/assets/css/template-element.css')}}" />
+    <style>
+        :root {
+            --primary: #d63384;
+            --primary-light: #f8e1ec;
+            --primary-dark: #b11c66;
+            --secondary: #6c5ce7;
+            --accent: #00b894;
+            --dark: #2d3436;
+            --light: #f8f9fa;
+            --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
+        }
 
-    <!-- template CSS -->
-    <link href="{{asset('dists/assets/css/style.css')}}" rel="stylesheet">
+        * {
+            font-family: 'Inter', sans-serif;
+        }
 
-    <!-- responsive CSS -->
-    <link href="{{asset('dists/assets/css/responsive.css')}}" rel="stylesheet">
+        body {
+            color: var(--dark);
+            overflow-x: hidden;
+        }
 
-    <!-- custom CSS -->
-    <link href="{{asset('dists/assets/css/custom.css')}}" rel="stylesheet">
+        /* Navbar */
+        .navbar {
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.95) !important;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+        }
 
+        .navbar-nav .nav-link {
+            font-weight: 500;
+            color: var(--dark);
+            margin: 0 0.5rem;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-nav .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 50%;
+            background: var(--gradient);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .navbar-nav .nav-link:hover:after {
+            width: 80%;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: var(--primary);
+        }
+
+        /* Buttons */
+        .btn {
+            border-radius: 50px;
+            padding: 0.6rem 1.8rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: var(--gradient);
+            border: none;
+            box-shadow: 0 10px 20px rgba(214, 51, 132, 0.2);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(214, 51, 132, 0.3);
+        }
+
+        .btn-success {
+            background: linear-gradient(135deg, #00b894, #00cec9);
+            border: none;
+            box-shadow: 0 10px 20px rgba(0, 184, 148, 0.2);
+        }
+
+        .btn-success:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(0, 184, 148, 0.3);
+        }
+
+        .btn-light {
+            background: white;
+            color: var(--primary);
+            border: none;
+        }
+
+        .btn-light:hover {
+            background: var(--primary-light);
+            transform: translateY(-3px);
+        }
+
+        /* Hero Section */
+        #home {
+            background: linear-gradient(135deg, #fff5f7 0%, #f0f2fe 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        #home:before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 80%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(214, 51, 132, 0.03) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        #home img {
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            animation: float 6s ease-in-out infinite;
+            box-shadow: 0 30px 40px -20px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        /* Cards */
+        .service-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem 1.5rem;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient);
+            transform: translateX(-100%);
+            transition: transform 0.5s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 40px -20px rgba(214, 51, 132, 0.3);
+            border-color: transparent;
+        }
+
+        .service-card:hover:before {
+            transform: translateX(0);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--primary-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: var(--primary);
+            font-size: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover .service-icon {
+            background: var(--gradient);
+            color: white;
+            transform: rotateY(180deg);
+        }
+
+        /* Doctor Card */
+        .doctor-card {
+            border-radius: 30px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .doctor-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 30px 40px -20px rgba(214, 51, 132, 0.3) !important;
+        }
+
+        .doctor-card img {
+            transition: all 0.5s ease;
+        }
+
+        .doctor-card:hover img {
+            transform: scale(1.05);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section:before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 60%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .cta-section * {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #1e272e, #2d3436);
+            position: relative;
+        }
+
+        footer a {
+            transition: all 0.3s ease;
+            opacity: 0.8;
+        }
+
+        footer a:hover {
+            opacity: 1;
+            color: var(--primary) !important;
+            transform: translateX(5px);
+        }
+
+        footer hr {
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            height: 1px;
+            border: none;
+        }
+
+        /* Map */
+        iframe {
+            filter: grayscale(0.3);
+            transition: all 0.3s ease;
+        }
+
+        iframe:hover {
+            filter: grayscale(0);
+        }
+
+        /* Animations */
+        [data-aos] {
+            pointer-events: none;
+        }
+
+        [data-aos].aos-animate {
+            pointer-events: auto;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .display-4 {
+                font-size: 2.5rem;
+            }
+
+            .navbar-collapse {
+                background: white;
+                padding: 1rem;
+                border-radius: 10px;
+                margin-top: 1rem;
+            }
+        }
+    </style>
 </head>
 
-<body >
-    <header class="top-bar header-fancy-topbar">
-        <div class="topbar">
+<body>
+
+    {{-- ================= NAVBAR ================= --}}
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container">
-                <div class="row justify-content-end">
-                    <div class="col-lg-6 col-md-6 col-12">
-                        <div class="topbar-social text-center text-md-left">
-                            <ul class="list-inline d-md-flex">
-                                <li><a href="https://api.whatsapp.com/send?phone=+593992993372" target="_blank"><i class="fab fa-whatsapp"></i>  Contactate desde WhatsApp</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-12 xs-mb-10">
-                        <div class="topbar-call text-center text-md-right">
-                            <ul class="list-inline d-md-flex d-inline-block justify-content-end">
-                                <li><i class="fa fa-envelope"></i>drandrespaterson@gmail.com</li>
-                                <li><i class="fa fa-phone"></i> <a href="tel:+593992993372"> <span> +593992993372 </span>
-                                    </a> </li>
-                            </ul>
-                        </div>
+                <a class="navbar-brand" href="{{ route('home') }}">
+                    <img src="{{ asset('dists/assets/img/brand/logoApIndex.png') }}" height="50" alt="AP Salud">
+                </a>
+
+                <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#mainNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="mainNav">
+                    <ul class="navbar-nav mx-auto align-items-lg-center">
+                        <li class="nav-item"><a class="nav-link" href="#home">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#services">Servicios</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#doctor">Especialista</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contactus">Contacto</a></li>
+                    </ul>
+
+                    <div class="d-flex">
+                        @guest
+                        <a class="btn btn-outline-primary rounded-pill px-4" href="{{ route('login') }}">
+                            <i class="fas fa-user me-2"></i>Ingresar
+                        </a>
+                        @else
+                        <a class="btn btn-primary rounded-pill px-4" href="{{ route('dashboard') }}">
+                            <i class="fas fa-user-circle me-2"></i>{{ Auth::user()->name }}
+                        </a>
+                        @endguest
                     </div>
                 </div>
             </div>
-        </div>
-
-        <nav hidden class="nav-white header-fancy">
-            <div class="nav-header">
-                <a href="index.html" class="brand">
-                    <img src="{{asset('dists/assets/img/brand/logoApIndex.png')}}" class="img-fluid" alt="logo" />
-                </a>
-                <button class="toggle-bar">
-                    <span class="ti-menu"></span>
-                </button>
-            </div>
-            <ul class="menu">
-                <li class="scrollspy active"><a href="#home">Inicio</a></li>
-                <li class="scrollspy"><a href="#services">Servicios</a></li>
-                <li class="scrollspy"><a href="#appointment">Citas</a></li>
-                <li class="scrollspy"><a href="#doctor">Doctor</a></li>
-                <li class="scrollspy"><a href="#contactus">Contacto</a></li>
-                @guest
-                <a class="mt-10 cs-button x-small" href="{{route('login')}}">Iniciar Sesion</a>
-                @else
-                <a class="mt-10 cs-button  x-small" href="{{route('dashboard')}}">{{Auth::user()->name}}</a>
-
-                @endguest
-
-
-            </ul>
-
-
-
         </nav>
     </header>
 
-    <!-- Start Slider -->
-    <section id="home">
-        <article class="content">
-            <div id="rev_slider_1083_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" data-alias="travel" data-source="gallery" style="margin:0px auto;background-color:transparent;padding:0px;margin-top:0px;margin-bottom:0px;">
-                <!-- START REVOLUTION SLIDER 5.4.1 auto mode -->
-                <div id="rev_slider_1083_1" class="rev_slider fullwidthabanner" style="display:none;" data-version="5.4.1">
-                    <ul>
-                        <!-- SLIDE  -->
-                        <li data-index="rs-3070" data-transition="parallaxhorizontal" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="default" data-rotate="0" data-fstransition="fade" data-fsmasterspeed="1500" data-fsslotamount="7" data-saveperformance="off" data-title="Number One" >
-                            <!-- MAIN IMAGE -->
-                            <img src="{{asset('dists/assets/img/slide333.jpeg')}}"  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
-                            <!-- LAYERS -->
+    <main>
+
+        {{-- ================= HERO ================= --}}
+        <section id="home" class="min-vh-100 d-flex align-items-center">
+            <div class="container">
+                <div class="row align-items-center gy-5">
+                    <div class="col-lg-6" data-aos="fade-right" data-aos-duration="1000">
+                        <span class="badge bg-primary-light text-primary px-3 py-2 rounded-pill mb-4">
+                            <i class="fas fa-heartbeat me-2"></i>Salud femenina integral
+                        </span>
+                        <h1 class="display-4 fw-bold mb-4">
+                            Cuida tu <span class="text-primary">salud femenina</span> con nosotros
+                        </h1>
+                        <p class="lead text-muted mb-5">
+                            Control prenatal, planificación familiar y atención ginecológica profesional en Quito.
+                            Te acompañamos en cada etapa de tu vida.
+                        </p>
+
+                        <div class="d-flex flex-wrap gap-3">
+                            <a href="{{ route('appoiment.create') }}" class="btn btn-primary btn-lg">
+                                <i class="fas fa-calendar-check me-2"></i>Reservar cita
+                            </a>
+
+                            <a href="https://api.whatsapp.com/send?phone=+593992993372"
+                                target="_blank"
+                                class="btn btn-success btn-lg">
+                                <i class="fab fa-whatsapp me-2"></i>WhatsApp
+                            </a>
+                        </div>
+
+                        <div class="mt-5 d-flex gap-4">
+                            <div>
+                                <h3 class="h2 fw-bold text-primary">+500</h3>
+                                <p class="text-muted">Pacientes atendidas</p>
+                            </div>
+                            <div>
+                                <h3 class="h2 fw-bold text-primary">10+</h3>
+                                <p class="text-muted">Años de experiencia</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 text-center" data-aos="fade-left" data-aos-duration="1000">
+                        <img src="{{ asset('dists/assets/img/medico2.png') }}"
+                            class="img-fluid"
+                            alt="Consulta ginecológica">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {{-- ================= SERVICIOS ================= --}}
+        <section id="services" class="py-5">
+            <div class="container">
+                <div class="text-center mb-5" data-aos="fade-up">
+                    <span class="badge bg-primary-light text-primary px-3 py-2 rounded-pill mb-3">
+                        <i class="fas fa-star me-2"></i>Nuestros servicios
+                    </span>
+                    <h2 class="display-5 fw-bold">Cuidado integral para ti</h2>
+                    <p class="text-muted lead">Atención profesional y personalizada para cada etapa de tu vida</p>
+                </div>
+
+                <div class="row g-4">
+                    @php
+                    $services = [
+                    ['icon' => 'fa-baby', 'title' => 'Control prenatal', 'text' => 'Seguimiento médico completo para mamá y bebé durante el embarazo.'],
+                    ['icon' => 'fa-flask', 'title' => 'Laboratorio clínico', 'text' => 'Pruebas y análisis clínicos con resultados confiables y rápidos.'],
+                    ['icon' => 'fa-heart', 'title' => 'Planificación familiar', 'text' => 'Asesoramiento profesional para que tomes decisiones informadas.'],
+                    ['icon' => 'fa-user-md', 'title' => 'Ginecología', 'text' => 'Atención especializada con enfoque humano y profesional.'],
+                    ['icon' => 'fa-seedling', 'title' => 'Fertilidad', 'text' => 'Apoyo y tratamientos para quienes buscan concebir.'],
+                    ['icon' => 'fa-hospital', 'title' => 'Consulta médica', 'text' => 'Evaluación personalizada y seguimiento de tu salud.'],
+                    ];
+                    @endphp
+
+                    @foreach ($services as $index => $service)
+                    <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="{{ $index * 100 }}">
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas {{ $service['icon'] }}"></i>
+                            </div>
+                            <h4 class="h5 fw-bold mb-3">{{ $service['title'] }}</h4>
+                            <p class="text-muted mb-0">{{ $service['text'] }}</p>
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
+            </div>
+        </section>
+
+        {{-- ================= CTA CITA ================= --}}
+        <section class="cta-section text-white py-5">
+            <div class="container text-center py-5">
+                <h2 class="display-5 fw-bold mb-4" data-aos="fade-up">¿Lista para cuidar tu salud?</h2>
+                <p class="lead mb-5" data-aos="fade-up" data-aos-delay="100">
+                    Agenda tu consulta hoy mismo y recibe atención personalizada
+                </p>
+
+                <a href="{{ route('appoiment.create') }}" class="btn btn-light btn-lg px-5" data-aos="zoom-in" data-aos-delay="200">
+                    <i class="fas fa-calendar-alt me-2"></i>Reservar ahora
+                </a>
+            </div>
+        </section>
+
+        {{-- ================= DOCTOR ================= --}}
+        <section id="doctor" class="py-5 bg-light">
+            <div class="container">
+                <div class="text-center mb-5" data-aos="fade-up">
+                    <span class="badge bg-primary-light text-primary px-3 py-2 rounded-pill mb-3">
+                        <i class="fas fa-user-md me-2"></i>Nuestro especialista
+                    </span>
+                    <h2 class="display-5 fw-bold">Conoce a tu médico</h2>
+                    <p class="text-muted lead">Experiencia y calidez en cada consulta</p>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-md-6 col-lg-4" data-aos="flip-left" data-aos-duration="1000">
+                        <div class="doctor-card card border-0 shadow-sm">
+                            <div class="position-relative overflow-hidden">
+                                <img src="{{ asset('dists/assets/img/team/medico.png') }}"
+                                    class="card-img-top"
+                                    alt="Dr. Andrés Peñaherrera">
+                                <div class="position-absolute bottom-0 start-0 end-0 p-4 bg-gradient-dark">
+                                    <div class="d-flex justify-content-center gap-3">
+                                        <a href="#" class="text-white fs-4"><i class="fab fa-facebook"></i></a>
+                                        <a href="#" class="text-white fs-4"><i class="fab fa-instagram"></i></a>
+                                        <a href="#" class="text-white fs-4"><i class="fab fa-linkedin"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body text-center p-4">
+                                <h4 class="card-title fw-bold">Dr. Andrés Peñaherrera</h4>
+                                <p class="text-primary fw-semibold mb-0">Médico Obstetra - Ginecólogo</p>
+                                <p class="text-muted small mt-2">Miembro de la Federación Ecuatoriana de Ginecología</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {{-- ================= CONTACTO ================= --}}
+        <section id="contactus" class="position-relative">
+            <div class="container-fluid p-0">
+                <iframe
+                    title="Ubicación"
+                    src="https://www.google.com/maps?q=Quito&output=embed"
+                    width="100%"
+                    height="450"
+                    style="border:0;"
+                    loading="lazy"
+                    allowfullscreen>
+                </iframe>
+
+                <div class="position-absolute bottom-0 start-0 end-0 bg-gradient-light text-center py-3">
+                    <div class="container">
+                        <p class="mb-0">
+                            <i class="fas fa-map-marker-alt text-primary me-2"></i>
+                            Av. Principal 123, Quito - Ecuador
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    {{-- ================= FOOTER ================= --}}
+    <footer class="text-white py-5">
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-lg-4" data-aos="fade-right">
+                    <img src="{{ asset('dists/assets/img/brand/logoApIndex.png') }}" height="40" alt="AP Salud" class="mb-3">
+                    <p class="opacity-75">
+                        Cuidando tu salud femenina con profesionalismo y calidez.
+                        Más de 10 años acompañando a mujeres en todas las etapas de su vida.
+                    </p>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-white fs-5 opacity-75 hover-opacity-100"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-white fs-5 opacity-75 hover-opacity-100"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white fs-5 opacity-75 hover-opacity-100"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white fs-5 opacity-75 hover-opacity-100"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <h5 class="mb-4">Contacto</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-3">
+                            <i class="fas fa-phone text-primary me-2"></i>
+                            <a href="tel:+593992993372" class="text-white text-decoration-none opacity-75">+593 99 299 3372</a>
                         </li>
-                        <!-- SLIDE  -->
-                        <li data-index="rs-3071" data-transition="parallaxhorizontal" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="default" data-rotate="0" data-saveperformance="off" data-title="Number Two"  >
-                            <!-- MAIN IMAGE -->
-                            <img src="{{asset('dists/assets/img/slide222.jpeg')}}" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
-                            <!-- LAYERS -->
+                        <li class="mb-3">
+                            <i class="fas fa-envelope text-primary me-2"></i>
+                            <a href="mailto:drandrespaterson@gmail.com" class="text-white text-decoration-none opacity-75">drandrespaterson@gmail.com</a>
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-map-marker-alt text-primary me-2"></i>
+                            <span class="opacity-75">Quito - Ecuador</span>
                         </li>
                     </ul>
-                    <div class="tp-static-layers">
-                        <!-- LAYER NR. 1 -->
-                        <div class="tp-caption Travel-BigCaption   tp-resizeme tp-static-layer" id="slider-1083-layer-1" data-x="['left','left','left','left']" data-hoffset="['90','90','60','40']" data-y="['center','center','center','center']" data-voffset="['0','0','0','0']" data-fontsize="['50','50','50','35']" data-lineheight="['50','50','50','35']" data-width="none" data-height="none" data-whitespace="nowrap" data-type="text" data-responsive_offset="on" data-startslide="0" data-endslide="3" data-frames='[{"from":"opacity:0;","speed":300,"to":"o:1;","delay":500,"ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"to":"opacity:0;","ease":"nothing"}]' data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" style="z-index: 5; white-space: nowrap;text-transform:left; color:#ff3399; font-weight:bold;">Sientete libre, segura y<br> lista para cada etapa de tu vida.
-                        </div>
-
-                        <!-- LAYER NR. 2 -->
-                        <div class="tp-caption Travel-SmallCaption   tp-resizeme tp-static-layer" id="slider-1083-layer-2" data-x="['left','left','left','left']" data-hoffset="['90','90','60','40']" data-y="['center','center','center','center']" data-voffset="['80','80','80','80']" data-fontsize="['25','25','25','20']" data-lineheight="['30','30','30','20']" data-width="none" data-height="none" data-whitespace="nowrap" data-type="text" data-responsive_offset="on" data-startslide="0" data-endslide="3" data-frames='[{"from":"opacity:0;","speed":300,"to":"o:1;","delay":500,"ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"to":"opacity:0;","ease":"nothing"}]' data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" style="z-index: 6; white-space: nowrap;text-transform:left; color: #fff;">Los Mejores Cuidados en tu Embarazo </div>
-
-                        <!-- LAYER NR. 3 -->
-                        <div class="tp-caption Travel-CallToAction cs-button x-small  tp-static-layer" id="slider-1083-layer-3" data-x="['left','left','left','left']" data-hoffset="['90','90','60','40']" data-y="['center','center','center','center']" data-voffset="['150','150','150','150']" data-width="none" data-height="none" data-whitespace="nowrap" data-type="button" data-actions='[{"event":"click","action":"scrollbelow","offset":"px","delay":""}]' data-responsive_offset="on" data-responsive="off" data-startslide="0" data-endslide="3" data-frames='[{"from":"opacity:0;","speed":300,"to":"o:1;","delay":500,"ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"to":"opacity:0;","ease":"nothing"},{"frame":"hover","speed":"300","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(61, 9, 31, 1.00);bg:rgba(61, 9, 31, 0.15);bw:2px 2px 2px 2px;"}]' data-textAlign="['left','left','left','left']" data-paddingtop="[10,10,10,10]" data-paddingright="[20,20,20,20]" data-paddingbottom="[10,10,10,10]" data-paddingleft="[20,20,20,20]" style="z-index: 7; white-space: nowrap;text-transform:left;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;">
-                            Sobre Nosotros</div>
-                    </div>
-                    <div class="tp-bannertimer tp-bottom" style="height: 7px; background-color: rgba(0, 0, 0, 0.25);">
-                    </div>
                 </div>
-            </div><!-- END REVOLUTION SLIDER -->
 
-        </article>
-    </section>
-    <!-- End Slider -->
-
-    <section id="services" class="section-ptb-0">
-        <div class="row no-gutter">
-            <div class="col-lg-6 col-12" data-jarallax='{"speed": 0.0}' style="background-image: url({{asset('dists/assets/img/about.jpg')}});">
-                <div class="px-100 py-140 sm-pl-30 sm-pr-30 sm-pb-30 sm-pt-30 text-right xs-text-center">
-                    <div class="section-heading text-right">
-
-                        <h1 class="heading fs-40">Bienvenido a<br> <span class="theme-color">AP Salud Sexual y Reproductiva</span></h1>
-                    </div>
-                    <div class="mt-30">
-                        <a class="cs-button medium" href="{{route('appoiment.create')}}">Reservar Cita</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6 col-12">
-                <div class="row no-gutter">
-                    <div class="col-md-4 col-12">
-                        <div class="ser-box feature-txt text-center mb-0">
-                            <div class="feature-icon mb-20">
-                                <img src="{{asset('dists/assets/img/icon-1.png')}}" alt="icon1" />
-                            </div>
-                            <div class="feature-info ">
-                                <h4 class="text-back mb-20">Control<br> Prenatal</h4>
-                                <p> <br> Todo para asegurarse que mamá y bebé estén bien.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-12">
-                        <div class="ser-box bx2 feature-txt text-center mb-0">
-                            <div class="feature-icon mb-20">
-                                <img src="{{asset('dists/assets/img/icon-2.png')}}" alt="icon2"/>
-                            </div>
-                            <div class="feature-info ">
-                                <h4 class="text-back mb-20">Pruebas de laboratorio</h4>
-                                <p>Nosotros apoyados en la ciencia daremos solución a tus problemas.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-12">
-                        <div class="ser-box feature-txt text-center mb-0">
-                            <div class="feature-icon mb-20">
-                                <img src="{{asset('dists/assets/img/icon-3.png')}}" alt="icon3"/>
-                            </div>
-                            <div class="feature-info ">
-                                <h4 class="text-back mb-20">Planificación familiar</h4>
-                                <p><br>Planifica tu vida no la dejes al azar confía en nosotros.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-12">
-                        <div class="ser-box bx2 feature-txt text-center mb-0">
-                            <div class="feature-icon mb-20">
-                                <img src="{{asset('dists/assets/img/icon-4.png')}}" alt="icon4"/>
-                            </div>
-                            <div class="feature-info ">
-                                <h4 class="text-back mb-20">Ginecología</h4><br>
-                                <p><br>Cuidamos tu integridad y tu salud,tu felicidad es nuestra felicidad.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-12">
-                        <div class="ser-box feature-txt text-center mb-0">
-                            <div class="feature-icon mb-20">
-                                <img src="{{asset('dists/assets/img/icon-6.png')}}" alt="icon6"/>
-                            </div>
-                            <div class="feature-info ">
-                                <h4 class="text-back mb-20">Tratamiento de fertilidad</h4>
-                                <p>Con nuestra asesoría tu cuerpo estará preparado para traer a un nuevo ser.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-12">
-                        <div class="ser-box bx2 feature-txt text-center mb-0">
-                            <div class="feature-icon mb-20">
-                                <img src="{{asset('dists/assets/img/icon-5.png')}}"alt="icon5"/>
-                            </div>
-                            <div class="feature-info">
-                                <h4 class="text-back mb-20">Servicios medicos</h4>
-                                <p>Nos enfocamos en ti como prioridad para darte la mejor de las atenciones.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="row mt-80">
-                <div class="col-md-4 col-12">
-                    <div class="feature-txt text-center mb-50">
-                        <div class="feature-icon">
-                            <i class="far fa-clock theme-color"></i>
-                        </div>
-                        <div class="feature-info mb-20 px-30">
-                            <h4 class="fs-16 f-w6">Horario de Atención</h4>
-                            <p>Lunes a Viernes: 08:00 am - 04:00 pm</p>
-                            <p>Domiciliaria</p>
-                            <p>Previa cita</p>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="col-md-4 col-12">
-                    <div class="feature-txt text-center xs-mb-50">
-                        <div class="feature-icon">
-                            <i class="fa fa-stethoscope theme-color"></i>
-                        </div>
-                        <div class="feature-info mb-20 px-30">
-                            <h4 class="fs-16 f-w6">Atención Médica</h4>
-                            <p>AP Sexual y Reproductiva te brinda la mejor atención médica.</p>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="col-md-4 col-12">
-                    <div class="feature-txt text-center">
-                        <div class="feature-icon">
-                            <i class="fa fa-ambulance theme-color"></i>
-                        </div>
-                        <div class="feature-info mb-20 px-30">
-                            <h4 class="fs-16 f-w6">Atención de Emergencia</h4>
-                            <p>AP Sexual y Reproductiva te atiende por emergencia</p>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </section>
-
-    <section id="appointment" class="section-ptb-150" data-jarallax='{"speed": 0.0}' style="background-image: url({{asset('dists/assets/img/medico2.png')}});">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-12">
-                    <div class="section-heading text-left mb-50">
-                        <h1 class="heading">Reserva una cita con nosotros</h1>
-                    </div>
-                    <div class="btn">
-                        <a href="{{route('appoiment.create')}}" class="cs-button medium">Reserva ya!</a>
-                    </div>
-
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-     <section id="doctor" class="section-ptb-0">
-
-        <div class="wrapper">
-
-            <div class="content1">
-                <div class="img-container">
-                    <img src="{{asset('dists/assets/img/team/medico.png')}}" alt="medico">
-                </div>
-                <div class="content2">
-                    <div class="head2">
-                        <p>Andres Peñaherrera</p>
-                        <span>Médico obstetra</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <section id="contactus" class="section-ptb-0" data-jarallax='{"speed": 0.0}'>
-
-        <div class="row">
-            <div class="col">
-                <iframe title="Ubicación" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d510694.056744402!2d-78.71074516936699!3d-0.18590534316641!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d59a4002427c9f%3A0x44b991e158ef5572!2sQuito!5e0!3m2!1sen!2sec!4v1616954922629!5m2!1sen!2sec" width="100%" height="460" style="border:0;" loading="lazy"></iframe>
-            </div>
-        </div>
-
-
-    </section>
-
-    <section class="actionbox2 bg-theme">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="actionbox2 actionbox-res actionbox-border text-center">
-                        <h3>Para cualquier consulta o asistencia, llame al teléfono: <span class="fa fa-phone"></span> (+593)0992993372</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="footer bg-black pt-50">
-        <div class="container">
-            <div class="row ">
-
-                <div class="col xs-pt-30">
-                    <h4 class="text-white mb-30 mt-10 text-uppercase">Contáctanos</h4>
-                    <ul class="address">
-                        <li><i class="fa fa-map-marker"></i>
-                            <p><div class="row">Ubicación: Estamos ubicados en la ciudad de Quito,<br>contactate para mas información</div></p>
-                        </li>
-                        <li><i class="fa fa-phone"></i>
-                            <p>+593992993372</p>
-                        </li>
-                        <li><i class="fa fa-envelope-o"></i>Email: drandrespaterson@gmail.com</li>
+                <div class="col-lg-4">
+                    <h5 class="mb-4">Horario de atención</h5>
+                    <ul class="list-unstyled opacity-75">
+                        <li class="mb-2">Lunes a Viernes: 9:00 - 18:00</li>
+                        <li class="mb-2">Sábados: 9:00 - 13:00</li>
+                        <li class="mb-2">Domingos: Cerrado</li>
                     </ul>
                 </div>
-                <div class="col  sm-mt-30">
-                    <div class="footer-link footer-link-hedding">
-                        <h4 class="txt-white mb-30 mt-10 text-uppercase">Enlace rápido</h4>
-                        <ul>
-                            <li><a href="#home">Inicio</a></li>
-                            <li><a href="#services">Servicios</a></li>
-                            <li><a href="#appointment">Citas</a></li>
-                            <li><a href="#doctor">Doctor</a></li>
-                        </ul>
-                    </div>
-                </div>
-
             </div>
-            <div class="footer-copyright mt-20">
-                <div class="row">
-                    <div class="col-lg-6 col-md-6">
-                        <p class="mt-15"> ©Copyright <span id="copyright"><a href="{{route('home')}}">{{config('app.name')}}</a> <script>document.write(new Date().getFullYear())</script></span>
-                            All
-                            Rights Reserved </p>
-                    </div>
-                    <div class="col-lg-6 col-md-6 text-left text-md-right">
-                        <div class="social-icons color-hover mt-10">
-                            <ul>
-                                <li class="social-facebook"><a><i class="fa fa-facebook"></i></a></li>
-                                <li class="social-twitter"><a><i class="fa fa-twitter"></i></a></li>
-                                <li class="social-instagram"><a><i class="fa fa-instagram"></i> </a></li>
-                                <li class="social-linkedin"><a><i class="fa fa-linkedin"></i> </a></li>
-                            </ul>
-                        </div>
-                    </div>
+
+            <hr class="my-4 bg-white opacity-25">
+
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0 opacity-75">
+                        © {{ date('Y') }} {{ config('app.name') }} - Todos los derechos reservados
+                    </p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="#" class="text-white text-decoration-none opacity-75 me-3">Políticas de privacidad</a>
+                    <a href="#" class="text-white text-decoration-none opacity-75">Términos de uso</a>
                 </div>
             </div>
         </div>
     </footer>
 
+    {{-- Botón flotante de WhatsApp --}}
+    <a href="https://api.whatsapp.com/send?phone=+593992993372"
+        target="_blank"
+        class="position-fixed bottom-0 end-0 m-4"
+        style="z-index: 1000;">
+        <div class="bg-success text-white rounded-circle p-3 shadow-lg" style="width: 70px; height: 70px; display: flex; align-items: center; justify-content: center;">
+            <i class="fab fa-whatsapp fa-2x"></i>
+        </div>
+    </a>
 
+    {{-- Scripts --}}
+    <script src="{{ asset('dists/assets/vendor2/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('dists/assets/vendor2/bootstrap/js/bootstrap.min.js') }}"></script>
+
+    {{-- AOS Animation --}}
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+
+        // Smooth scroll para los enlaces
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Navbar background change on scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-sm');
+            } else {
+                navbar.classList.remove('shadow-sm');
+            }
+        });
+    </script>
 </body>
-
-<!-- jQuery -->
-<script src="{{asset('dists/assets/vendor2/jquery/jquery.min.js')}}"></script>
-
-<!-- Popper -->
-<script src="{{asset('dists/assets/vendor2/js/popper.min.js')}}"></script>
-
-<!-- bootstrap Core JavaScript -->
-<script src="{{asset('dists/assets/vendor2/bootstrap/js/bootstrap.min.js')}}"></script>
-
-<!-- Corenav Master JavaScript -->
-<script src="{{asset('dists/assets/vendor2/corenav-master/coreNavigation-1.1.3.js')}}"></script>
-<script src="{{asset('dists/assets/js/nav.js')}}"></script>
-
-<!--carousel script -->
-<script src="{{asset('dists/assets/vendor2/owlcarousel/js/owl.carousel.min.js')}}"></script>
-<script src="{{asset('dists/assets/vendor2/owlcarousel/js/jquery.mousewheel.min.js')}}"></script>
-
-<!-- nice-select -->
-<script src="{{asset('dists/assets/vendor2/jquery-nice-select/jquery-nice-select.js')}}"></script>
-
-<!-- custom JavaScript -->
-<script src="{{asset('dists/assets/js/custom.js')}}"></script>
-
-<!-- prettyPhoto -->
-<script src="{{asset('dists/assets/vendor2/prettyPhoto/js/jquery.prettyPhoto.js')}}"></script>
-
-<!-- custom JavaScript -->
-<script src="{{asset('dists/assets/js/customizer.js')}}"></script>
-
-<!-- template JavaScript -->
-<script src="{{asset('dists/assets/js/template.js')}}"></script>
-
-<!-- REVOLUTION JS FILES -->
-<script type="text/javascript" src="{{asset('dists/assets/vendor2/revolution-slider/revolution/js/jquery.themepunch.tools.min.js')}}"></script>
-<script type="text/javascript" src="{{asset('dists/assets/vendor2/revolution-slider/revolution/js/jquery.themepunch.revolution.min.js')}}"></script>
-
-    <!-- SLIDER REVOLUTION 5.0 EXTENSIONS  (Load Extensions only on Local File Systems !  The following part can be removed on Server for On Demand Loading) -->
-<script type="text/javascript" src="{{asset('dists/assets/vendor2/revolution-slider/revolution/js/extensions/revolution.extension.actions.min.js')}}"></script>
-<script type="text/javascript" src="{{asset('dists/assets/vendor2/revolution-slider/revolution/js/extensions/revolution.extension.carousel.min.js')}}"></script>
-<script type="text/javascript" src="{{asset('dists/assets/vendor2/revolution-slider/revolution/js/extensions/revolution.extension.kenburn.min.js')}}"></script>
-<script type="text/javascript" src="{{asset('dists/assets/vendor2/revolution-slider/revolution/js/extensions/revolution.extension.layeranimation.min.js')}}"></script>
-<script type="text/javascript" src="{{asset('dists/assets/vendor2/revolution-slider/revolution/js/extensions/revolution.extension.migration.min.js')}}"></script>
-<script type="text/javascript" src="{{asset('dists/assets/vendor2/revolution-slider/revolution/js/extensions/revolution.extension.navigation.min.js')}}"></script>
-<script type="text/javascript" src="{{asset('dists/assets/vendor2/revolution-slider/revolution/js/extensions/revolution.extension.parallax.min.js')}}"></script>
-<script type="text/javascript" src="{{asset('dists/assets/vendor2/revolution-slider/revolution/js/extensions/revolution.extension.slideanims.min.js')}}"></script>
-<script type="text/javascript" src="{{asset('dists/assets/vendor2/revolution-slider/revolution/js/extensions/revolution.extension.video.min.js')}}"></script>
-
-<script src="{{asset('dists/assets/js/revolution-slider.js')}}" type="text/javascript"></script>
-
-
-
-
-<!--jarallax javascript -->
-<script src="{{asset('dists/assets/js/jarallax.js')}}"></script>
-
-<script src="{{asset('js/addons/addons.js')}}" type="text/javascript"></script>
-
-
-
-
 
 </html>

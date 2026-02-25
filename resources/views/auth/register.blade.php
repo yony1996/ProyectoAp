@@ -1,100 +1,110 @@
-@extends('layouts.loginAdd')
+{{-- resources/views/auth/register-saas.blade.php --}}
+@extends('layouts.saas-login')
+
+@section('title', 'NexoraMedic - Registro')
 
 @section('content')
+    <div class="login-panel" style="overflow-y: auto; max-height: 90vh;">
+        <div class="brand-header">
+            <div class="brand-logo">
+                <img src="{{ asset('dists/assets/img/logo.png') }}" alt="NexoraMedic">
+                <span>NexoraMedic</span>
+            </div>
+            <h1 class="welcome-text">Comienza gratis</h1>
+            <p class="welcome-subtext">Crea tu cuenta en menos de 2 minutos</p>
+        </div>
 
-<div class="container-all">
-
-    <div class="ctn-form">
-        <img class="logo" src="{{asset('dists/assets/img/logo.png')}}" alt="">
-        <h1 class="title">Registrarme</h1>
-        <form method="POST" action="{{route('register')}}">
+        <form method="POST" action="{{ route('register') }}">
             @csrf
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="ci">Cédula</label>
-                    <input type="text" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*?)\..*/g, '$1');" maxlength="10" minlength="10" value="{{old('ci')}}" name="ci" id="ci" required autocomplete="off">
-                    @error('ci') <small class="text-danger">{{ $message }}</small>@enderror
 
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="age">Edad</label>
-                    <input type="text" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*?)\..*/g, '$1');" maxlength="2" value="{{old('age')}}" name="age" id="age" required autocomplete="off">
-                    @error('age')
-                    <small class="alert text-danger">{{ $message }}</small>
-                    @enderror
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label class="form-label">Nombre</label>
+                    <input type="text" name="name" class="form-control" placeholder="Dr. Juan Pérez">
                 </div>
 
-
+                <div class="col-md-6 mb-3">
+                    <label class="form-label">Consultorio</label>
+                    <input type="text" name="consultorio" class="form-control" placeholder="Nombre del consultorio">
+                </div>
             </div>
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="name">Nombre</label>
-                    <input type="text" style="text-transform: uppercase;" oninput="this.value = this.value.replace(/[^A-Za-z&ntilde;]/g,'').replace(/(\..*?)\..*/g, '$1');"value="{{old('name')}}" name="name" id="name" required autocomplete="off">
-                    @error('name')
-                    <small class="alert text-danger">{{ $message }}</small>
-                    @enderror
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="middle_name">Segundo Nombre</label>
-                    <input type="text" style="text-transform: uppercase;" oninput="this.value = this.value.replace(/[^A-Za-z&ntilde;]/g,'').replace(/(\..*?)\..*/g, '$1');"value="{{old('middle_name')}}" name="middle_name" id="middle_name" required autocomplete="off">
-                    @error('middle_name')
-                    <small class="alert text-danger">{{ $message }}</small>
-                    @enderror
-                </div>
 
-
+            <div class="mb-3">
+                <label class="form-label">Email</label>
+                <input type="email" name="email" class="form-control" placeholder="contacto@consultorio.com">
             </div>
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="last_name">Apellido</label>
-                     <input type="text" style="text-transform: uppercase;" oninput="this.value = this.value.replace(/[^A-Za-z&ntilde;]/g,'').replace(/(\..*?)\..*/g, '$1');" value="{{old('last_name')}}"name="last_name" id="last_name" required autocomplete="off">
-                    @error('last_name')
-                    <small class="alert text-danger">{{ $message }}</small>
-                    @enderror
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="User">Segundo Apellido</label>
-                    <input type="text" style="text-transform: uppercase;" oninput="this.value = this.value.replace(/[^A-Za-z&ntilde;]/g,'').replace(/(\..*?)\..*/g, '$1');" value="{{old('second_last_name')}}" name="second_last_name" id="second_last_name" required autocomplete="off">
-                    @error('second_last_name')
-                    <small class="alert text-danger">{{ $message }}</small>
-                    @enderror
-                </div>
 
-
+            <div class="mb-3">
+                <label class="form-label">Teléfono</label>
+                <input type="tel" name="phone" class="form-control" placeholder="+593 99 123 4567">
             </div>
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="email">Correo</label>
-                    <input type="email" value="{{old('email')}}"name="email" id="email" required autocomplete="off">
-                    @error('email')
-                    <small class="alert text-danger">{{ $message }}</small>
-                    @enderror
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="phone">Teléfono</label>
-                    <input type="text" oninput="this.value = this.value.replace(/[^0-9]/g,'').replace(/(\..*?)\..*/g, '$1');" maxlength="10" value="{{old('phone')}}"name="phone" id="phone"  required autocomplete="off">
-                    @error('phone')
-                    <small class="alert text-danger">{{ $message }}</small>
-                    @enderror
+
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label class="form-label">Contraseña</label>
+                    <input type="password" name="password" class="form-control" placeholder="••••••••">
                 </div>
 
-
+                <div class="col-md-6 mb-3">
+                    <label class="form-label">Confirmar contraseña</label>
+                    <input type="password" name="password_confirmation" class="form-control" placeholder="••••••••">
+                </div>
             </div>
-            <label for="password">Contraseña</label>
-            <input type="password" name="password" value="{{ old('password') }}" autocomplete="off">
-            @error('password')
-            <small class="alert text-danger">{{ $message }}</small>
-            @enderror
 
-            <button type="submit">Registrarse</button>
+            <div class="mb-4">
+                <label class="remember-checkbox">
+                    <input type="checkbox" name="terms" required>
+                    <span>Acepto los <a href="#" class="text-primary">Términos y condiciones</a> y la
+                    <a href="#" class="text-primary">Política de privacidad</a></span>
+                </label>
+            </div>
+
+            <button type="submit" class="btn-login mb-3">
+                <i class="fas fa-user-plus me-2"></i>Crear cuenta gratis
+            </button>
+
+            <p class="register-link">
+                ¿Ya tienes una cuenta?
+                <a href="{{ route('login') }}">
+                    Inicia sesión <i class="fas fa-arrow-right ms-1"></i>
+                </a>
+            </p>
+
+            <div class="text-center mt-4">
+                <small class="text-muted">
+                    <i class="fas fa-shield-alt me-1"></i>
+                    Tus datos están seguros con nosotros
+                </small>
+            </div>
         </form>
-        <span class="text-footer">¿Ya tienes una cuenta? <a href="{{route('login')}}">Iniciar Sesión</a></span>
     </div>
 
-    <div class="ctn-text2">
-        <div class="capa"></div>
-        <h1 class="title-description">AP Salud Sexual y Reproductiva</h1>
-        <p class="text-description" style="font-size:25px;">Tomar la decisíon de <strong>tener un bebé es trascendental:</strong> significa decidir que desde ese momento tu corazón empezará tambíen a caminer fuera de tu cuerpo</p>
+    <div class="hero-panel">
+        <div class="hero-content">
+            <span class="hero-badge">
+                <i class="fas fa-rocket me-2"></i>14 días gratis
+            </span>
+
+            <h2 class="hero-title">Todo lo que necesitas</h2>
+
+            <div class="hero-features">
+                <div class="feature-item">
+                    <div class="feature-icon">✓</div>
+                    <span>Gestión de pacientes ilimitada</span>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">✓</div>
+                    <span>Calendario de citas inteligente</span>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">✓</div>
+                    <span>Facturación electrónica</span>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">✓</div>
+                    <span>Soporte 24/7</span>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
 @endsection

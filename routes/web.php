@@ -19,22 +19,21 @@ Auth::routes(['verify' => true]);
 Route::get('/', 'HomeController@index')->name('home');
 
 
-
-Route::middleware('auth','verified')->group(function () {
+Route::middleware('auth', 'verified')->group(function () {
     Route::get('/dashboard', 'AdminController@index')->name('dashboard');
 
 
     Route::group(['middleware' => ['role:admin']], function () {
         //doctor
-        Route::get('/doctors/create','DoctorController@create')->name('doctor.create');
-        Route::get('/doctors/{doctor}/edit','DoctorController@editar')->name('doctor.edit');
-        Route::post('/doctors','DoctorController@store')->name('doctor.store');
-        Route::put('/doctors/{doctor}','DoctorController@update')->name('doctor.update');
+        Route::get('/doctors/create', 'DoctorController@create')->name('doctor.create');
+        Route::get('/doctors/{doctor}/edit', 'DoctorController@editar')->name('doctor.edit');
+        Route::post('/doctors', 'DoctorController@store')->name('doctor.store');
+        Route::put('/doctors/{doctor}', 'DoctorController@update')->name('doctor.update');
         Route::delete('/doctors/{doctor}', 'DoctorController@destroy')->name('doctor.destroy');
         //chart
-        Route::get('/charts/appoiment/line','ChartController@appoiments')->name('chart.appoiment');
-        Route::get('/charts/doctors/column','ChartController@doctors')->name('chart.doctors');
-        Route::get('/charts/doctors/column/data','ChartController@doctorsJson');
+        Route::get('/charts/appoiment/line', 'ChartController@appoiments')->name('chart.appoiment');
+        Route::get('/charts/doctors/column', 'ChartController@doctors')->name('chart.doctors');
+        Route::get('/charts/doctors/column/data', 'ChartController@doctorsJson');
         //especialidades
         Route::get('/specialties', 'SpecialtyController@index')->name('specialty');
         Route::get('/specialties/create', 'SpecialtyController@create')->name('specialty.create');
@@ -85,9 +84,7 @@ Route::middleware('auth','verified')->group(function () {
     Route::post('/appoiments/{appoiment}/cancel', 'AppoimentController@PostCancel')->name('appoiment.postcancel');
     Route::get('/appoiments/{appoiment}/cancel', 'AppoimentController@ShowCancelForm')->name('appoiment.cancelform');
     Route::post('/appoiments/{appoiment}/confirm', 'AppoimentController@PostConfirm')->name('appoiment.postconfirm');
-    Route::post('/appoiments/{appoiment}/attended','AppoimentController@Attended')->name('appoiment.attended');
-
-
+    Route::post('/appoiments/{appoiment}/attended', 'AppoimentController@Attended')->name('appoiment.attended');
 
 
 });

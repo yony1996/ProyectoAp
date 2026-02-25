@@ -11,9 +11,6 @@ use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Mail;
 
 
-
-
-
 class PatientController extends Controller
 {
 
@@ -21,10 +18,12 @@ class PatientController extends Controller
     {
         $this->middleware('auth');
     }
+
     public function create()
     {
         return view('Patient.create');
     }
+
     public function editar($id)
     {
         $patient = Patient::find($id);
@@ -37,7 +36,7 @@ class PatientController extends Controller
             'ci.ecuador' => 'Esta cédula no existe'
         ];
 
-        $this->validate($request,[
+        $this->validate($request, [
             'name' => 'required|regex:/^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+$/u',
             'middle_name' => 'required|regex:/^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+$/u',
             'last_name' => 'required|regex:/^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+$/u',
@@ -46,10 +45,9 @@ class PatientController extends Controller
             'phone' => 'required|nullable|min:10',
             'ci' => 'required|digits:10|unique:patients',
             'age' => 'required',
-            'ci'=> 'ecuador:ci'
+            'ci' => 'ecuador:ci'
 
-        ],$customMessages);
-
+        ], $customMessages);
 
 
         $user = new User();
@@ -77,6 +75,7 @@ class PatientController extends Controller
         $notification = 'El Paciente se ha creado correctamente';
         return redirect()->route('patient.create')->with(compact('notification'));
     }
+
     public function update(Request $request, $id)
     {
         $userId = $request->input('user_id');
@@ -94,7 +93,7 @@ class PatientController extends Controller
             'ci' => 'required|ecuador:ci|digits:10', Rule::unique('patients')->ignore($patient->id),
             'phone' => 'required|nullable|min:10'
         ];
-        $this->validate($request, $rules,$customMessages);
+        $this->validate($request, $rules, $customMessages);
 
 
         $user->name = $request->input('name');
@@ -111,7 +110,6 @@ class PatientController extends Controller
         $patient->save();
 
 
-
         $notificationP = 'El Paciente se ha actualizado correctamente';
         return redirect()->route('dashboard')->with(compact('notificationP'));
     }
@@ -124,6 +122,6 @@ class PatientController extends Controller
         $patient->user->status = $status;
         $patient->user->save();
         //$notificationP = 'El Paciente se ha eliminado correctamente';
-        return redirect()->route('dashboard')->with('eliminar','ok-pat');
+        return redirect()->route('dashboard')->with('eliminar', 'ok-pat');
     }
 }

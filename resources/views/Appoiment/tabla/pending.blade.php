@@ -1,6 +1,6 @@
 <div class="card-body table-responsive p-0">
 
-    @if (count($PendingAppoiments)>= 1)
+    @if (stats['total_pending']>= 1)
     <table class="table table-hover text-nowrap">
         <thead>
             <tr>
@@ -16,13 +16,13 @@
                 <th>Fecha</th>
                 <th>Hora</th>
                 <th>Tipo</th>
-               {{-- <th>Accion</th> --}} 
+               {{-- <th>Accion</th> --}}
 
             </tr>
         </thead>
         <tbody>
 
-            @foreach ($PendingAppoiments as $appoiment)
+            @foreach ($appointments['pending'] as $appoiment)
             <tr>
 
                 <td>{{$appoiment->description}}</td>
@@ -58,7 +58,7 @@
                             <i class="ni ni-check-bold"></i>
                         </button>
                     </form>
-                    @endhasrole --}} 
+                    @endhasrole --}}
                     @hasrole('admin')
                     <a href="{{route('appoiment.show',$appoiment->id)}}" class="btn btn-sm btn-outline-primary" data-toggle="tooltip" title="Ver Detalles "> <i class="fa fa-eye"></i> </a>
                     @endhasrole
@@ -86,5 +86,5 @@
 
 </div>
 <div class="card-body">
-    {{$PendingAppoiments->links()}}
+    {{$appointments['pending']->links()}}
 </div>
